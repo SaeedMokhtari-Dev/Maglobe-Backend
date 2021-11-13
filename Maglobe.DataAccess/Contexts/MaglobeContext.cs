@@ -95,6 +95,11 @@ namespace Maglobe.DataAccess.Contexts
 
                 entity.Property(e => e.CreatedAt).HasColumnType("datetime");
 
+                entity.Property(e => e.Language)
+                    .IsRequired()
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
                 entity.Property(e => e.ModifiedAt).HasColumnType("datetime");
 
                 entity.Property(e => e.Name).HasMaxLength(50);
@@ -119,6 +124,11 @@ namespace Maglobe.DataAccess.Contexts
 
                 entity.Property(e => e.CreatedAt).HasColumnType("datetime");
 
+                entity.Property(e => e.Language)
+                    .IsRequired()
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
                 entity.Property(e => e.ModifiedAt).HasColumnType("datetime");
 
                 entity.Property(e => e.Title)
@@ -128,7 +138,6 @@ namespace Maglobe.DataAccess.Contexts
                 entity.HasOne(d => d.Attachment)
                     .WithMany(p => p.Certificates)
                     .HasForeignKey(d => d.AttachmentId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Certificate_Attachment");
             });
 
@@ -157,6 +166,11 @@ namespace Maglobe.DataAccess.Contexts
 
                 entity.Property(e => e.CreatedAt).HasColumnType("datetime");
 
+                entity.Property(e => e.Language)
+                    .IsRequired()
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
                 entity.Property(e => e.ModifiedAt).HasColumnType("datetime");
 
                 entity.Property(e => e.Title)
@@ -172,6 +186,11 @@ namespace Maglobe.DataAccess.Contexts
 
                 entity.Property(e => e.Editor).IsRequired();
 
+                entity.Property(e => e.Language)
+                    .IsRequired()
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
                 entity.Property(e => e.ModifiedAt).HasColumnType("datetime");
 
                 entity.Property(e => e.Title)
@@ -182,6 +201,9 @@ namespace Maglobe.DataAccess.Contexts
             modelBuilder.Entity<PasswordResetToken>(entity =>
             {
                 entity.ToTable("PasswordResetToken");
+
+                entity.HasIndex(e => new { e.UserId, e.Token }, "IX_PasswordResetToken_UserId_Token")
+                    .IsUnique();
 
                 entity.Property(e => e.ResetRequestDate).HasColumnType("datetime");
 
@@ -204,6 +226,11 @@ namespace Maglobe.DataAccess.Contexts
                 entity.Property(e => e.CreatedAt).HasColumnType("datetime");
 
                 entity.Property(e => e.Description).HasMaxLength(2048);
+
+                entity.Property(e => e.Language)
+                    .IsRequired()
+                    .HasMaxLength(10)
+                    .IsFixedLength();
 
                 entity.Property(e => e.Model).HasMaxLength(50);
 
@@ -256,6 +283,9 @@ namespace Maglobe.DataAccess.Contexts
             {
                 entity.ToTable("RefreshToken");
 
+                entity.HasIndex(e => e.Token, "IX_RefreshToken_Token")
+                    .IsUnique();
+
                 entity.Property(e => e.CreatedAt).HasColumnType("datetime");
 
                 entity.Property(e => e.ExpiresAt).HasColumnType("datetime");
@@ -276,6 +306,11 @@ namespace Maglobe.DataAccess.Contexts
             {
                 entity.ToTable("Setting");
 
+                entity.Property(e => e.Language)
+                    .IsRequired()
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
                 entity.Property(e => e.WebsiteTitle)
                     .IsRequired()
                     .HasMaxLength(100);
@@ -295,12 +330,16 @@ namespace Maglobe.DataAccess.Contexts
 
                 entity.Property(e => e.CreatedAt).HasColumnType("datetime");
 
+                entity.Property(e => e.Language)
+                    .IsRequired()
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
                 entity.Property(e => e.ModifiedAt).HasColumnType("datetime");
 
                 entity.HasOne(d => d.Attachment)
                     .WithMany(p => p.Testimonials)
                     .HasForeignKey(d => d.AttachmentId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Testimonial_Attachment");
             });
 

@@ -7,6 +7,7 @@ namespace Maglobe.DataAccess.Entities
         public long Id { get; set; }
         public long WebsiteLogoId { get; set; }
         public string WebsiteTitle { get; set; }
+        public string Language { get; set; }
 
         public virtual Attachment WebsiteLogo { get; set; }
     }

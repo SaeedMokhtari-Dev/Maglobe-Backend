@@ -15,7 +15,7 @@ namespace Maglobe.Web.Initializers
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
-                    Title = "Vanak Industry Portal",
+                    Title = "Maglobe Portal",
                     Version = "v1",
                     Description = ""
                 });

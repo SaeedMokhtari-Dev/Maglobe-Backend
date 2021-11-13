@@ -14,10 +14,11 @@ namespace Maglobe.DataAccess.Entities
 
         public long Id { get; set; }
         public string Title { get; set; }
-        public long AttachmentId { get; set; }
+        public long? AttachmentId { get; set; }
         public bool IsActive { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime ModifiedAt { get; set; }
+        public string Language { get; set; }
 
         public virtual Attachment Attachment { get; set; }
         public virtual ICollection<ProductCertificate> ProductCertificates { get; set; }

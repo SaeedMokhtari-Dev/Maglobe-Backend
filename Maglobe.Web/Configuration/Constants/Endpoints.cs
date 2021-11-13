@@ -29,58 +29,91 @@ namespace Maglobe.Web.Configuration.Constants
 
         #endregion
         
-        #region  ElectionCandidateTypes
+        #region  Menus
 
-        public const string ApiElectionCandidateTypeGet = "/api/election-candidate-type/get";
-        public const string ApiElectionCandidateTypeAdd = "/api/election-candidate-type/add";
-        public const string ApiElectionCandidateTypeEdit = "/api/election-candidate-type/edit";
-        public const string ApiElectionCandidateTypeDetail = "/api/election-candidate-type/detail";
-        public const string ApiElectionCandidateTypeDelete = "/api/election-candidate-type/delete";
-        public const string ApiElectionCandidateTypeList = "/api/election-candidate-type/list";
-
+        public const string ApiMenuGet = "/api/menu/get";
+        public const string ApiMenuAdd = "/api/menu/add";
+        public const string ApiMenuEdit = "/api/menu/edit";
+        public const string ApiMenuDetail = "/api/menu/detail";
+        public const string ApiMenuDelete = "/api/menu/delete";
+        public const string ApiMenuList = "/api/menu/list";
+        public const string ApiMenuActive = "/api/menu/active";
+        
         #endregion
         
-        #region  Election
+        #region  Testimonials
 
-        public const string ApiElectionGet = "/api/election/get";
-        public const string ApiElectionAdd = "/api/election/add";
-        public const string ApiElectionEdit = "/api/election/edit";
-        public const string ApiElectionDetail = "/api/election/detail";
-        public const string ApiElectionDelete = "/api/election/delete";
-        public const string ApiElectionAddCandidate = "/api/election/add-candidate";
-        public const string ApiElectionList = "/api/election/list";
-        public const string ApiElectionPresent = "/api/election/present";
-        public const string ApiElectionFinalize = "/api/election/finalize";
-
+        public const string ApiTestimonialGet = "/api/testimonial/get";
+        public const string ApiTestimonialAdd = "/api/testimonial/add";
+        public const string ApiTestimonialEdit = "/api/testimonial/edit";
+        public const string ApiTestimonialDetail = "/api/testimonial/detail";
+        public const string ApiTestimonialDelete = "/api/testimonial/delete";
+        public const string ApiTestimonialList = "/api/testimonial/list";
+        public const string ApiTestimonialActive = "/api/testimonial/active";
+        
         #endregion
         
+        #region  Certificates
+
+        public const string ApiCertificateGet = "/api/certificate/get";
+        public const string ApiCertificateAdd = "/api/certificate/add";
+        public const string ApiCertificateEdit = "/api/certificate/edit";
+        public const string ApiCertificateDetail = "/api/certificate/detail";
+        public const string ApiCertificateDelete = "/api/certificate/delete";
+        public const string ApiCertificateList = "/api/certificate/list";
+        public const string ApiCertificateActive = "/api/certificate/active";
         
-        #region  ElectionCandidate
-
-        public const string ApiElectionCandidateGet = "/api/election-candidate/get";
-
         #endregion
         
-        #region  SelectElectionCandidate
+        #region  Settings
 
-        public const string ApiSelectElectionCandidateGet = "/api/select-election-candidate/get";
-        public const string ApiSelectElectionCandidateAdd = "/api/select-election-candidate/add";
+        public const string ApiSettingGet = "/api/setting/get";
+        public const string ApiSettingAdd = "/api/setting/add";
+        public const string ApiSettingEdit = "/api/setting/edit";
+        public const string ApiSettingDetail = "/api/setting/detail";
+        public const string ApiSettingDelete = "/api/setting/delete";
+        
+        #endregion
+        
+        #region  Products
 
+        public const string ApiProductGet = "/api/product/get";
+        public const string ApiProductAdd = "/api/product/add";
+        public const string ApiProductEdit = "/api/product/edit";
+        public const string ApiProductDetail = "/api/product/detail";
+        public const string ApiProductDelete = "/api/product/delete";
+        public const string ApiProductList = "/api/product/list";
+        public const string ApiProductActive = "/api/product/active";
+        
+        #endregion
+        
+        #region  CustomerSupportRequests
+
+        public const string ApiCustomerSupportRequestGet = "/api/customer-support-request/get";
+        public const string ApiCustomerSupportRequestAdd = "/api/customer-support-request/add";
+        public const string ApiCustomerSupportRequestEdit = "/api/customer-support-request/edit";
+        public const string ApiCustomerSupportRequestDetail = "/api/customer-support-request/detail";
+        public const string ApiCustomerSupportRequestDelete = "/api/customer-support-request/delete";
+        
+        #endregion
+        
+        #region  Pages
+
+        public const string ApiPageGet = "/api/page/get";
+        public const string ApiPageAdd = "/api/page/add";
+        public const string ApiPageEdit = "/api/page/edit";
+        public const string ApiPageDetail = "/api/page/detail";
+        public const string ApiPageDelete = "/api/page/delete";
+        public const string ApiPageList = "/api/page/list";
+        public const string ApiPageActive = "/api/page/active";
+        
         #endregion
         
         #region  Attachment
 
         public const string ApiAttachmentDetail = "/api/attachment/detail";
 
-        #endregion
-        
-        #region  ElectionResult
-
-        public const string ApiElectionResultFinalize = "/api/election-result/finalize";
-        public const string ApiElectionResultGet = "/api/election-result/get";
-
-        #endregion
-        
+        #endregion 
         
 
         public const string ApiLog = "/api/log";

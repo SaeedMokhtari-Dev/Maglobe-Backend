@@ -57,43 +57,81 @@ namespace Maglobe.Core.Constants
             public const string UserNotFound = "Api.User.NotFound";
             public const string UserWasPresentedBefore = "Api.User.PresentedBefore";
         }
-
-        public static class ElectionCandidateTypeMessage
+        public static class MenuMessage
         {
-            public const string TitleRequired = "Api.ElectionCandidateType.Title.Required";
-
-            public const string AddedSuccessfully = "Api.ElectionCandidateType.Add.Successful";
-            public const string EditedSuccessfully = "Api.ElectionCandidateType.Edit.Successful";
-            public const string DeletedSuccessfully = "Api.ElectionCandidateType.Deleted.Successful";
+            public const string MenuIdRequired = "Api.Menu.MenuId.Required";
+            
+            public const string AddedSuccessfully = "Api.Menu.Add.Successful";
+            public const string EditedSuccessfully = "Api.Menu.Edit.Successful";
+            public const string ActivatedSuccessfully = "Api.Menu.Activated.Successful";
+            public const string DeletedSuccessfully = "Api.Menu.Deleted.Successful";
+            
+            public const string MenuNotFound = "Api.Menu.NotFound";
         }
-
-        public static class SelectElectionCandidateMessage
+        public static class TestimonialMessage
         {
-            public const string AddedSuccessfully = "Api.SelectElectionCandidate.Add.Successful";
-            public const string EditedSuccessfully = "Api.SelectElectionCandidate.Edit.Successful";
-            public const string DeletedSuccessfully = "Api.SelectElectionCandidate.Deleted.Successful";
+            public const string TestimonialIdRequired = "Api.Testimonial.TestimonialId.Required";
             
-            public const string MoreThanLimit = "Api.SelectElectionCandidate.MoreThanLimit.NotAllowed";
+            public const string AddedSuccessfully = "Api.Testimonial.Add.Successful";
+            public const string EditedSuccessfully = "Api.Testimonial.Edit.Successful";
+            public const string ActivatedSuccessfully = "Api.Testimonial.Activated.Successful";
+            public const string DeletedSuccessfully = "Api.Testimonial.Deleted.Successful";
+            
+            public const string TestimonialNotFound = "Api.Testimonial.NotFound";
         }
-        public static class ElectionResultMessage
+        public static class CertificateMessage
         {
-            public const string FinalizedSuccessfully = "Api.ElectionResult.Finalized.Successful";
+            public const string CertificateIdRequired = "Api.Certificate.CertificateId.Required";
+            
+            public const string AddedSuccessfully = "Api.Certificate.Add.Successful";
+            public const string EditedSuccessfully = "Api.Certificate.Edit.Successful";
+            public const string ActivatedSuccessfully = "Api.Certificate.Activated.Successful";
+            public const string DeletedSuccessfully = "Api.Certificate.Deleted.Successful";
+            
+            public const string CertificateNotFound = "Api.Certificate.NotFound";
         }
-        public static class ElectionMessage
+        public static class SettingMessage
         {
-            public const string TitleRequired = "Api.Election.Title.Required";    
-            public const string ElectionCandidateTypeIdRequired = "Api.Election.ElectionCandidateTypeId.Required";    
+            public const string SettingIdRequired = "Api.Setting.SettingId.Required";
             
-            public const string AddedSuccessfully = "Api.Election.Add.Successful";
-            public const string EditedSuccessfully = "Api.Election.Edit.Successful";
-            public const string DeletedSuccessfully = "Api.Election.Deleted.Successful";
-            public const string CandidateAddedSuccessfully = "Api.Election.CandidateAdded.Successful";
-            public const string FinalizedSuccessfully = "Api.Election.Finalized.Successful";
+            public const string AddedSuccessfully = "Api.Setting.Add.Successful";
+            public const string EditedSuccessfully = "Api.Setting.Edit.Successful";
+            public const string ActivatedSuccessfully = "Api.Setting.Activated.Successful";
+            public const string DeletedSuccessfully = "Api.Setting.Deleted.Successful";
             
-            public const string EndDateShouldGreaterThanStartDate = "Api.Election.EndDateShouldGreaterThanStartDate";
-            public const string DontFindCurrentElection = "Api.Election.DontFindCurrentElection";
-            public const string UserIsNotPresent = "Api.Election.UserIsNotPresent";
+            public const string SettingNotFound = "Api.Setting.NotFound";
+        }
+        public static class ProductMessage
+        {
+            public const string ProductIdRequired = "Api.Product.ProductId.Required";
             
+            public const string AddedSuccessfully = "Api.Product.Add.Successful";
+            public const string EditedSuccessfully = "Api.Product.Edit.Successful";
+            public const string ActivatedSuccessfully = "Api.Product.Activated.Successful";
+            public const string DeletedSuccessfully = "Api.Product.Deleted.Successful";
+            
+            public const string ProductNotFound = "Api.Product.NotFound";
+        }
+        public static class PageMessage
+        {
+            public const string PageIdRequired = "Api.Page.PageId.Required";
+            
+            public const string AddedSuccessfully = "Api.Page.Add.Successful";
+            public const string EditedSuccessfully = "Api.Page.Edit.Successful";
+            public const string ActivatedSuccessfully = "Api.Page.Activated.Successful";
+            public const string DeletedSuccessfully = "Api.Page.Deleted.Successful";
+            
+            public const string PageNotFound = "Api.Page.NotFound";
+        }
+        public static class CustomerSupportRequestMessage
+        {
+            public const string CustomerSupportRequestIdRequired = "Api.CustomerSupportRequest.CustomerSupportRequestId.Required";
+            
+            public const string AddedSuccessfully = "Api.CustomerSupportRequest.Add.Successful";
+            public const string EditedSuccessfully = "Api.CustomerSupportRequest.Edit.Successful";
+            public const string DeletedSuccessfully = "Api.CustomerSupportRequest.Deleted.Successful";
+            
+            public const string CustomerSupportRequestNotFound = "Api.CustomerSupportRequest.NotFound";
         }
     }
 }

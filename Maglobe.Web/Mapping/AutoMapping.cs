@@ -1,7 +1,37 @@
 ﻿using System;
+using System.Linq;
 using AutoMapper;
+using Maglobe.Core.Enums;
 using Maglobe.DataAccess.Entities;
 using Maglobe.Web.Controllers.Auth.Register;
+using Maglobe.Web.Controllers.Entities.Certificates.Add;
+using Maglobe.Web.Controllers.Entities.Certificates.Detail;
+using Maglobe.Web.Controllers.Entities.Certificates.Edit;
+using Maglobe.Web.Controllers.Entities.Certificates.Get;
+using Maglobe.Web.Controllers.Entities.CustomerSupportRequests.Add;
+using Maglobe.Web.Controllers.Entities.CustomerSupportRequests.Detail;
+using Maglobe.Web.Controllers.Entities.CustomerSupportRequests.Edit;
+using Maglobe.Web.Controllers.Entities.CustomerSupportRequests.Get;
+using Maglobe.Web.Controllers.Entities.Menus.Add;
+using Maglobe.Web.Controllers.Entities.Menus.Detail;
+using Maglobe.Web.Controllers.Entities.Menus.Edit;
+using Maglobe.Web.Controllers.Entities.Menus.Get;
+using Maglobe.Web.Controllers.Entities.Pages.Add;
+using Maglobe.Web.Controllers.Entities.Pages.Detail;
+using Maglobe.Web.Controllers.Entities.Pages.Edit;
+using Maglobe.Web.Controllers.Entities.Pages.Get;
+using Maglobe.Web.Controllers.Entities.Products.Add;
+using Maglobe.Web.Controllers.Entities.Products.Detail;
+using Maglobe.Web.Controllers.Entities.Products.Edit;
+using Maglobe.Web.Controllers.Entities.Products.Get;
+using Maglobe.Web.Controllers.Entities.Settings.Add;
+using Maglobe.Web.Controllers.Entities.Settings.Detail;
+using Maglobe.Web.Controllers.Entities.Settings.Edit;
+using Maglobe.Web.Controllers.Entities.Settings.Get;
+using Maglobe.Web.Controllers.Entities.Testimonials.Add;
+using Maglobe.Web.Controllers.Entities.Testimonials.Detail;
+using Maglobe.Web.Controllers.Entities.Testimonials.Edit;
+using Maglobe.Web.Controllers.Entities.Testimonials.Get;
 using Maglobe.Web.Controllers.Entities.Users.Add;
 using Maglobe.Web.Controllers.Entities.Users.Detail;
 using Maglobe.Web.Controllers.Entities.Users.Edit;
@@ -48,6 +78,171 @@ namespace Maglobe.Web.Mapping
                 .ForMember(w => w.LastLoginAt,
                     opt => opt.MapFrom(e =>
                         e.LastLoginAt.HasValue ? e.LastLoginAt.Value.ToPersianDateTime() : String.Empty));
+
+            #endregion
+            
+            #region Menu
+
+            CreateMap<MenuAddRequest, Menu>()
+                .ForMember(w => w.CreatedAt, opt => opt.MapFrom(e => DateTime.Now))
+                .ForMember(w => w.ModifiedAt, opt => opt.MapFrom(e => DateTime.Now));
+
+            CreateMap<MenuEditRequest, Menu>()
+                .ForMember(w => w.Id, opt => opt.Ignore())
+                .ForMember(w => w.ModifiedAt, opt => opt.MapFrom(e => DateTime.Now));
+
+            CreateMap<Menu, MenuDetailResponse>()
+                .ForMember(w => w.Key, opt => opt.MapFrom(e => e.Id))
+                .ForMember(w => w.CreatedAt, opt => opt.MapFrom(e => e.CreatedAt.ToPersianDateTime()))
+                .ForMember(w => w.ModifiedAt, opt => opt.MapFrom(e => e.ModifiedAt.ToPersianDateTime()));
+
+            CreateMap<Menu, MenuGetResponseItem>()
+                .ForMember(w => w.Key, opt => opt.MapFrom(e => e.Id))
+                .ForMember(w => w.CreatedAt, opt => opt.MapFrom(e => e.CreatedAt.ToPersianDateTime()))
+                .ForMember(w => w.ModifiedAt, opt => opt.MapFrom(e => e.ModifiedAt.ToPersianDateTime()));
+
+            #endregion
+            
+            #region Certificate
+
+            CreateMap<CertificateAddRequest, Certificate>()
+                .ForMember(w => w.CreatedAt, opt => opt.MapFrom(e => DateTime.Now))
+                .ForMember(w => w.ModifiedAt, opt => opt.MapFrom(e => DateTime.Now));
+
+            CreateMap<CertificateEditRequest, Certificate>()
+                .ForMember(w => w.Id, opt => opt.Ignore())
+                .ForMember(w => w.ModifiedAt, opt => opt.MapFrom(e => DateTime.Now));
+
+            CreateMap<Certificate, CertificateDetailResponse>()
+                .ForMember(w => w.Key, opt => opt.MapFrom(e => e.Id))
+                .ForMember(w => w.CreatedAt, opt => opt.MapFrom(e => e.CreatedAt.ToPersianDateTime()))
+                .ForMember(w => w.ModifiedAt, opt => opt.MapFrom(e => e.ModifiedAt.ToPersianDateTime()))
+                .ForMember(w => w.Attachment, opt =>
+                    opt.MapFrom(e =>
+                        e.AttachmentId.HasValue
+                            ? String.Join("", e.Attachment.Image.Select(Convert.ToChar))
+                            : String.Empty));
+
+            CreateMap<Certificate, CertificateGetResponseItem>()
+                .ForMember(w => w.Key, opt => opt.MapFrom(e => e.Id))
+                .ForMember(w => w.CreatedAt, opt => opt.MapFrom(e => e.CreatedAt.ToPersianDateTime()))
+                .ForMember(w => w.ModifiedAt, opt => opt.MapFrom(e => e.ModifiedAt.ToPersianDateTime()));
+
+            #endregion
+            
+            #region Testimonial
+
+            CreateMap<TestimonialAddRequest, Testimonial>()
+                .ForMember(w => w.CreatedAt, opt => opt.MapFrom(e => DateTime.Now))
+                .ForMember(w => w.ModifiedAt, opt => opt.MapFrom(e => DateTime.Now));
+
+            CreateMap<TestimonialEditRequest, Testimonial>()
+                .ForMember(w => w.Id, opt => opt.Ignore())
+                .ForMember(w => w.ModifiedAt, opt => opt.MapFrom(e => DateTime.Now));
+
+            CreateMap<Testimonial, TestimonialDetailResponse>()
+                .ForMember(w => w.Key, opt => opt.MapFrom(e => e.Id))
+                .ForMember(w => w.CreatedAt, opt => opt.MapFrom(e => e.CreatedAt.ToPersianDateTime()))
+                .ForMember(w => w.ModifiedAt, opt => opt.MapFrom(e => e.ModifiedAt.ToPersianDateTime()))
+                .ForMember(w => w.Attachment, opt =>
+                    opt.MapFrom(e =>
+                        e.AttachmentId.HasValue
+                            ? String.Join("", e.Attachment.Image.Select(Convert.ToChar))
+                            : String.Empty));
+
+            CreateMap<Testimonial, TestimonialGetResponseItem>()
+                .ForMember(w => w.Key, opt => opt.MapFrom(e => e.Id))
+                .ForMember(w => w.CreatedAt, opt => opt.MapFrom(e => e.CreatedAt.ToPersianDateTime()))
+                .ForMember(w => w.ModifiedAt, opt => opt.MapFrom(e => e.ModifiedAt.ToPersianDateTime()));
+
+            #endregion
+            
+            #region Setting
+
+            CreateMap<SettingAddRequest, Setting>();
+
+            CreateMap<SettingEditRequest, Setting>()
+                .ForMember(w => w.Id, opt => opt.Ignore());
+
+            CreateMap<Setting, SettingDetailResponse>()
+                .ForMember(w => w.Key, opt => opt.MapFrom(e => e.Id))
+                .ForMember(w => w.WebsiteLogo, opt =>
+                    opt.MapFrom(e =>
+                         String.Join("", e.WebsiteLogo.Image.Select(Convert.ToChar))));
+
+            CreateMap<Setting, SettingGetResponseItem>()
+                .ForMember(w => w.Key, opt => opt.MapFrom(e => e.Id));
+
+            #endregion
+            
+            #region Product
+
+            CreateMap<ProductAddRequest, Product>()
+                .ForMember(w => w.CreatedAt, opt => opt.MapFrom(e => DateTime.Now))
+                .ForMember(w => w.ModifiedAt, opt => opt.MapFrom(e => DateTime.Now));
+
+            CreateMap<ProductEditRequest, Product>()
+                .ForMember(w => w.Id, opt => opt.Ignore())
+                .ForMember(w => w.ModifiedAt, opt => opt.MapFrom(e => DateTime.Now));
+
+            CreateMap<Product, ProductDetailResponse>()
+                .ForMember(w => w.Key, opt => opt.MapFrom(e => e.Id))
+                .ForMember(w => w.CreatedAt, opt => opt.MapFrom(e => e.CreatedAt.ToPersianDateTime()))
+                .ForMember(w => w.ModifiedAt, opt => opt.MapFrom(e => e.ModifiedAt.ToPersianDateTime()))
+                .ForMember(w => w.CertificateItems, opt =>
+                    opt.MapFrom(e =>
+                        e.ProductCertificates.Any()
+                            ? e.ProductCertificates.Select(w => w.Certificate)
+                            : null));
+
+            CreateMap<Product, ProductGetResponseItem>()
+                .ForMember(w => w.Key, opt => opt.MapFrom(e => e.Id))
+                .ForMember(w => w.CreatedAt, opt => opt.MapFrom(e => e.CreatedAt.ToPersianDateTime()))
+                .ForMember(w => w.ModifiedAt, opt => opt.MapFrom(e => e.ModifiedAt.ToPersianDateTime()));
+
+            #endregion
+            
+            #region Page
+
+            CreateMap<PageAddRequest, Page>()
+                .ForMember(w => w.CreatedAt, opt => opt.MapFrom(e => DateTime.Now))
+                .ForMember(w => w.ModifiedAt, opt => opt.MapFrom(e => DateTime.Now));
+
+            CreateMap<PageEditRequest, Page>()
+                .ForMember(w => w.Id, opt => opt.Ignore())
+                .ForMember(w => w.ModifiedAt, opt => opt.MapFrom(e => DateTime.Now));
+
+            CreateMap<Page, PageDetailResponse>()
+                .ForMember(w => w.Key, opt => opt.MapFrom(e => e.Id))
+                .ForMember(w => w.CreatedAt, opt => opt.MapFrom(e => e.CreatedAt.ToPersianDateTime()))
+                .ForMember(w => w.ModifiedAt, opt => opt.MapFrom(e => e.ModifiedAt.ToPersianDateTime()));
+
+            CreateMap<Page, PageGetResponseItem>()
+                .ForMember(w => w.Key, opt => opt.MapFrom(e => e.Id))
+                .ForMember(w => w.CreatedAt, opt => opt.MapFrom(e => e.CreatedAt.ToPersianDateTime()))
+                .ForMember(w => w.ModifiedAt, opt => opt.MapFrom(e => e.ModifiedAt.ToPersianDateTime()));
+
+            #endregion
+            
+            #region CustomerSupportRequest
+
+            CreateMap<CustomerSupportRequestAddRequest, CustomerSupportRequest>()
+                .ForMember(w => w.CreatedAt, opt => opt.MapFrom(e => DateTime.Now))
+                .ForMember(w => w.ModifiedAt, opt => opt.MapFrom(e => DateTime.Now));
+
+            CreateMap<CustomerSupportRequestEditRequest, CustomerSupportRequest>()
+                .ForMember(w => w.Id, opt => opt.Ignore())
+                .ForMember(w => w.ModifiedAt, opt => opt.MapFrom(e => DateTime.Now));
+
+            CreateMap<CustomerSupportRequest, CustomerSupportRequestDetailResponse>()
+                .ForMember(w => w.Key, opt => opt.MapFrom(e => e.Id))
+                .ForMember(w => w.CreatedAt, opt => opt.MapFrom(e => e.CreatedAt.ToPersianDateTime()))
+                .ForMember(w => w.ModifiedAt, opt => opt.MapFrom(e => e.ModifiedAt.ToPersianDateTime()));
+
+            CreateMap<CustomerSupportRequest, CustomerSupportRequestGetResponseItem>()
+                .ForMember(w => w.Key, opt => opt.MapFrom(e => e.Id))
+                .ForMember(w => w.CreatedAt, opt => opt.MapFrom(e => e.CreatedAt.ToPersianDateTime()))
+                .ForMember(w => w.ModifiedAt, opt => opt.MapFrom(e => e.ModifiedAt.ToPersianDateTime()));
 
             #endregion
         }

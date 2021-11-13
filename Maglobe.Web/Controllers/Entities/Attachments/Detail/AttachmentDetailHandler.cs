@@ -31,8 +31,6 @@ namespace Maglobe.Web.Controllers.Entities.Attachments.Detail
             {
                 return ActionResult.Error(ApiMessages.ResourceNotFound);
             }
-
-            //AttachmentDetailResponse response = _mapper.Map<AttachmentDetailResponse>(election);
             AttachmentDetailResponse response = new AttachmentDetailResponse();
             response.Image = String.Join("", attachment.Image.Select(Convert.ToChar));
             return ActionResult.Ok(response);

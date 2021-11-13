@@ -42,8 +42,15 @@ namespace Maglobe.Web
             
             services.AddAutoMapper(typeof(AutoMapping));
             services.AddMvcCore().AddApiExplorer();
+            
             services.ConfigureSwagger();
             services.AddResponseCaching();
+            services.AddMvc().AddRazorPagesOptions(options =>
+            {
+                options.Conventions.AddPageRoute("/Index", "");
+            });
+            services.AddRazorPages();
+            //services.AddControllersWithViews();
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration => { configuration.RootPath = "ClientApp/build"; });
         }
@@ -57,7 +64,7 @@ namespace Maglobe.Web
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint(Endpoints.Swagger, "PetroPay Portal v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint(Endpoints.Swagger, "Maglobe Portal v1"));
             }
             else
             {
@@ -88,7 +95,9 @@ namespace Maglobe.Web
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers(); 
+                endpoints.MapRazorPages();
+                endpoints.MapControllers();
+                
             });
             /*app.UseSpa(spa =>
             {
