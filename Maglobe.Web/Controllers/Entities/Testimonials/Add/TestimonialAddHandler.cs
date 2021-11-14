@@ -37,12 +37,12 @@ namespace Maglobe.Web.Controllers.Entities.Testimonials.Add
             {
                 Testimonial newTestimonial = _mapper.Map<Testimonial>(request);
                 
-                if (!string.IsNullOrEmpty(request.Attachment))
+                if (!string.IsNullOrEmpty(request.Picture))
                 {
                     newTestimonial.Attachment = new Attachment()
                     {
                         CreatedAt = DateTime.Now,
-                        Image = request.Attachment.ToCharArray().Select(Convert.ToByte).ToArray()
+                        Image = request.Picture.ToCharArray().Select(Convert.ToByte).ToArray()
                     };
                 }
 

@@ -98,7 +98,7 @@ namespace Maglobe.DataAccess.Contexts
                 entity.Property(e => e.Language)
                     .IsRequired()
                     .HasMaxLength(10)
-                    .IsFixedLength();
+                    .IsUnicode(false);
 
                 entity.Property(e => e.ModifiedAt).HasColumnType("datetime");
 
@@ -127,7 +127,7 @@ namespace Maglobe.DataAccess.Contexts
                 entity.Property(e => e.Language)
                     .IsRequired()
                     .HasMaxLength(10)
-                    .IsFixedLength();
+                    .IsUnicode(false);
 
                 entity.Property(e => e.ModifiedAt).HasColumnType("datetime");
 
@@ -169,7 +169,7 @@ namespace Maglobe.DataAccess.Contexts
                 entity.Property(e => e.Language)
                     .IsRequired()
                     .HasMaxLength(10)
-                    .IsFixedLength();
+                    .IsUnicode(false);
 
                 entity.Property(e => e.ModifiedAt).HasColumnType("datetime");
 
@@ -189,7 +189,7 @@ namespace Maglobe.DataAccess.Contexts
                 entity.Property(e => e.Language)
                     .IsRequired()
                     .HasMaxLength(10)
-                    .IsFixedLength();
+                    .IsUnicode(false);
 
                 entity.Property(e => e.ModifiedAt).HasColumnType("datetime");
 
@@ -230,7 +230,7 @@ namespace Maglobe.DataAccess.Contexts
                 entity.Property(e => e.Language)
                     .IsRequired()
                     .HasMaxLength(10)
-                    .IsFixedLength();
+                    .IsUnicode(false);
 
                 entity.Property(e => e.Model).HasMaxLength(50);
 
@@ -309,7 +309,7 @@ namespace Maglobe.DataAccess.Contexts
                 entity.Property(e => e.Language)
                     .IsRequired()
                     .HasMaxLength(10)
-                    .IsFixedLength();
+                    .IsUnicode(false);
 
                 entity.Property(e => e.WebsiteTitle)
                     .IsRequired()
@@ -333,7 +333,7 @@ namespace Maglobe.DataAccess.Contexts
                 entity.Property(e => e.Language)
                     .IsRequired()
                     .HasMaxLength(10)
-                    .IsFixedLength();
+                    .IsUnicode(false);
 
                 entity.Property(e => e.ModifiedAt).HasColumnType("datetime");
 

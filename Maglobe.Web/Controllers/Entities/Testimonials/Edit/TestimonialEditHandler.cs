@@ -48,19 +48,19 @@ namespace Maglobe.Web.Controllers.Entities.Testimonials.Edit
             {
                 _mapper.Map(request, editTestimonial);
                 
-                if (request.AttachmentChanged && !string.IsNullOrEmpty(request.Attachment))
+                if (request.PictureChanged && !string.IsNullOrEmpty(request.Picture))
                 {
                     if (editTestimonial.AttachmentId.HasValue)
                     {
                         editTestimonial.Attachment.CreatedAt = DateTime.Now;
-                        editTestimonial.Attachment.Image = request.Attachment.ToCharArray().Select(Convert.ToByte).ToArray();
+                        editTestimonial.Attachment.Image = request.Picture.ToCharArray().Select(Convert.ToByte).ToArray();
                     }
                     else
                     {
                         editTestimonial.Attachment = new Attachment
                         {
                             CreatedAt = DateTime.Now,
-                            Image = request.Attachment.ToCharArray().Select(Convert.ToByte).ToArray()
+                            Image = request.Picture.ToCharArray().Select(Convert.ToByte).ToArray()
                         };
                     }
                 }

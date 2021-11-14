@@ -34,12 +34,12 @@ namespace Maglobe.Web.Controllers.Entities.Settings.Add
             Setting setting = await _context.ExecuteTransactionAsync(async () =>
             {
                 Setting newSetting = _mapper.Map<Setting>(request);
-                if (!string.IsNullOrEmpty(request.WebsiteLogo))
+                if (!string.IsNullOrEmpty(request.WebsiteLogoImage))
                 {
                     newSetting.WebsiteLogo = new Attachment()
                     {
                         CreatedAt = DateTime.Now,
-                        Image = request.WebsiteLogo.ToCharArray().Select(Convert.ToByte).ToArray()
+                        Image = request.WebsiteLogoImage.ToCharArray().Select(Convert.ToByte).ToArray()
                     };
                 }
 

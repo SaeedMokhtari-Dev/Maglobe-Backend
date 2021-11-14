@@ -37,12 +37,12 @@ namespace Maglobe.Web.Controllers.Entities.Certificates.Add
             {
                 Certificate newCertificate = _mapper.Map<Certificate>(request);
                 
-                if (!string.IsNullOrEmpty(request.Attachment))
+                if (!string.IsNullOrEmpty(request.Picture))
                 {
                     newCertificate.Attachment = new Attachment()
                     {
                         CreatedAt = DateTime.Now,
-                        Image = request.Attachment.ToCharArray().Select(Convert.ToByte).ToArray()
+                        Image = request.Picture.ToCharArray().Select(Convert.ToByte).ToArray()
                     };
                 }
 

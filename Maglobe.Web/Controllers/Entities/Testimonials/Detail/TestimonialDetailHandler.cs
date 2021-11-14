@@ -27,6 +27,7 @@ namespace Maglobe.Web.Controllers.Entities.Testimonials.Detail
         protected override async Task<ActionResult> Execute(TestimonialDetailRequest request)
         {
             Testimonial testimonial = await _context.Testimonials
+                .Include(w => w.Attachment)
                 .FirstOrDefaultAsync(w => w.Id == request.TestimonialId);
 
             if (testimonial == null)

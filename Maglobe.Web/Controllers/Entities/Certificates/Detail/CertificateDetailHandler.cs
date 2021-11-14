@@ -27,6 +27,7 @@ namespace Maglobe.Web.Controllers.Entities.Certificates.Detail
         protected override async Task<ActionResult> Execute(CertificateDetailRequest request)
         {
             Certificate certificate = await _context.Certificates
+                .Include(w => w.Attachment)
                 .FirstOrDefaultAsync(w => w.Id == request.CertificateId);
 
             if (certificate == null)

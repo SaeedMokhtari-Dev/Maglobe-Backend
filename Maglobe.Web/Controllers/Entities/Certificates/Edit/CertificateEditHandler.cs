@@ -48,19 +48,19 @@ namespace Maglobe.Web.Controllers.Entities.Certificates.Edit
             {
                 _mapper.Map(request, editCertificate);
                 
-                if (request.AttachmentChanged && !string.IsNullOrEmpty(request.Attachment))
+                if (request.PictureChanged && !string.IsNullOrEmpty(request.Picture))
                 {
                     if (editCertificate.AttachmentId.HasValue)
                     {
                         editCertificate.Attachment.CreatedAt = DateTime.Now;
-                        editCertificate.Attachment.Image = request.Attachment.ToCharArray().Select(Convert.ToByte).ToArray();
+                        editCertificate.Attachment.Image = request.Picture.ToCharArray().Select(Convert.ToByte).ToArray();
                     }
                     else
                     {
                         editCertificate.Attachment = new Attachment
                         {
                             CreatedAt = DateTime.Now,
-                            Image = request.Attachment.ToCharArray().Select(Convert.ToByte).ToArray()
+                            Image = request.Picture.ToCharArray().Select(Convert.ToByte).ToArray()
                         };
                     }
                 }

@@ -4,8 +4,8 @@ namespace Maglobe.Web.Controllers.Entities.Certificates.Edit
     {
         public long CertificateId { get; set; }
         public string Title { get; set; }
-        public string Attachment { get; set; }
-        public bool AttachmentChanged { get; set; }
+        public string Picture { get; set; }
+        public bool PictureChanged { get; set; }
         public bool IsActive { get; set; }
         public string Language { get; set; }
     }

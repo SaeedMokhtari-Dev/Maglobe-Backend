@@ -117,7 +117,7 @@ namespace Maglobe.Web.Mapping
                 .ForMember(w => w.Key, opt => opt.MapFrom(e => e.Id))
                 .ForMember(w => w.CreatedAt, opt => opt.MapFrom(e => e.CreatedAt.ToPersianDateTime()))
                 .ForMember(w => w.ModifiedAt, opt => opt.MapFrom(e => e.ModifiedAt.ToPersianDateTime()))
-                .ForMember(w => w.Attachment, opt =>
+                .ForMember(w => w.Picture, opt =>
                     opt.MapFrom(e =>
                         e.AttachmentId.HasValue
                             ? String.Join("", e.Attachment.Image.Select(Convert.ToChar))
@@ -144,7 +144,7 @@ namespace Maglobe.Web.Mapping
                 .ForMember(w => w.Key, opt => opt.MapFrom(e => e.Id))
                 .ForMember(w => w.CreatedAt, opt => opt.MapFrom(e => e.CreatedAt.ToPersianDateTime()))
                 .ForMember(w => w.ModifiedAt, opt => opt.MapFrom(e => e.ModifiedAt.ToPersianDateTime()))
-                .ForMember(w => w.Attachment, opt =>
+                .ForMember(w => w.Picture, opt =>
                     opt.MapFrom(e =>
                         e.AttachmentId.HasValue
                             ? String.Join("", e.Attachment.Image.Select(Convert.ToChar))
@@ -159,14 +159,15 @@ namespace Maglobe.Web.Mapping
             
             #region Setting
 
-            CreateMap<SettingAddRequest, Setting>();
+            CreateMap<SettingAddRequest, Setting>()
+                .ForMember(w => w.WebsiteLogo, opt => opt.Ignore());
 
             CreateMap<SettingEditRequest, Setting>()
                 .ForMember(w => w.Id, opt => opt.Ignore());
 
             CreateMap<Setting, SettingDetailResponse>()
                 .ForMember(w => w.Key, opt => opt.MapFrom(e => e.Id))
-                .ForMember(w => w.WebsiteLogo, opt =>
+                .ForMember(w => w.WebsiteLogoImage, opt =>
                     opt.MapFrom(e =>
                          String.Join("", e.WebsiteLogo.Image.Select(Convert.ToChar))));
 

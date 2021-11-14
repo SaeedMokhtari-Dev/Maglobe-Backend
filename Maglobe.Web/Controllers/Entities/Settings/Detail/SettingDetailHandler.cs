@@ -24,6 +24,7 @@ namespace Maglobe.Web.Controllers.Entities.Settings.Detail
         protected override async Task<ActionResult> Execute(SettingDetailRequest request)
         {
             Setting setting = await _context.Settings
+                .Include(w => w.WebsiteLogo)
                 .FirstOrDefaultAsync(w => w.Id == request.SettingId);
 
             if (setting == null)

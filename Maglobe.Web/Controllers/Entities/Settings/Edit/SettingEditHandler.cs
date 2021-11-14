@@ -45,10 +45,10 @@ namespace Maglobe.Web.Controllers.Entities.Settings.Edit
             {
                 _mapper.Map(request, editSetting);
                 
-                if (request.WebsiteLogoChanged && !string.IsNullOrEmpty(request.WebsiteLogo))
+                if (request.WebsiteLogoImageChanged && !string.IsNullOrEmpty(request.WebsiteLogoImage))
                 {
                     editSetting.WebsiteLogo.CreatedAt = DateTime.Now;
-                    editSetting.WebsiteLogo.Image = request.WebsiteLogo.ToCharArray().Select(Convert.ToByte).ToArray();
+                    editSetting.WebsiteLogo.Image = request.WebsiteLogoImage.ToCharArray().Select(Convert.ToByte).ToArray();
                 }
                 
                 await _context.SaveChangesAsync();
