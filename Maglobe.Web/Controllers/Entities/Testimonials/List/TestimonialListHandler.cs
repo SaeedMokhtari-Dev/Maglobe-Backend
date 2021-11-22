@@ -30,7 +30,7 @@ namespace Maglobe.Web.Controllers.Entities.Testimonials.List
             var response = await query.Select(w =>
             new TestimonialListResponseItem() {
                 Key = w.Id, 
-                Title = w.Comment,
+                Title = w.Title,
             }).ToListAsync();
             
             return ActionResult.Ok(response);

@@ -2,6 +2,7 @@ namespace Maglobe.Web.Controllers.Entities.Testimonials.Add
 {
     public class TestimonialAddRequest
     {
+        public string Title { get; set; }
         public string Comment { get; set; }
         public string Picture { get; set; }
         public int DisplayOrder { get; set; }

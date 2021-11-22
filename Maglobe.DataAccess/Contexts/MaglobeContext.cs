@@ -330,6 +330,7 @@ namespace Maglobe.DataAccess.Contexts
             {
                 entity.ToTable("Testimonial");
 
+                entity.Property(e => e.Title).IsRequired();
                 entity.Property(e => e.Comment).IsRequired();
 
                 entity.Property(e => e.CreatedAt).HasColumnType("datetime");
