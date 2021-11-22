@@ -9,5 +9,6 @@ namespace Maglobe.Web.Controllers.Entities.Menus.Detail
         public string CreatedAt { get; set; }
         public string ModifiedAt { get; set; }
         public string Language { get; set; }
+        public string Url { get; set; }
     }
 }

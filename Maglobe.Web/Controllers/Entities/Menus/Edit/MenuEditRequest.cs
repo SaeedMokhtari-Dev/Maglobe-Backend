@@ -7,5 +7,6 @@ namespace Maglobe.Web.Controllers.Entities.Menus.Edit
         public int DisplayOrder { get; set; }
         public bool IsActive { get; set; }
         public string Language { get; set; }
+        public string Url { get; set; }
     }
 }

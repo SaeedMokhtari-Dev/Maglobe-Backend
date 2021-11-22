@@ -1,8 +1,10 @@
-@page "/Index"
+@page "/Index/{siteLanguage}"
+@using Maglobe.Web.Services.Models
 @model Maglobe.Web.Pages.Index
 
 @{
     Layout = null;
+    var menus = (List<MenuViewModel>) ViewData["Menus"];
 }
 
 <!DOCTYPE html>
@@ -13,7 +15,10 @@
 </head>
 <body>
 <div>
-    Hello My Lady
+    @foreach (var item in menus)
+    {
+        <a href="@item.Url">@item.Title</a>
+    }
 </div>
 </body>
 </html>

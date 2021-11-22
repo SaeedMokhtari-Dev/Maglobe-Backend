@@ -176,6 +176,10 @@ namespace Maglobe.DataAccess.Contexts
                 entity.Property(e => e.Title)
                     .IsRequired()
                     .HasMaxLength(50);
+
+                entity.Property(e => e.Url)
+                    .IsRequired()
+                    .HasMaxLength(2000);
             });
 
             modelBuilder.Entity<Page>(entity =>

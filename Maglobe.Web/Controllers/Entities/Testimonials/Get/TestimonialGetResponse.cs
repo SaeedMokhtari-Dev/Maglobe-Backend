@@ -14,6 +14,7 @@ namespace Maglobe.Web.Controllers.Entities.Testimonials.Get
         public string Comment { get; set; }
         //public string Attachment { get; set; }
         public bool IsActive { get; set; }
+        public int DisplayOrder { get; set; }
         public string CreatedAt { get; set; }
         public string ModifiedAt { get; set; }
         public string Language { get; set; }
