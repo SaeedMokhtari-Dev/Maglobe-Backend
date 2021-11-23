@@ -16,10 +16,10 @@ using Maglobe.Web.Controllers.Entities.Menus.Add;
 using Maglobe.Web.Controllers.Entities.Menus.Detail;
 using Maglobe.Web.Controllers.Entities.Menus.Edit;
 using Maglobe.Web.Controllers.Entities.Menus.Get;
-using Maglobe.Web.Controllers.Entities.Pages.Add;
-using Maglobe.Web.Controllers.Entities.Pages.Detail;
-using Maglobe.Web.Controllers.Entities.Pages.Edit;
-using Maglobe.Web.Controllers.Entities.Pages.Get;
+using Maglobe.Web.Controllers.Entities.DynamicPages.Add;
+using Maglobe.Web.Controllers.Entities.DynamicPages.Detail;
+using Maglobe.Web.Controllers.Entities.DynamicPages.Edit;
+using Maglobe.Web.Controllers.Entities.DynamicPages.Get;
 using Maglobe.Web.Controllers.Entities.Products.Add;
 using Maglobe.Web.Controllers.Entities.Products.Detail;
 using Maglobe.Web.Controllers.Entities.Products.Edit;
@@ -203,22 +203,22 @@ namespace Maglobe.Web.Mapping
 
             #endregion
             
-            #region Page
+            #region DynamicPage
 
-            CreateMap<PageAddRequest, Page>()
+            CreateMap<DynamicPageAddRequest, DynamicPage>()
                 .ForMember(w => w.CreatedAt, opt => opt.MapFrom(e => DateTime.Now))
                 .ForMember(w => w.ModifiedAt, opt => opt.MapFrom(e => DateTime.Now));
 
-            CreateMap<PageEditRequest, Page>()
+            CreateMap<DynamicPageEditRequest, DynamicPage>()
                 .ForMember(w => w.Id, opt => opt.Ignore())
                 .ForMember(w => w.ModifiedAt, opt => opt.MapFrom(e => DateTime.Now));
 
-            CreateMap<Page, PageDetailResponse>()
+            CreateMap<DynamicPage, DynamicPageDetailResponse>()
                 .ForMember(w => w.Key, opt => opt.MapFrom(e => e.Id))
                 .ForMember(w => w.CreatedAt, opt => opt.MapFrom(e => e.CreatedAt.ToPersianDateTime()))
                 .ForMember(w => w.ModifiedAt, opt => opt.MapFrom(e => e.ModifiedAt.ToPersianDateTime()));
 
-            CreateMap<Page, PageGetResponseItem>()
+            CreateMap<DynamicPage, DynamicPageGetResponseItem>()
                 .ForMember(w => w.Key, opt => opt.MapFrom(e => e.Id))
                 .ForMember(w => w.CreatedAt, opt => opt.MapFrom(e => e.CreatedAt.ToPersianDateTime()))
                 .ForMember(w => w.ModifiedAt, opt => opt.MapFrom(e => e.ModifiedAt.ToPersianDateTime()));

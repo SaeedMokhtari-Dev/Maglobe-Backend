@@ -26,7 +26,7 @@ namespace Maglobe.DataAccess.Contexts
         public virtual DbSet<Certificate> Certificates { get; set; }
         public virtual DbSet<CustomerSupportRequest> CustomerSupportRequests { get; set; }
         public virtual DbSet<Menu> Menus { get; set; }
-        public virtual DbSet<Page> Pages { get; set; }
+        public virtual DbSet<DynamicPage> DynamicPages { get; set; }
         public virtual DbSet<PasswordResetToken> PasswordResetTokens { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ProductAttachment> ProductAttachments { get; set; }
@@ -182,9 +182,9 @@ namespace Maglobe.DataAccess.Contexts
                     .HasMaxLength(2000);
             });
 
-            modelBuilder.Entity<Page>(entity =>
+            modelBuilder.Entity<DynamicPage>(entity =>
             {
-                entity.ToTable("Page");
+                entity.ToTable("DynamicPage");
 
                 entity.Property(e => e.CreatedAt).HasColumnType("datetime");
 

@@ -1,6 +1,6 @@
 namespace Maglobe.Web.Services.Models
 {
-    public class PageViewModel
+    public class DynamicPageViewModel
     {
         public string Title { get; set; }
         public string DescriptionSeo { get; set; }

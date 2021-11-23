@@ -4,7 +4,7 @@
 
 namespace Maglobe.DataAccess.Entities
 {
-    public partial class Page
+    public partial class DynamicPage
     {
         public long Id { get; set; }
         public string Title { get; set; }

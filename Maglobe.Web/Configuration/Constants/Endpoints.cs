@@ -97,15 +97,15 @@ namespace Maglobe.Web.Configuration.Constants
         
         #endregion
         
-        #region  Pages
+        #region  DynamicPages
 
-        public const string ApiPageGet = "/api/page/get";
-        public const string ApiPageAdd = "/api/page/add";
-        public const string ApiPageEdit = "/api/page/edit";
-        public const string ApiPageDetail = "/api/page/detail";
-        public const string ApiPageDelete = "/api/page/delete";
-        public const string ApiPageList = "/api/page/list";
-        public const string ApiPageActive = "/api/page/active";
+        public const string ApiDynamicPageGet = "/api/dynamic-page/get";
+        public const string ApiDynamicPageAdd = "/api/dynamic-page/add";
+        public const string ApiDynamicPageEdit = "/api/dynamic-page/edit";
+        public const string ApiDynamicPageDetail = "/api/dynamic-page/detail";
+        public const string ApiDynamicPageDelete = "/api/dynamic-page/delete";
+        public const string ApiDynamicPageList = "/api/dynamic-page/list";
+        public const string ApiDynamicPageActive = "/api/dynamic-page/active";
         
         #endregion
         

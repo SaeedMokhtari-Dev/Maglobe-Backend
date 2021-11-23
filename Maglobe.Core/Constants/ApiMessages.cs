@@ -112,14 +112,14 @@ namespace Maglobe.Core.Constants
             
             public const string ProductNotFound = "Api.Product.NotFound";
         }
-        public static class PageMessage
+        public static class DynamicPageMessage
         {
-            public const string PageIdRequired = "Api.Page.PageId.Required";
+            public const string DynamicPageIdRequired = "Api.DynamicPage.DynamicPageId.Required";
             
-            public const string AddedSuccessfully = "Api.Page.Add.Successful";
-            public const string EditedSuccessfully = "Api.Page.Edit.Successful";
-            public const string ActivatedSuccessfully = "Api.Page.Activated.Successful";
-            public const string DeletedSuccessfully = "Api.Page.Deleted.Successful";
+            public const string AddedSuccessfully = "Api.DynamicPage.Add.Successful";
+            public const string EditedSuccessfully = "Api.DynamicPage.Edit.Successful";
+            public const string ActivatedSuccessfully = "Api.DynamicPage.Activated.Successful";
+            public const string DeletedSuccessfully = "Api.DynamicPage.Deleted.Successful";
             
             public const string PageNotFound = "Api.Page.NotFound";
         }
