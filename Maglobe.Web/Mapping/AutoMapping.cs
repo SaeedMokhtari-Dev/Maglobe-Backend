@@ -193,7 +193,12 @@ namespace Maglobe.Web.Mapping
                 .ForMember(w => w.CertificateItems, opt =>
                     opt.MapFrom(e =>
                         e.ProductCertificates.Any()
-                            ? e.ProductCertificates.Select(w => w.Certificate)
+                            ? e.ProductCertificates.Select(w => new CertificateItem()
+                            {
+                                Key = w.CertificateId,
+                                //Image = w.Certificate.Attachment != null ? String.Join("", w.Certificate.Attachment.Image.Select(Convert.ToChar)) : string.Empty,
+                                Title = w.Certificate.Title
+                            })
                             : null));
 
             CreateMap<Product, ProductGetResponseItem>()

@@ -17,10 +17,6 @@ namespace Maglobe.Web.Controllers.Entities.Products.Get
         public string Volume { get; set; }
         public int DisplayOrder { get; set; }
         public bool IsActive { get; set; }
-        public string DescriptionSeo { get; set; }
-        public long[] ProductCertificateIds { get; set; }
-        public string LargePicture { get; set; }
-        public string SmallPicture { get; set; }
         public string CreatedAt { get; set; }
         public string ModifiedAt { get; set; }
         public string Language { get; set; }
