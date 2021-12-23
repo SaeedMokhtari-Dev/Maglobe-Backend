@@ -64,7 +64,7 @@ namespace Maglobe.Web
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint(Endpoints.Swagger, "Maglobe Portal v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint(Endpoints.Swagger, "Maglube Portal v1"));
             }
             else
             {
@@ -99,15 +99,15 @@ namespace Maglobe.Web
                 endpoints.MapControllers();
                 
             });
-            /*app.UseSpa(spa =>
+            app.UseSpa(spa =>
             {
                 spa.Options.SourcePath = "ClientApp";
 
                 /*if (env.IsDevelopment())
                 {
                     spa.UseReactDevelopmentServer(npmScript: "start");
-                }#1#
-            });*/
+                }*/
+            });
         }
         private static void SetCulture()
         {

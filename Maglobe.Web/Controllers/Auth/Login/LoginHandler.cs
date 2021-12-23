@@ -37,7 +37,7 @@ namespace Maglobe.Web.Controllers.Auth.Login
             {
                 return ActionResult.Error(ApiMessages.Auth.InvalidCredentials);
             }
-            
+
             if (!IsPasswordValid(request.Password, user.Password))
             {
                 return ActionResult.Error(ApiMessages.Auth.InvalidCredentials);

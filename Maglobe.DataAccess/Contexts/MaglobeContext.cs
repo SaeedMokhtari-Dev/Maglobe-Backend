@@ -262,7 +262,7 @@ namespace Maglobe.DataAccess.Contexts
                 entity.HasOne(d => d.Product)
                     .WithMany(p => p.ProductAttachments)
                     .HasForeignKey(d => d.ProductId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK_ProductAttachment_Product");
             });
 
@@ -279,7 +279,7 @@ namespace Maglobe.DataAccess.Contexts
                 entity.HasOne(d => d.Product)
                     .WithMany(p => p.ProductCertificates)
                     .HasForeignKey(d => d.ProductId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK_ProductCertificate_Product");
             });
 
