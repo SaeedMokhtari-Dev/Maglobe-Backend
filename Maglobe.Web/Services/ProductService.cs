@@ -25,8 +25,8 @@ namespace Maglobe.Web.Services
                 .Where(w => w.IsActive && w.Language == language.ToString())
                 .OrderBy(w => w.DisplayOrder)
                 .AsQueryable();
-
-            return await query.Select(w => new ProductViewModel()
+            var products = await query.ToListAsync();
+            var result = products.Select(w => new ProductViewModel()
             {
                 Name = w.Name,
                 Description = w.Description,
@@ -39,7 +39,9 @@ namespace Maglobe.Web.Services
                 SmallPicture =  w.ProductAttachments.Any(e => e.AttachmentType == AttachmentType.SmallPicture) ?
                     String.Join("", w.ProductAttachments.First(e => e.AttachmentType == AttachmentType.SmallPicture).Attachment.Image.Select(Convert.ToChar)) : string.Empty,
                 DisplayOrder = w.DisplayOrder
-            }) .ToListAsync();
+            }).ToList();
+
+            return result;
         }
     }
 }
