@@ -5,7 +5,7 @@ using Maglobe.Web.Configuration.Constants;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Maglobe.Web.Controllers.Entities.DynamicPages.Add
+namespace Maglobe.Web.Controllers.Entities.Pages.Add
 {
     [Route(Endpoints.ApiDynamicPageAdd)]
     [ApiExplorerSettings(GroupName = "DynamicPage")]

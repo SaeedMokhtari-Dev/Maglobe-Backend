@@ -1,4 +1,4 @@
-namespace Maglobe.Web.Controllers.Entities.DynamicPages.Get
+namespace Maglobe.Web.Controllers.Entities.Pages.Get
 {
     public class DynamicPageGetRequest
     {

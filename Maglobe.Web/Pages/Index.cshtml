@@ -3,10 +3,9 @@
 @model Maglobe.Web.Pages.Index
 
 @{
-    Layout = "_Layout";
+    Layout = "Shared/_Layout";
     var menus = (List<MenuViewModel>) ViewData["Menus"];
 }
-<link href="@Url.Content("src/css/style.css")" rel="stylesheet" type="text/css" />
 <body>
 
 <div>

@@ -1,7 +1,7 @@
 using FluentValidation;
 using Maglobe.Core.Constants;
 
-namespace Maglobe.Web.Controllers.Entities.DynamicPages.Detail
+namespace Maglobe.Web.Controllers.Entities.Pages.Detail
 {
     public class DynamicPageDetailValidator : AbstractValidator<DynamicPageDetailRequest>
     {

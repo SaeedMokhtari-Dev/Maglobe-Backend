@@ -1,4 +1,4 @@
-namespace Maglobe.Web.Controllers.Entities.DynamicPages.List
+namespace Maglobe.Web.Controllers.Entities.Pages.List
 {
     public class DynamicPageListResponseItem
     {

@@ -1,4 +1,4 @@
-namespace Maglobe.Web.Controllers.Entities.DynamicPages.Detail
+namespace Maglobe.Web.Controllers.Entities.Pages.Detail
 {
     public class DynamicPageDetailRequest
     {

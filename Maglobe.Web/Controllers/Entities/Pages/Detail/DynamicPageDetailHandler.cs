@@ -1,16 +1,13 @@
-using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Maglobe.Core.Api.Handlers;
 using Maglobe.Core.Api.Models;
 using Maglobe.Core.Constants;
-using Maglobe.Core.Enums;
 using Maglobe.DataAccess.Contexts;
 using Maglobe.DataAccess.Entities;
-using Maglobe.Web.Identity.Contexts;
 using Microsoft.EntityFrameworkCore;
 
-namespace Maglobe.Web.Controllers.Entities.DynamicPages.Detail
+namespace Maglobe.Web.Controllers.Entities.Pages.Detail
 {
     public class DynamicPageDetailHandler : ApiRequestHandler<DynamicPageDetailRequest>
     {

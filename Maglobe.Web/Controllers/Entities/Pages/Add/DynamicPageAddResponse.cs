@@ -1,4 +1,4 @@
-namespace Maglobe.Web.Controllers.Entities.DynamicPages.Add
+namespace Maglobe.Web.Controllers.Entities.Pages.Add
 {
     public class DynamicPageAddResponse
     {

@@ -6,18 +6,15 @@ using Maglobe.Core.Constants;
 using Maglobe.DataAccess.Contexts;
 using Maglobe.DataAccess.Entities;
 
-namespace Maglobe.Web.Controllers.Entities.DynamicPages.Active
+namespace Maglobe.Web.Controllers.Entities.Pages.Active
 {
     public class DynamicPageActiveHandler : ApiRequestHandler<DynamicPageActiveRequest>
     {
         private readonly MaglobeContext _context;
-        private readonly IMapper _mapper;
 
-        public DynamicPageActiveHandler(
-            MaglobeContext context, IMapper mapper)
+        public DynamicPageActiveHandler(MaglobeContext context)
         {
             _context = context;
-            _mapper = mapper;
         }
 
         protected override async Task<ActionResult> Execute(DynamicPageActiveRequest request)

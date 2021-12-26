@@ -5,7 +5,7 @@ using Maglobe.Web.Configuration.Constants;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Maglobe.Web.Controllers.Entities.DynamicPages.Delete
+namespace Maglobe.Web.Controllers.Entities.Pages.Delete
 {
     [Route(Endpoints.ApiDynamicPageDelete)]
     [ApiExplorerSettings(GroupName = "DynamicPage")]

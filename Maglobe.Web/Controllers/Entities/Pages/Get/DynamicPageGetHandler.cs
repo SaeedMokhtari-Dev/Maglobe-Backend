@@ -7,7 +7,7 @@ using Maglobe.Core.Api.Models;
 using Maglobe.DataAccess.Contexts;
 using Microsoft.EntityFrameworkCore;
 
-namespace Maglobe.Web.Controllers.Entities.DynamicPages.Get
+namespace Maglobe.Web.Controllers.Entities.Pages.Get
 {
     public class DynamicPageGetHandler : ApiRequestHandler<DynamicPageGetRequest>
     {

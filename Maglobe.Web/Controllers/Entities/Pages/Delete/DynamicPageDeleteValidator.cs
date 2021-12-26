@@ -1,7 +1,7 @@
 using FluentValidation;
 using Maglobe.Core.Constants;
 
-namespace Maglobe.Web.Controllers.Entities.DynamicPages.Delete
+namespace Maglobe.Web.Controllers.Entities.Pages.Delete
 {
     public class DynamicPageDeleteValidator : AbstractValidator<DynamicPageDeleteRequest>
     {
