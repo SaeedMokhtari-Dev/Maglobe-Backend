@@ -2,6 +2,7 @@
 
 @{
     string title = (string) ViewData["Title"];
+    if (title == "مگلوب") title = "خانه";
 }
 @if (Model != null && Model.Any())
 {
