@@ -9,6 +9,7 @@ namespace Maglobe.DataAccess.Entities
     {
         public Attachment()
         {
+            Blogs = new HashSet<Blog>();
             Certificates = new HashSet<Certificate>();
             ProductAttachments = new HashSet<ProductAttachment>();
             Settings = new HashSet<Setting>();
@@ -19,6 +20,7 @@ namespace Maglobe.DataAccess.Entities
         public byte[] Image { get; set; }
         public DateTime CreatedAt { get; set; }
 
+        public virtual ICollection<Blog> Blogs { get; set; }
         public virtual ICollection<Certificate> Certificates { get; set; }
         public virtual ICollection<ProductAttachment> ProductAttachments { get; set; }
         public virtual ICollection<Setting> Settings { get; set; }

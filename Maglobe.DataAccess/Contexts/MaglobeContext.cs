@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Maglobe.DataAccess.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 
 #nullable disable
 
@@ -23,10 +24,11 @@ namespace Maglobe.DataAccess.Contexts
 
         public virtual DbSet<Agency> Agencies { get; set; }
         public virtual DbSet<Attachment> Attachments { get; set; }
+        public virtual DbSet<Blog> Blogs { get; set; }
         public virtual DbSet<Certificate> Certificates { get; set; }
         public virtual DbSet<CustomerSupportRequest> CustomerSupportRequests { get; set; }
-        public virtual DbSet<Menu> Menus { get; set; }
         public virtual DbSet<DynamicPage> DynamicPages { get; set; }
+        public virtual DbSet<Menu> Menus { get; set; }
         public virtual DbSet<PasswordResetToken> PasswordResetTokens { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ProductAttachment> ProductAttachments { get; set; }
@@ -118,6 +120,37 @@ namespace Maglobe.DataAccess.Contexts
                 entity.Property(e => e.Image).IsRequired();
             });
 
+            modelBuilder.Entity<Blog>(entity =>
+            {
+                entity.ToTable("Blog");
+
+                entity.HasIndex(e => e.IsActive, "IX_Blog_IsActive");
+
+                entity.HasIndex(e => e.Language, "IX_Blog_Language");
+
+                entity.Property(e => e.CreatedAt).HasColumnType("datetime");
+
+                entity.Property(e => e.Description).IsRequired();
+
+                entity.Property(e => e.Language)
+                    .IsRequired()
+                    .HasMaxLength(10)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ModifiedAt).HasColumnType("datetime");
+
+                entity.Property(e => e.PublishedDate).HasColumnType("datetime");
+
+                entity.Property(e => e.Title)
+                    .IsRequired()
+                    .HasMaxLength(500);
+
+                entity.HasOne(d => d.Attachment)
+                    .WithMany(p => p.Blogs)
+                    .HasForeignKey(d => d.AttachmentId)
+                    .HasConstraintName("FK_Blog_Attachment");
+            });
+
             modelBuilder.Entity<Certificate>(entity =>
             {
                 entity.ToTable("Certificate");
@@ -160,28 +193,6 @@ namespace Maglobe.DataAccess.Contexts
                     .HasMaxLength(50);
             });
 
-            modelBuilder.Entity<Menu>(entity =>
-            {
-                entity.ToTable("Menu");
-
-                entity.Property(e => e.CreatedAt).HasColumnType("datetime");
-
-                entity.Property(e => e.Language)
-                    .IsRequired()
-                    .HasMaxLength(10)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.ModifiedAt).HasColumnType("datetime");
-
-                entity.Property(e => e.Title)
-                    .IsRequired()
-                    .HasMaxLength(50);
-
-                entity.Property(e => e.Url)
-                    .IsRequired()
-                    .HasMaxLength(2000);
-            });
-
             modelBuilder.Entity<DynamicPage>(entity =>
             {
                 entity.ToTable("DynamicPage");
@@ -200,6 +211,32 @@ namespace Maglobe.DataAccess.Contexts
                 entity.Property(e => e.Title)
                     .IsRequired()
                     .HasMaxLength(500);
+            });
+
+            modelBuilder.Entity<Menu>(entity =>
+            {
+                entity.ToTable("Menu");
+
+                entity.HasIndex(e => e.IsActive, "IX_Menu_IsActive");
+
+                entity.HasIndex(e => e.Language, "IX_Menu_Language");
+
+                entity.Property(e => e.CreatedAt).HasColumnType("datetime");
+
+                entity.Property(e => e.Language)
+                    .IsRequired()
+                    .HasMaxLength(10)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ModifiedAt).HasColumnType("datetime");
+
+                entity.Property(e => e.Title)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Url)
+                    .IsRequired()
+                    .HasMaxLength(2000);
             });
 
             modelBuilder.Entity<PasswordResetToken>(entity =>
@@ -226,6 +263,10 @@ namespace Maglobe.DataAccess.Contexts
             modelBuilder.Entity<Product>(entity =>
             {
                 entity.ToTable("Product");
+
+                entity.HasIndex(e => e.IsActive, "IX_Product_IsActive");
+
+                entity.HasIndex(e => e.Language, "IX_Product_Language");
 
                 entity.Property(e => e.CreatedAt).HasColumnType("datetime");
 
@@ -330,7 +371,6 @@ namespace Maglobe.DataAccess.Contexts
             {
                 entity.ToTable("Testimonial");
 
-                entity.Property(e => e.Title).IsRequired();
                 entity.Property(e => e.Comment).IsRequired();
 
                 entity.Property(e => e.CreatedAt).HasColumnType("datetime");
@@ -342,6 +382,10 @@ namespace Maglobe.DataAccess.Contexts
 
                 entity.Property(e => e.ModifiedAt).HasColumnType("datetime");
 
+                entity.Property(e => e.Title)
+                    .IsRequired()
+                    .HasMaxLength(500);
+
                 entity.HasOne(d => d.Attachment)
                     .WithMany(p => p.Testimonials)
                     .HasForeignKey(d => d.AttachmentId)
@@ -351,7 +395,12 @@ namespace Maglobe.DataAccess.Contexts
             modelBuilder.Entity<User>(entity =>
             {
                 entity.ToTable("User");
-                
+
+                entity.HasIndex(e => e.IsActive, "IX_User_IsActive");
+
+                entity.HasIndex(e => e.Username, "IX_User_Username")
+                    .IsUnique();
+
                 entity.Property(e => e.CreatedAt).HasColumnType("datetime");
 
                 entity.Property(e => e.Email)
@@ -366,16 +415,13 @@ namespace Maglobe.DataAccess.Contexts
 
                 entity.Property(e => e.ModifiedAt).HasColumnType("datetime");
 
-                entity.HasIndex(e => e.Username, "IX_User_Username")
-                    .IsUnique();
-                
-                entity.Property(e => e.Username)
-                    .IsRequired()
-                    .HasMaxLength(50);
-
                 entity.Property(e => e.Password)
                     .IsRequired()
                     .HasMaxLength(100);
+
+                entity.Property(e => e.Username)
+                    .IsRequired()
+                    .HasMaxLength(50);
             });
 
             modelBuilder.Entity<UserRole>(entity =>
