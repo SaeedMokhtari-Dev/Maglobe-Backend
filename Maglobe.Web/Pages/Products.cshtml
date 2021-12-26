@@ -1,16 +1,22 @@
-@page "/Index/{siteLanguage}"
+@page "/Products/{siteLanguage}"
 @using Maglobe.Web.Services.Models
-@model Maglobe.Web.Pages.Index
+@model Maglobe.Web.Pages.Products
 
 @{
     Layout = "Shared/_Layout";
     var menus = (List<MenuViewModel>) ViewData["Menus"];
+    var products = (List<ProductViewModel>) ViewData["Products"];
 }
 <body>
 <div>
     @foreach (var item in menus)
     {
         <a href="@item.Url">@item.Title</a>
+    }
+    
+    @foreach (var item in products) 
+    {
+        <p>@item.Name</p>
     }
 </div>
 </body>
