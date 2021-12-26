@@ -4,14 +4,7 @@
 
 @{
     Layout = "Shared/_Layout";
-    var menus = (List<MenuViewModel>) ViewData["Menus"];
 }
-<body>
 
 <div>
-    @foreach (var item in menus)
-    {
-        <a href="@item.Url">@item.Title</a>
-    }
 </div>
-</body>

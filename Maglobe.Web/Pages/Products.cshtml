@@ -4,15 +4,11 @@
 
 @{
     Layout = "Shared/_Layout";
-    var menus = (List<MenuViewModel>) ViewData["Menus"];
-    var products = (List<ProductViewModel>?) ViewData["Products"];
+    var products = (List<ProductViewModel>) ViewData["Products"];
 }
 <body>
 <div>
-    @foreach (var item in menus)
-    {
-        <a href="@item.Url">@item.Title</a>
-    }
+    
     @if (products != null && products.Any())
     {
         @foreach (var item in products)

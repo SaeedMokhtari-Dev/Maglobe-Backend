@@ -1,4 +1,5 @@
-﻿@using System.ComponentModel
+﻿@using Maglobe.Core.Enums
+@using Microsoft.AspNetCore.Http
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,8 +12,10 @@
     <title>@ViewData["Title"]</title>
 
 </head>
+<body class="@(ViewData["BodyClass"] != null ? (string) ViewData["BodyClass"] : string.Empty)">
 
+@await Component.InvokeAsync("Menu", new {siteLanguage = ViewData["siteLanguage"] != null ? (string) ViewData["siteLanguage"] : string.Empty});
 @RenderBody()
-
+</body>
 
 </html>

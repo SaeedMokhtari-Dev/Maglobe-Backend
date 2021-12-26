@@ -1,6 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using Maglobe.Core.Enums;
+using Maglobe.Web.Pages.Shared;
 using Maglobe.Web.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -8,20 +9,17 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 namespace Maglobe.Web.Pages
 {
     [AllowAnonymous]
-    public class Products : PageModel
+    public class Products : BasePageModel
     {
-        private readonly MenuService _menuService;
         private readonly ProductService _productService;
-        public Products(MenuService menuService, ProductService productService)
+        public Products(ProductService productService)
         {
-            _menuService = menuService;
             _productService = productService;
         }
         public async Task OnGet(string siteLanguage)
         {
-            Enum.TryParse(siteLanguage, out Language language);
-            ViewData["Menus"] = await _menuService.GetActiveMenus(language);
-
+            Language language = CheckAndSetSiteLanguage(siteLanguage);
+            
             ViewData["Products"] = await _productService.GetActiveProducts(language);
         }
     }
