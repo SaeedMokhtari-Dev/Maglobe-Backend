@@ -16,6 +16,7 @@ namespace Maglobe.DataAccess.Entities
         public DateTime ModifiedAt { get; set; }
         public string Language { get; set; }
         public long SeenCount { get; set; }
+        public int DisplayOrder { get; set; }
 
         public virtual Attachment Attachment { get; set; }
     }

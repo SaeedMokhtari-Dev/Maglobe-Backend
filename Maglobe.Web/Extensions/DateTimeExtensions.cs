@@ -17,6 +17,15 @@ namespace Maglobe.Web.Extensions
                 $":{persianCalendar.GetMinute(dateTime).ToString().PadLeft(2, '0')}" +
                 $":{persianCalendar.GetSecond(dateTime).ToString().PadLeft(2, '0')}";
         }
+        public static string ToPersianDateAndDayName(this DateTime dateTime)
+        {
+            PersianCalendar persianCalendar = new PersianCalendar();
+            return
+                $"{persianCalendar.GetYear(dateTime)}/" +
+                $"{persianCalendar.GetMonth(dateTime).ToString().PadLeft(2, '0')}/" +
+                $"{persianCalendar.GetDayOfMonth(dateTime).ToString().PadLeft(2, '0')}" +
+                $"{persianCalendar.GetDayOfWeek(dateTime).ToString()}";
+        }
         public static DateTime ToGregorianDateTime(this string persianDateTime)
         {
             PersianCalendar persianCalendar = new PersianCalendar();
