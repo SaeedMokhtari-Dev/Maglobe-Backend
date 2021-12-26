@@ -1,11 +1,13 @@
 @model IEnumerable<Maglobe.Web.Services.Models.MenuViewModel>
 
-
+@{
+    string title = (string) ViewData["Title"];
+}
 @if (Model != null && Model.Any())
 {
     @foreach (var item in Model)
     {
-        <li class="menu-item active">
+        <li class="menu-item @(item.Title == title ? "active" : String.Empty)">
             <a href="@item.Url">@item.Title</a>
         </li>
     }
