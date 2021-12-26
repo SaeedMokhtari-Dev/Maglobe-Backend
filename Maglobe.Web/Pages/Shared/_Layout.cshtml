@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Maglobe.DataAccess.Entities
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -6,14 +7,134 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="deepstudio.ir">
-    <link href="@Url.Content("~/StaticFiles/css/style.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/StaticFiles/css/style.css")" rel="stylesheet" type="text/css"/>
     <title>@ViewData["Title"]</title>
-
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WTSNPRS');</script>
+    <!-- End Google Tag Manager -->
 </head>
 <body class="@(ViewData["BodyClass"] != null ? (string) ViewData["BodyClass"] : string.Empty)">
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WTSNPRS"
+            height="0" width="0" style="display:none;visibility:hidden">
+    </iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+<header class="header">
+    <div class="container-xl">
+        <div class="logo-bg  d-none d-md-block">
+            <img src="@Url.Content("~/StaticFiles/images/logo-bg.png")" alt="زمینه لوگو">
+        </div>
+        <div class="row">
+            <div class="col-4 col-sm-3 col-md-2 col-xl-3 col-xxl-3">
+                <a href="index.html">
+                    <img class="header-logo" src="@Url.Content("~/StaticFiles/images/logo.png")" alt="مگلوب">
+                </a>
+            </div>
+            <div class="col col-md-6 col-xl-6  col-xxl-6 d-none d-md-block">
+                <nav class="menu">
+                    <ul>
+                        @await Component.InvokeAsync("Menu", new {siteLanguage = ViewData["siteLanguage"] != null ? (string) ViewData["siteLanguage"] : string.Empty})
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-md-1 col-xl-1 col-xxl-1 d-none d-md-block">
+                <div class="header-lang">
+                    <a class="active" href="#">FA</a>
+                    <a href="#">EN</a>
+                </div>
+            </div>
+            <div class="col col-md-2 col-xl-2 col-xxl-2 d-none d-md-block">
+                <div class="header-support">
+                    <a class="btn btn-secondary" href="support.html"><i class="icon-user"></i> پشتیبانی مشتریان </a>
+                </div>
+            </div>
+            <div class="col-2 col-sm-2 offset-6 col-sm-3 d-block d-md-none align-left">
+                <a class="mobile-menu-toggle" href="#">
+                    <img src="@Url.Content("/StaticFiles/images/menu.svg")">
+                </a>
+            </div>
+            <nav class="mobile-overlay">
+                <div class="close">
+                    <img src="@Url.Content("/StaticFiles/images/close.svg")">
+                </div>
+                <ul>
+                    @await Component.InvokeAsync("Menu", new {siteLanguage = ViewData["siteLanguage"] != null ? (string) ViewData["siteLanguage"] : string.Empty});
+                </ul>
+                <p class="ltr align-center">
+                    <img class="img-block call-icon" alt="تلفن" src="@Url.Content("/StaticFiles/images/call-icon.png")">
+                    +9821 - 8347
+                </p>
+                <div class="mobile-support">
+                    <a class="btn btn-secondary btn-block" href="support.html">
+                        <i class="icon-user"></i> پشتیبانی
+                        مشتریان
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
 
-@await Component.InvokeAsync("Menu", new {siteLanguage = ViewData["siteLanguage"] != null ? (string) ViewData["siteLanguage"] : string.Empty});
 @RenderBody()
+
+
+<footer class="footer">
+    <div class="container-fluid">
+        <div class="footer-inner">
+            <div class="footer-right">
+                <ul class="social">
+                    <li>
+                        <a href="#">
+                            <i class="icon-youtube-play"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="icon-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/maglubeoil/">
+                            <i class="icon-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="icon-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="icon-linkedin-squared"></i>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="footer-left">
+                <div class="ltr copyright">2021 design by <a href="https://hoodadtech.com/">hoodadtech</a></div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script src="@Url.Content("~/StaticFiles/js/jquery-3.6.0.min.js")"></script>
+<script>
+        $('.mobile-menu-toggle').click(function () {
+            $(".mobile-overlay").slideDown("slow");
+        });
+        $('.mobile-overlay .close').click(function () {
+            $(".mobile-overlay").fadeOut("slow");
+        });
+</script>
+
 </body>
 
 </html>
