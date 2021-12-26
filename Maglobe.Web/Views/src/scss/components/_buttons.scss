@@ -1,0 +1,34 @@
+.btn {
+  padding: 9px 25px;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  text-align: center;
+}
+.btn-block {
+  display: block;
+}
+.btn-medium {
+  padding: 12px 25px;
+}
+.btn-large {
+  padding: 20px 30px;
+  font-size: 1.125rem;
+}
+.btn-primary {
+  border: 1px solid $primary-color;
+  i {
+    color: $second-color;
+  }
+}
+.btn-secondary {
+  border: 1px solid $second-color;
+  background-color: transparent;
+  color: $white;
+  i {
+    color: $second-color;
+  }
+}
+.btn-gradient {
+  background-image: linear-gradient(to bottom, #d1b66f, #5e4b1c);
+  color: $white;
+}

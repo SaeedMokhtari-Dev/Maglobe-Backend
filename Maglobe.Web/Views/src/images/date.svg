@@ -1,0 +1,10 @@
+<svg id="Component_272_1" data-name="Component 272 – 1" xmlns="http://www.w3.org/2000/svg" width="14.396" height="15.996" viewBox="0 0 14.396 15.996">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e2c87e;
+      }
+    </style>
+  </defs>
+  <path id="Path_6594" data-name="Path 6594" class="cls-1" d="M79.8,138H68.6a1.6,1.6,0,0,1-1.6-1.6V125.2a1.6,1.6,0,0,1,1.6-1.6h1.6V122h1.6v1.6h4.8V122h1.6v1.6h1.6a1.6,1.6,0,0,1,1.6,1.6v11.2A1.6,1.6,0,0,1,79.8,138Zm-11.2-9.6v8H79.8v-8Zm0-3.2v1.6H79.8v-1.6Zm9.6,9.6H76.6v-1.6h1.6Zm-3.2,0H73.4v-1.6H75Zm-3.2,0H70.2v-1.6h1.6Zm6.4-3.2H76.6V130h1.6Zm-3.2,0H73.4V130H75Zm-3.2,0H70.2V130h1.6Z" transform="translate(-67 -122)"/>
+</svg>

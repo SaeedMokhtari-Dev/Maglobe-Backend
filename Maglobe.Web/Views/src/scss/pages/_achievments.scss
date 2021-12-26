@@ -1,0 +1,48 @@
+.achievments {
+  .content {
+    padding-top: 100px;
+    .certificate {
+      a {
+        position: relative;
+        display: block;
+        &:hover::before {
+          display: block;
+        }
+        &:hover::after {
+          display: block;
+        }
+        &::before {
+          content: "";
+          display: none;
+          background-color: rgba(0, 0, 0, 0.6);
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+        }
+        &::after {
+          content: "";
+          display: none;
+          width: 28px;
+          height: 28px;
+          background-image: url("../images/search.png");
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          margin: auto;
+        }
+      }
+
+      p {
+        font-size: 18px;
+        padding: 15px;
+      }
+    }
+  }
+  .achievments-text {
+    margin-top: 70px;
+  }
+}

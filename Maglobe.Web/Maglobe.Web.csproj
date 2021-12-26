@@ -34,6 +34,7 @@
     <ItemGroup>
         <Folder Include="ClientApp" />
         <Folder Include="Database" />
+        <Folder Include="Views" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\Maglobe.Core\Maglobe.Core.csproj" />
@@ -50,6 +51,7 @@
       <_ContentIncludedByDefault Remove="publish\Maglobe.Web.deps.json" />
       <_ContentIncludedByDefault Remove="publish\Maglobe.Web.runtimeconfig.json" />
       <_ContentIncludedByDefault Remove="publish\package-lock.json" />
+      <_ContentIncludedByDefault Remove="Pages\Shared\_Layout.cshtml" />
     </ItemGroup>
     <!--<Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
         &lt;!&ndash; Ensure Node.js is installed &ndash;&gt;

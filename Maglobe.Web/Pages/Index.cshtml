@@ -3,10 +3,12 @@
 @model Maglobe.Web.Pages.Index
 
 @{
-    Layout = "Shared/_Layout";
+    Layout = "_Layout";
     var menus = (List<MenuViewModel>) ViewData["Menus"];
 }
+<link href="@Url.Content("src/css/style.css")" rel="stylesheet" type="text/css" />
 <body>
+
 <div>
     @foreach (var item in menus)
     {

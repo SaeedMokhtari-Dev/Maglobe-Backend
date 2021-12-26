@@ -1,0 +1,43 @@
+.footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding-bottom: 5px;
+  .footer-inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 25px 0;
+    border-radius: 1rem;
+    .copyright {
+      margin-top: 5px;
+      font-family: sans-serif;
+      font-size: 0.75rem;
+      font-weight: normal;
+    }
+  }
+  .social {
+    display: flex;
+    flex-direction: row;
+    li {
+      margin-left: 1rem;
+      a {
+        padding: 0.5rem 0.3rem 0.25rem;
+        background-color: $white;
+        display: inline-block;
+        color: $dark-gray;
+        border-radius: 50%;
+        transition-duration: 0.3s;
+        transition-property: transform;
+        &:hover {
+          background-color: $primary-color;
+        }
+        i {
+          font-size: 1rem;
+          line-height: 1;
+        }
+      }
+    }
+  }
+}

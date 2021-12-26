@@ -1,0 +1,48 @@
+.img-block {
+  display: block;
+  margin: 0 auto;
+}
+.ltr {
+  direction: ltr;
+}
+
+.deep-box {
+  padding: 10px 20px;
+  background-color: $dark-gray;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  min-height: 60px;
+}
+.deep-box-small {
+  padding: 7px 20px;
+  background-color: $dark-gray;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  min-height: 60px;
+}
+.npl {
+  padding-left: 0;
+}
+.npr {
+  padding-right: 0;
+}
+.nprl {
+  padding-right: 0;
+  padding-left: 0;
+}
+.pl-25 {
+  padding-left: 25px;
+}
+.pr-25 {
+  padding-right: 25px;
+}
+.pl-5 {
+  padding-left: 5px;
+}
+.pr-5 {
+  padding-right: 5px;
+}
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+}

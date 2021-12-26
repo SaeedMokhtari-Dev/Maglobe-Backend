@@ -1,0 +1,96 @@
+.about {
+  overflow: hidden;
+  .content {
+    .right-content {
+      position: relative;
+      overflow: hidden;
+      padding: 200px 180px 180px;
+
+      &::before {
+        content: "";
+        width: 800px;
+        height: 800px;
+        background-image: url("../images/home-content-bg.png");
+        background-position: center center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        animation: deep-spin 10s infinite linear;
+        transform-origin: center center;
+      }
+    }
+    .left-content-one,
+    .left-content-two,
+    .left-content-three {
+      position: relative;
+      &::before {
+        content: "";
+        background-image: url("../images/home-content-bg.png");
+        background-position: center center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+      }
+
+      a {
+        color: $primary-color;
+        font-family: $bold-font;
+        span {
+          line-height: 1.5;
+          margin-top: 10px;
+          display: block;
+        }
+      }
+    }
+    .left-content-one {
+      animation: deep-bob-animate 4s ease-in-out infinite;
+      &::before {
+        width: 275px;
+        height: 275px;
+      }
+      .inner-content {
+        padding: 90px 50px 75px 50px;
+      }
+    }
+    .left-content-two {
+      animation: deep-bob-animate 4s -2s ease-in-out infinite;
+      margin-top: 80px;
+      &::before {
+        width: 250px;
+        height: 250px;
+      }
+      .inner-content {
+        padding: 75px 50px 75px 80px;
+      }
+    }
+    .left-content-three {
+      animation: deep-bob-right-animate 4s ease-in-out infinite;
+      &::before {
+        width: 300px;
+        height: 300px;
+      }
+      .inner-content {
+        padding: 90px 15px 75px 80px;
+      }
+    }
+    h2 {
+      font-size: 2.5rem;
+    }
+    p {
+      font-size: 1.125rem;
+      line-height: 1.625rem;
+      letter-spacing: 0.18px;
+      margin-bottom: 2rem;
+    }
+  }
+}

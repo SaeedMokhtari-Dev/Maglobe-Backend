@@ -1,0 +1,758 @@
+@media (max-width: 1720px) {
+  .products {
+    .content-wrapper {
+      &::before {
+        width: 1200px;
+        height: 1200px;
+        bottom: -300px;
+        left: -350px;
+      }
+    }
+    .content {
+      .products-swiper {
+        .inline-logo {
+          margin: 0 15px;
+        }
+        .big-product-pic {
+          padding-top: 80px;
+          img {
+            max-width: 480px;
+          }
+        }
+      }
+    }
+  }
+  .testimonials {
+    .content {
+      .testimonial-swiper {
+        height: auto;
+        .testimonial-img {
+          max-width: 120px;
+        }
+      }
+    }
+  }
+  .support {
+    .content {
+      p {
+        margin-bottom: 0.5rem;
+      }
+      .form-wrapper textarea {
+        min-height: 100px;
+      }
+    }
+  }
+}
+@media (max-width: 1600px) {
+  .products {
+    .content-wrapper {
+      &::before {
+        bottom: -400px;
+        left: -350px;
+      }
+    }
+    .content {
+      .products-swiper {
+        .inline-logo {
+          margin: 0 15px;
+        }
+        .big-product-pic {
+          padding-top: 80px;
+          img {
+            max-width: 480px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1399px) {
+  .logo-bg {
+    top: -225px;
+    right: -120px;
+  }
+  .header {
+    .header-support {
+      .btn {
+        padding: 9px 15px;
+      }
+    }
+  }
+  .support,
+  .contact-us {
+    .content {
+      padding-top: 120px;
+    }
+  }
+  .home {
+    .content {
+      width: 650px;
+      height: 650px;
+      margin-right: 520px;
+      margin-top: -60px;
+      .content-text {
+        padding: 170px 150px 150px;
+        h2 {
+          font-size: 2rem;
+        }
+        p {
+          font-size: 1rem;
+        }
+        .line {
+          margin: 1rem 0;
+        }
+        .license {
+          font-size: 1rem;
+          img {
+            max-width: 150px;
+          }
+        }
+      }
+    }
+  }
+  .products {
+    .content-wrapper {
+      &::before {
+        width: 1000px;
+        height: 1000px;
+        bottom: -350px;
+        left: -250px;
+      }
+    }
+    .content .products-swiper {
+      height: 600px;
+      h3 {
+        font-size: 3rem;
+        margin-bottom: 0rem;
+        margin-top: 1rem;
+      }
+      p {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+      }
+      .deep-box {
+        padding: 7px 20px;
+        min-height: 3rem;
+      }
+      .deep-box-small {
+        padding: 5px 20px;
+        min-height: 3rem;
+
+        p {
+          line-height: 2.5rem;
+        }
+      }
+      .big-product-pic {
+        padding-top: 70px;
+        img {
+          max-width: 85%;
+          margin: 0 auto;
+          display: block;
+        }
+      }
+      .swiper-vertical > .swiper-pagination-bullets,
+      .swiper-pagination-vertical.swiper-pagination-bullets {
+        right: 50px;
+        top: 20px;
+      }
+      .swiper-button-next {
+        bottom: 20px;
+        right: calc(50% + 80px);
+      }
+      .swiper-button-prev {
+        bottom: 20px;
+        right: 50%;
+      }
+    }
+  }
+  .benefits,
+  .contact-us,
+  .support,
+  .testimonials {
+    .content {
+      padding-top: 120px;
+      &::before {
+        width: 1140px;
+        height: 1140px;
+      }
+      h2 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+  .about {
+    .content {
+      .right-content {
+        position: relative;
+        overflow: hidden;
+        padding: 160px 160px 100px 140px;
+        margin-top: -50px;
+        &::before {
+          width: 680px;
+          height: 680px;
+        }
+      }
+      .left-content-one {
+        &::before {
+          width: 250px;
+          height: 250px;
+        }
+        .inner-content {
+          padding: 80px 45px 75px 35px;
+        }
+      }
+      .left-content-two {
+        &::before {
+          width: 225px;
+          height: 225px;
+        }
+        .inner-content {
+          padding: 70px 25px 75px 40px;
+        }
+      }
+      .left-content-two {
+        margin-top: 15px;
+        &::before {
+          width: 225px;
+          height: 225px;
+        }
+        .inner-content {
+          padding: 70px 25px 75px 40px;
+        }
+      }
+      .left-content-three {
+        .inner-content {
+          padding: 90px 55px 75px 80px;
+        }
+      }
+      h2 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+  .support {
+    .content .form-wrapper textarea {
+      min-height: 100px;
+    }
+  }
+  .testimonials {
+    .content {
+      .testimonial-swiper {
+        height: auto;
+        .testimonial-img {
+          max-width: 100px;
+        }
+        h2 {
+          font-size: 1.75rem;
+          margin-bottom: 0.5rem;
+        }
+        .swiper-button-prev,
+        .swiper-button-next {
+          bottom: 50%;
+          width: 56px;
+          height: 56px;
+        }
+        .swiper-horizontal > .swiper-pagination-bullets,
+        .swiper-pagination-bullets.swiper-pagination-horizontal {
+          bottom: 0;
+        }
+      }
+    }
+  }
+
+  .footer {
+    padding-bottom: 5px;
+  }
+}
+@media (max-width: 1199px) {
+  .header {
+    .header-support .btn {
+      padding: 9px 10px;
+      font-size: 0.875rem;
+    }
+    .header-lang a {
+      font-size: 0.875rem;
+    }
+  }
+  .home {
+    .content {
+      margin-right: 320px;
+    }
+  }
+  .products {
+    .content-wrapper {
+      &::before {
+        width: 900px;
+        height: 900px;
+        bottom: -180px;
+        left: -290px;
+      }
+    }
+    .content .products-swiper {
+      .deep-box {
+        p {
+          font-size: 1rem;
+        }
+      }
+      .inline-logo {
+        margin: 0 10px;
+      }
+    }
+  }
+  .about {
+    .content {
+      .right-content {
+        padding: 150px 150px 150px 150px;
+        margin-top: -25px;
+      }
+    }
+  }
+  .benefits {
+    .content {
+      &::before {
+        width: 960px;
+        height: 960px;
+      }
+    }
+  }
+}
+@media (max-width: 991px) {
+  .header {
+    .header-logo {
+      max-width: 100%;
+    }
+    .header-support {
+      margin-top: 30px;
+
+      .btn {
+        padding: 9px 1px;
+        font-size: 0.75rem;
+      }
+    }
+    .menu ul {
+      margin-top: 40px;
+      .menu-item {
+        padding: 20px 10px;
+        a {
+          font-size: 0.875rem;
+        }
+      }
+    }
+    .header-lang {
+      margin-top: 30px;
+    }
+  }
+  .logo-bg {
+    right: -210px;
+  }
+  .home {
+    .content {
+      margin-top: -30px;
+      margin-right: 180px;
+      width: 600px;
+      height: 600px;
+      .content-text {
+        padding: 145px 150px 150px;
+        h2 {
+          font-size: 1.5rem;
+        }
+        p {
+          font-size: 0.875rem;
+        }
+      }
+    }
+  }
+  .products {
+    .content-wrapper {
+      &::before {
+        width: 800px;
+        height: 800px;
+        bottom: -60px;
+        left: -340px;
+      }
+    }
+    .content .products-swiper {
+      .inline-logo {
+        margin: 0 5px;
+      }
+      .swiper-vertical > .swiper-pagination-bullets,
+      .swiper-pagination-vertical.swiper-pagination-bullets {
+        right: 30px;
+      }
+    }
+  }
+  .about {
+    .content {
+      .right-content {
+        padding: 130px 140px 100px 100px;
+        margin-top: -10px;
+        &::before {
+          width: 600px;
+          height: 600px;
+        }
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 0.875rem;
+      }
+      .left-content-one {
+        &::before {
+          width: 220px;
+          height: 220px;
+        }
+        .inner-content {
+          padding: 75px 45px 75px 30px;
+        }
+      }
+      .left-content-two {
+        &::before {
+          width: 210px;
+          height: 210px;
+        }
+        .inner-content {
+          padding: 75px 35px 75px 20px;
+        }
+      }
+      .left-content-three {
+        .inner-content {
+          padding: 90px 55px 75px 20px;
+        }
+      }
+    }
+  }
+  .benefits {
+    .content {
+      &::before {
+        width: 720px;
+        height: 720px;
+      }
+    }
+  }
+  .support {
+    .content::before {
+      width: 1000px;
+      height: 1000px;
+    }
+  }
+  .testimonials {
+    .content::before {
+      width: 720px;
+      height: 720px;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .home {
+    background-image: none;
+    .content {
+      width: 100%;
+      margin-right: 0;
+      margin-top: 0;
+      height: auto;
+      &::before {
+        display: none;
+      }
+      .content-text {
+        padding: 0 0 35px;
+      }
+    }
+  }
+  .footer {
+    .footer-inner {
+      padding: 10px 0 0;
+    }
+    .footer-inner .copyright {
+      font-size: 0.675rem;
+    }
+    .social li {
+      margin-left: 0.5rem;
+    }
+  }
+  .products {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    .content-wrapper {
+      &::before {
+        width: 320px;
+        height: 320px;
+        bottom: auto;
+        left: 0;
+        right: 0;
+        top: 50px;
+        margin: auto;
+      }
+    }
+    .content .products-swiper {
+      h3 {
+        font-size: 1.5rem;
+        margin-top: 0;
+      }
+      p {
+        line-height: 1.3;
+      }
+      .deep-box {
+        padding: 2px 15px;
+        min-height: 2rem;
+        p {
+          font-size: 0.75rem;
+          line-height: 2rem;
+        }
+      }
+      .deep-box-small {
+        padding: 0 5px;
+        min-height: 2rem;
+        p {
+          font-size: 0.75rem;
+          line-height: 2rem;
+        }
+      }
+      .big-product-pic {
+        padding-top: 0;
+        padding-bottom: 25px;
+        img {
+          max-width: 200px;
+        }
+      }
+      .swiper-button-prev,
+      .swiper-button-next {
+        width: 30px;
+        height: 30px;
+        display: block;
+        top: 70px;
+        padding: 5px;
+        text-align: center;
+        font-size: 1rem;
+        &::after {
+          font-size: 1rem;
+        }
+      }
+      .swiper-button-prev {
+        right: 10px;
+      }
+      .swiper-button-next {
+        left: 10px;
+        right: auto;
+      }
+      h3 {
+        font-size: 2.5rem;
+      }
+      p {
+        font-size: 0.875rem;
+      }
+      .swiper-slide {
+        > .row {
+          flex-direction: column-reverse;
+        }
+        .pl-5 {
+          padding-left: 15px;
+        }
+        .btn {
+          font-size: 1rem;
+        }
+      }
+      .swiper-vertical > .swiper-pagination-bullets,
+      .swiper-pagination-vertical.swiper-pagination-bullets {
+        display: none;
+      }
+      .inline-logo {
+        max-width: 40px;
+      }
+      .deep-box p {
+        font-size: 0.75rem;
+      }
+    }
+  }
+  .testimonials {
+    position: relative;
+    overflow-x: hidden;
+    .content {
+      padding-top: 30px;
+      &::before {
+        width: 300px;
+        height: 300px;
+        margin: auto;
+      }
+      h2 {
+        font-size: 1.75rem;
+      }
+      h5 {
+        font-size: 0.875rem;
+      }
+      p {
+        font-size: 0.75rem;
+      }
+      .testimonial-swiper {
+        h5 {
+          font-size: 0.875rem;
+        }
+        .testimonial-social-link {
+          font-size: 0.875rem;
+        }
+        .testimonial-img {
+          max-width: 120px;
+        }
+        .swiper-pagination-bullets.swiper-pagination-horizontal {
+          top: 60%;
+          bottom: auto;
+        }
+      }
+    }
+    .benefits-btn {
+      left: 10px;
+      top: 180px;
+    }
+  }
+  .contact-us {
+    .content {
+      padding-top: 30px;
+      &::before {
+        display: none;
+      }
+    }
+  }
+  .about {
+    overflow: auto;
+    .content {
+      padding-bottom: 60px;
+      padding-top: 30px;
+      .right-content {
+        padding: 280px 15px 0;
+        &::before {
+          width: 300px;
+          height: 300px;
+          right: 0;
+          left: 0;
+          top: 0;
+          bottom: auto;
+          margin: auto;
+        }
+        &::after {
+          content: "";
+          width: 150px;
+          height: 150px;
+          background-image: url("../images/logo.png");
+          background-position: center center;
+          background-repeat: no-repeat;
+          position: absolute;
+          top: 0;
+          right: 0;
+          left: 0;
+          margin: 65px auto 0;
+        }
+      }
+      .left-content-one,
+      .left-content-two,
+      .left-content-three {
+        animation: none;
+        &::before {
+          display: none;
+        }
+        .inner-content {
+          padding: 0;
+        }
+      }
+    }
+  }
+  .achievments .content {
+    padding-top: 30px;
+    padding-bottom: 60px;
+  }
+  .benefits {
+    position: relative;
+    overflow-x: hidden;
+    .benefits-swiper {
+      padding: 20px 0;
+    }
+    .testimonials-btn {
+      right: 10px;
+      top: 200px;
+    }
+    .content {
+      padding-top: 5px;
+      &::before {
+        width: 350px;
+        height: 350px;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: auto;
+        margin: auto;
+      }
+      h2 {
+        font-size: 1.75rem;
+      }
+    }
+  }
+  .support {
+    overflow: auto;
+    .content {
+      padding-top: 30px;
+      &::before {
+        display: none;
+      }
+    }
+  }
+  .news-detail .news-img {
+    padding-right: 0;
+    padding-bottom: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .products {
+    .content-wrapper::before {
+      width: 225px;
+      height: 225px;
+      top: 20px;
+    }
+    .content .products-swiper {
+      h3 {
+        font-size: 1.25rem;
+        margin-top: 0;
+      }
+      p {
+        font-size: 0.675rem;
+        line-height: 1.3;
+      }
+      .big-product-pic {
+        padding-bottom: 0.5rem;
+        img {
+          max-width: 150px;
+        }
+      }
+      .deep-box {
+        padding: 2px 15px;
+        min-height: 2rem;
+        p {
+          font-size: 0.675rem;
+          line-height: 2rem;
+        }
+      }
+      .deep-box-small {
+        padding: 0 5px;
+        min-height: 2rem;
+        p {
+          font-size: 0.675rem;
+          line-height: 2rem;
+        }
+      }
+      .swiper-slide .btn {
+        padding: 10px 15px;
+        font-size: 0.875rem;
+      }
+      .inline-logo {
+        max-width: 2rem;
+      }
+    }
+  }
+}
