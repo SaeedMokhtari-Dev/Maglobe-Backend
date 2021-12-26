@@ -1,10 +1,8 @@
-using System;
 using System.Threading.Tasks;
 using Maglobe.Core.Enums;
 using Maglobe.Web.Pages.Shared;
 using Maglobe.Web.Services;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Maglobe.Web.Pages
 {

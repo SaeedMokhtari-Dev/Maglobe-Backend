@@ -8,7 +8,6 @@ using Maglobe.Core.Constants;
 using Maglobe.Core.Enums;
 using Maglobe.DataAccess.Contexts;
 using Maglobe.DataAccess.Entities;
-using Maglobe.Web.Identity.Services;
 
 namespace Maglobe.Web.Controllers.Entities.Products.Add
 {

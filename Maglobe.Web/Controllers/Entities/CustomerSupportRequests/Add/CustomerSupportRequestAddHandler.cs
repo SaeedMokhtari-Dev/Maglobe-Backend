@@ -1,14 +1,10 @@
-using System;
-using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Maglobe.Core.Api.Handlers;
 using Maglobe.Core.Api.Models;
 using Maglobe.Core.Constants;
-using Maglobe.Core.Enums;
 using Maglobe.DataAccess.Contexts;
 using Maglobe.DataAccess.Entities;
-using Maglobe.Web.Identity.Services;
 
 namespace Maglobe.Web.Controllers.Entities.CustomerSupportRequests.Add
 {

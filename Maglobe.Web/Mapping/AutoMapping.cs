@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using AutoMapper;
-using Maglobe.Core.Enums;
 using Maglobe.DataAccess.Entities;
 using Maglobe.Web.Controllers.Auth.Register;
 using Maglobe.Web.Controllers.Entities.Certificates.Add;

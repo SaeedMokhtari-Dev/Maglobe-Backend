@@ -1,5 +1,4 @@
 using System.Threading.Tasks;
-using AutoMapper;
 using Maglobe.Core.Api.Handlers;
 using Maglobe.Core.Api.Models;
 using Maglobe.Core.Constants;

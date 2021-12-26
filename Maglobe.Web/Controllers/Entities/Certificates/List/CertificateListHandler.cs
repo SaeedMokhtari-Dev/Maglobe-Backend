@@ -4,7 +4,6 @@ using AutoMapper;
 using Maglobe.Core.Api.Handlers;
 using Maglobe.Core.Api.Models;
 using Maglobe.DataAccess.Contexts;
-using Maglobe.Web.Identity.Contexts;
 using Microsoft.EntityFrameworkCore;
 
 namespace Maglobe.Web.Controllers.Entities.Certificates.List
