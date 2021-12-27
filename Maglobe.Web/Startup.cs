@@ -103,15 +103,15 @@ namespace Maglobe.Web
                 endpoints.MapControllers();
                 
             });
-            app.UseSpa(spa =>
+            /*app.UseSpa(spa =>
             {
                 spa.Options.SourcePath = "ClientApp";
             
                 /*if (env.IsDevelopment())
                 {
                     spa.UseReactDevelopmentServer(npmScript: "start");
-                }*/
-            });
+                }#1#
+            });*/
         }
         private static void SetCulture()
         {
