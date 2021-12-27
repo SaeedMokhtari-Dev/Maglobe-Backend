@@ -1,0 +1,10 @@
+@page "/NewsDetails/{newsId}/{siteLanguage?}"
+@using Maglobe.Web.Services.Models
+@model Maglobe.Web.Pages.NewsDetails
+
+@{
+    Layout = "Shared/_Layout";
+    var news = (BlogDetailViewModel) ViewData["News"];
+}
+
+<p>@news.Title</p>

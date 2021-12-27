@@ -2,25 +2,23 @@ using System.Threading.Tasks;
 using Maglobe.Core.Enums;
 using Maglobe.Web.Pages.Shared;
 using Maglobe.Web.Services;
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Maglobe.Web.Pages
 {
-    [AllowAnonymous]
-    public class News : BasePageModel
+    public class NewsDetails : BasePageModel
     {
         private readonly BlogService _blogService;
-        public News(BlogService blogService)
+        public NewsDetails(BlogService blogService)
         {
             _blogService = blogService;
         }
-        public async Task OnGet(string siteLanguage)
+        public async Task OnGet(int newsId, string siteLanguage)
         {
             Language language = CheckAndSetSiteLanguage(siteLanguage);
             
-            ViewData["BodyClass"] = "news";
-            
-            ViewData["News"] = await _blogService.GetActiveBlogs(language, 0, 12);
+            ViewData["News"] = await _blogService.GetBlogDetail(language, newsId);
+            ViewData["BodyClass"] = "products";
         }
     }
 }
