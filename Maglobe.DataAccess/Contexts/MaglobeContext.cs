@@ -285,6 +285,8 @@ namespace Maglobe.DataAccess.Contexts
                     .IsRequired()
                     .HasMaxLength(500);
 
+                entity.Property(e => e.OilType).HasMaxLength(50);
+
                 entity.Property(e => e.Quality).HasMaxLength(50);
 
                 entity.Property(e => e.Volume).HasMaxLength(50);
@@ -297,13 +299,11 @@ namespace Maglobe.DataAccess.Contexts
                 entity.HasOne(d => d.Attachment)
                     .WithMany(p => p.ProductAttachments)
                     .HasForeignKey(d => d.AttachmentId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_ProductAttachment_Attachment");
 
                 entity.HasOne(d => d.Product)
                     .WithMany(p => p.ProductAttachments)
                     .HasForeignKey(d => d.ProductId)
-                    .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK_ProductAttachment_Product");
             });
 
@@ -320,7 +320,6 @@ namespace Maglobe.DataAccess.Contexts
                 entity.HasOne(d => d.Product)
                     .WithMany(p => p.ProductCertificates)
                     .HasForeignKey(d => d.ProductId)
-                    .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK_ProductCertificate_Product");
             });
 

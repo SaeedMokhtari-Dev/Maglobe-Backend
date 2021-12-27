@@ -10,6 +10,7 @@ namespace Maglobe.Web.Services.Models
         public string Model { get; set; }
         public string Quality { get; set; }
         public string Volume { get; set; }
+        public string OilType { get; set; }
         public int DisplayOrder { get; set; }
         public string DescriptionSeo { get; set; }
         public List<CertificateItem> CertificateItems { get; set; }

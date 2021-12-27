@@ -79,6 +79,17 @@ namespace Maglobe.Core.Constants
             
             public const string TestimonialNotFound = "Api.Testimonial.NotFound";
         }
+        public static class BlogMessage
+        {
+            public const string BlogIdRequired = "Api.Blog.BlogId.Required";
+            
+            public const string AddedSuccessfully = "Api.Blog.Add.Successful";
+            public const string EditedSuccessfully = "Api.Blog.Edit.Successful";
+            public const string ActivatedSuccessfully = "Api.Blog.Activated.Successful";
+            public const string DeletedSuccessfully = "Api.Blog.Deleted.Successful";
+            
+            public const string BlogNotFound = "Api.Blog.NotFound";
+        }
         public static class CertificateMessage
         {
             public const string CertificateIdRequired = "Api.Certificate.CertificateId.Required";

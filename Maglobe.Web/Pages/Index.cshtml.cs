@@ -11,9 +11,9 @@ namespace Maglobe.Web.Pages
         public Index()
         {
         }
-        public async Task OnGet(string siteLanguage)
+        public void OnGet(string siteLanguage)
         {
-            Language language = CheckAndSetSiteLanguage(siteLanguage);
+            CheckAndSetSiteLanguage(siteLanguage);
             ViewData["BodyClass"] = "home";
         }
     }

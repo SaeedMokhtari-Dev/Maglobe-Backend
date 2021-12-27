@@ -3,6 +3,10 @@ using System.Linq;
 using AutoMapper;
 using Maglobe.DataAccess.Entities;
 using Maglobe.Web.Controllers.Auth.Register;
+using Maglobe.Web.Controllers.Entities.Blogs.Add;
+using Maglobe.Web.Controllers.Entities.Blogs.Detail;
+using Maglobe.Web.Controllers.Entities.Blogs.Edit;
+using Maglobe.Web.Controllers.Entities.Blogs.Get;
 using Maglobe.Web.Controllers.Entities.Certificates.Add;
 using Maglobe.Web.Controllers.Entities.Certificates.Detail;
 using Maglobe.Web.Controllers.Entities.Certificates.Edit;
@@ -246,6 +250,37 @@ namespace Maglobe.Web.Mapping
 
             CreateMap<CustomerSupportRequest, CustomerSupportRequestGetResponseItem>()
                 .ForMember(w => w.Key, opt => opt.MapFrom(e => e.Id))
+                .ForMember(w => w.CreatedAt, opt => opt.MapFrom(e => e.CreatedAt.ToPersianDateTime()))
+                .ForMember(w => w.ModifiedAt, opt => opt.MapFrom(e => e.ModifiedAt.ToPersianDateTime()));
+
+            #endregion
+            
+                #region Blog
+
+                    CreateMap<BlogAddRequest, Blog>()
+                .ForMember(w => w.PublishedDate, opt => opt.MapFrom(e => DateTime.Now))
+                .ForMember(w => w.CreatedAt, opt => opt.MapFrom(e => DateTime.Now))
+                .ForMember(w => w.ModifiedAt, opt => opt.MapFrom(e => DateTime.Now));
+
+                    CreateMap<BlogEditRequest, Blog>()
+                .ForMember(w => w.Id, opt => opt.Ignore())
+                .ForMember(w => w.PublishedDate, opt => opt.Ignore())
+                .ForMember(w => w.ModifiedAt, opt => opt.MapFrom(e => DateTime.Now));
+
+                    CreateMap<Blog, BlogDetailResponse>()
+                .ForMember(w => w.Key, opt => opt.MapFrom(e => e.Id))
+                .ForMember(w => w.CreatedAt, opt => opt.MapFrom(e => e.CreatedAt.ToPersianDateTime()))
+                .ForMember(w => w.ModifiedAt, opt => opt.MapFrom(e => e.ModifiedAt.ToPersianDateTime()))
+                .ForMember(w => w.PublishedDate, opt => opt.MapFrom(e => e.PublishedDate.ToPersianDateTime()))
+                .ForMember(w => w.Picture, opt =>
+                    opt.MapFrom(e =>
+                        e.AttachmentId.HasValue
+                            ? String.Join("", e.Attachment.Image.Select(Convert.ToChar))
+                            : String.Empty));
+
+                    CreateMap<Blog, BlogGetResponseItem>()
+                .ForMember(w => w.Key, opt => opt.MapFrom(e => e.Id))
+                .ForMember(w => w.PublishedDate, opt => opt.MapFrom(e => e.PublishedDate.ToPersianDateTime()))
                 .ForMember(w => w.CreatedAt, opt => opt.MapFrom(e => e.CreatedAt.ToPersianDateTime()))
                 .ForMember(w => w.ModifiedAt, opt => opt.MapFrom(e => e.ModifiedAt.ToPersianDateTime()));
 

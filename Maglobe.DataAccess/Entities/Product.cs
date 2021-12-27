@@ -25,6 +25,8 @@ namespace Maglobe.DataAccess.Entities
         public DateTime ModifiedAt { get; set; }
         public string DescriptionSeo { get; set; }
         public string Language { get; set; }
+        public string OilType { get; set; }
+        public string DetailDescription { get; set; }
 
         public virtual ICollection<ProductAttachment> ProductAttachments { get; set; }
         public virtual ICollection<ProductCertificate> ProductCertificates { get; set; }

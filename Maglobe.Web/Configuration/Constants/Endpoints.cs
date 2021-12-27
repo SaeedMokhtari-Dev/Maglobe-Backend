@@ -115,6 +115,18 @@ namespace Maglobe.Web.Configuration.Constants
 
         #endregion 
         
+        #region  Blogs
+
+        public const string ApiBlogGet = "/api/blog/get";
+        public const string ApiBlogAdd = "/api/blog/add";
+        public const string ApiBlogEdit = "/api/blog/edit";
+        public const string ApiBlogDetail = "/api/blog/detail";
+        public const string ApiBlogDelete = "/api/blog/delete";
+        public const string ApiBlogList = "/api/blog/list";
+        public const string ApiBlogActive = "/api/blog/active";
+        
+        #endregion
+        
 
         public const string ApiLog = "/api/log";
         public const string Swagger = "/swagger/v1/swagger.json";

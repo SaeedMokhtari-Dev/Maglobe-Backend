@@ -24,5 +24,7 @@ namespace Maglobe.Web.Controllers.Entities.Products.Detail
         public string CreatedAt { get; set; }
         public string ModifiedAt { get; set; }
         public string Language { get; set; }
+        public string OilType { get; set; }
+        public string DetailDescription { get; set; }
     }
 }

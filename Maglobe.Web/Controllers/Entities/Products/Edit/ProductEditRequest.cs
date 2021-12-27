@@ -17,5 +17,7 @@ namespace Maglobe.Web.Controllers.Entities.Products.Edit
         public string SmallPicture { get; set; }
         public bool SmallPictureChanged { get; set; }
         public string Language { get; set; }
+        public string OilType { get; set; }
+        public string DetailDescription { get; set; }
     }
 }

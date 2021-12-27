@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Maglobe.Core.Enums;
 using Maglobe.Core.Interfaces;
 using Maglobe.DataAccess.Contexts;
+using Maglobe.DataAccess.Entities;
 using Maglobe.Web.Services.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -25,7 +26,12 @@ namespace Maglobe.Web.Services
                 .Where(w => w.IsActive && w.Language == language.ToString())
                 .OrderBy(w => w.DisplayOrder)
                 .AsQueryable();
-            var products = await query.ToListAsync();
+            var products = await query.Select(w => new Product()
+            {
+                Id = w.Id, Name = w.Name, Description = w.Description, Model = w.Model, Quality = w.Quality,
+                Volume = w.Volume, DescriptionSeo = w.DescriptionSeo, ProductAttachments = w.ProductAttachments,
+                DisplayOrder = w.DisplayOrder, OilType = w.OilType
+            }).ToListAsync();
             var result = products.Select(w => new ProductViewModel()
             {
                 Name = w.Name,
@@ -38,10 +44,30 @@ namespace Maglobe.Web.Services
                     String.Join("", w.ProductAttachments.First(e => e.AttachmentType == AttachmentType.LargePicture).Attachment.Image.Select(Convert.ToChar)) : string.Empty,
                 SmallPicture =  w.ProductAttachments.Any(e => e.AttachmentType == AttachmentType.SmallPicture) ?
                     String.Join("", w.ProductAttachments.First(e => e.AttachmentType == AttachmentType.SmallPicture).Attachment.Image.Select(Convert.ToChar)) : string.Empty,
-                DisplayOrder = w.DisplayOrder
+                DisplayOrder = w.DisplayOrder,
+                OilType = w.OilType
             }).ToList();
 
             return result;
+        }
+
+        public async Task<ProductDetailViewModel> GetProductDetail(Language language, long productId)
+        {
+            var product = await _context.Products
+                .FirstOrDefaultAsync(w => w.Id == productId && w.IsActive && w.Language == language.ToString());
+
+            return new ProductDetailViewModel()
+            {
+                Name = product.Name,
+                Description = product.Description,
+                Model = product.Model,
+                Quality = product.Quality,
+                Volume = product.Volume,
+                DescriptionSeo = product.DescriptionSeo,
+                DisplayOrder = product.DisplayOrder,
+                DetailDescription = product.DetailDescription,
+                OilType = product.OilType
+            };
         }
     }
 }

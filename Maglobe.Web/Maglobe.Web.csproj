@@ -32,9 +32,17 @@
         <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
     </ItemGroup>
     <ItemGroup>
-        <Folder Include="ClientApp" />
+        <Folder Include="ClientApp\build" />
         <Folder Include="Database" />
         <Folder Include="MyStaticFiles" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="MyStaticFiles\**">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Include="ClientApp\**">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\Maglobe.Core\Maglobe.Core.csproj" />
