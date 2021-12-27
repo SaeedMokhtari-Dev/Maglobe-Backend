@@ -54,8 +54,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
             <div class="col-md-1 col-xl-1 col-xxl-1 d-none d-md-block">
                 <div class="header-lang">
-                    <a class="active" href="#">FA</a>
-                    <a href="#">EN</a>
+                    @if (language == "en")
+                    {
+                        <a href="#">FA</a>
+                        <a class="active" href="#">EN</a>
+                    }
+                    else
+                    {
+                        <a class="active" href="#">FA</a>
+                        <a href="#">EN</a>
+                    }
+
                 </div>
             </div>
             <div class="col col-md-2 col-xl-2 col-xxl-2 d-none d-md-block">

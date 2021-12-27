@@ -1,0 +1,135 @@
+@page "/News/{siteLanguage?}"
+@model Maglobe.Web.Pages.News
+@using Maglobe.Web.Services.Models
+
+@{
+    Layout = "Shared/_Layout";
+    ViewData["Title"] = "رسانه";
+}
+
+    <div class="content-wrapper">
+        <div class="container-xl">
+            <div class="row">
+                <h1 class="align-center">رسانه</h1>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-3 news-wrapper">
+                    <div class="news-item">
+                        <a href="news-detail.html">
+                            <img class="news-thumbnail img-block" src="">
+                            <h2></h2>
+                            <a class="news-more" href="news-detail.html">مشاهده مطلب...</a>
+                            <!-- <div class="row news-meta">
+                            <div class="col-6"><img class="view-img" src="src/images/view.svg"><span>630 بازدید</span>
+                            </div>
+                            <div class="col-6 align-left"><img class="date-img" src="src/images/date.svg">
+                                <time> شنبه 1 تیر 1400</time>
+                            </div>
+                        </div> -->
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-3 news-wrapper">
+                    <div class="news-item">
+                        <a href="news-detail.html">
+                            <img class="news-thumbnail img-block" src="src/images/news-pic.png">
+                            <h2>عرضه ۶۸ هزار تن مواد پلیمری در بورس کالای ایران</h2>
+                            <a class="news-more" href="news-detail.html">مشاهده مطلب...</a>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-3 news-wrapper">
+                    <div class="news-item">
+                        <a href="news-detail.html">
+                            <img class="news-thumbnail img-block" src="src/images/news-pic.png">
+                            <h2>عرضه ۶۸ هزار تن مواد پلیمری در بورس کالای ایران</h2>
+                            <a class="news-more" href="news-detail.html">مشاهده مطلب...</a>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-3 news-wrapper">
+                    <div class="news-item">
+                        <a href="news-detail.html">
+                            <img class="news-thumbnail img-block" src="src/images/news-pic.png">
+                            <h2>عرضه ۶۸ هزار تن مواد پلیمری در بورس کالای ایران</h2>
+                            <a class="news-more" href="news-detail.html">مشاهده مطلب...</a>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-3 news-wrapper">
+                    <div class="news-item">
+                        <a href="news-detail.html">
+                            <img class="news-thumbnail img-block" src="src/images/news-pic.png">
+                            <h2>عرضه ۶۸ هزار تن مواد پلیمری در بورس کالای ایران</h2>
+                            <a class="news-more" href="news-detail.html">مشاهده مطلب...</a>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-3 news-wrapper">
+                    <div class="news-item">
+                        <a href="news-detail.html">
+                            <img class="news-thumbnail img-block" src="src/images/news-pic.png">
+                            <h2>عرضه ۶۸ هزار تن مواد پلیمری در بورس کالای ایران</h2>
+                            <a class="news-more" href="news-detail.html">مشاهده مطلب...</a>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-3 news-wrapper">
+                    <div class="news-item">
+                        <a href="news-detail.html">
+                            <img class="news-thumbnail img-block" src="src/images/news-pic.png">
+                            <h2>عرضه ۶۸ هزار تن مواد پلیمری در بورس کالای ایران</h2>
+                            <a class="news-more" href="news-detail.html">مشاهده مطلب...</a>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-3 news-wrapper">
+                    <div class="news-item">
+                        <a href="news-detail.html">
+                            <img class="news-thumbnail img-block" src="src/images/news-pic.png">
+                            <h2>عرضه ۶۸ هزار تن مواد پلیمری در بورس کالای ایران</h2>
+                            <a class="news-more" href="news-detail.html">مشاهده مطلب...</a>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-3 news-wrapper">
+                    <div class="news-item">
+                        <a href="news-detail.html">
+                            <img class="news-thumbnail img-block" src="src/images/news-pic.png">
+                            <h2>عرضه ۶۸ هزار تن مواد پلیمری در بورس کالای ایران</h2>
+                            <a class="news-more" href="news-detail.html">مشاهده مطلب...</a>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-3 news-wrapper">
+                    <div class="news-item">
+                        <a href="news-detail.html">
+                            <img class="news-thumbnail img-block" src="src/images/news-pic.png">
+                            <h2>عرضه ۶۸ هزار تن مواد پلیمری در بورس کالای ایران</h2>
+                            <a class="news-more" href="news-detail.html">مشاهده مطلب...</a>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-3 news-wrapper">
+                    <div class="news-item">
+                        <a href="news-detail.html">
+                            <img class="news-thumbnail img-block" src="src/images/news-pic.png">
+                            <h2>عرضه ۶۸ هزار تن مواد پلیمری در بورس کالای ایران</h2>
+                            <a class="news-more" href="news-detail.html">مشاهده مطلب...</a>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-3 news-wrapper">
+                    <div class="news-item">
+                        <a href="news-detail.html">
+                            <img class="news-thumbnail img-block" src="src/images/news-pic.png">
+                            <h2>عرضه ۶۸ هزار تن مواد پلیمری در بورس کالای ایران</h2>
+                            <a class="news-more" href="news-detail.html">مشاهده مطلب...</a>
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
