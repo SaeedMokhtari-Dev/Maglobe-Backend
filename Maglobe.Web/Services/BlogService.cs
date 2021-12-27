@@ -31,6 +31,7 @@ namespace Maglobe.Web.Services
 
             var result = await query.Select(w => new BlogListViewModel()
             {
+                Id = w.Id,
                 Title = w.Title,
                 Picture = w.AttachmentId.HasValue
                     ? String.Join("", w.Attachment.Image.Select(Convert.ToChar))
