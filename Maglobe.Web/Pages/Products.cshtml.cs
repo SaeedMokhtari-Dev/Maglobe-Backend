@@ -19,6 +19,8 @@ namespace Maglobe.Web.Pages
             Language language = CheckAndSetSiteLanguage(siteLanguage);
             
             ViewData["Products"] = await _productService.GetActiveProducts(language);
+            ViewData["BodyClass"] = "products";
+
         }
     }
 }
