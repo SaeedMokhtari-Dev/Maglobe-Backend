@@ -24,7 +24,7 @@ namespace Maglobe.Web.Services
         public async Task<List<ProductViewModel>> GetActiveProducts(Language language)
         {
             var query = _context.Products
-                .Include(w => w.ProductAttachments)
+                .Include(w => w.ProductAttachments).ThenInclude(w => w.Attachment)
                 .Include(w => w.ProductCertificates).ThenInclude(w => w.Certificate)
                 .ThenInclude(w => w.Attachment)
                 .Where(w => w.IsActive && w.Language == language.ToString())
@@ -34,7 +34,7 @@ namespace Maglobe.Web.Services
             {
                 Id = w.Id, Name = w.Name, Description = w.Description, Model = w.Model, Quality = w.Quality,
                 Volume = w.Volume, DescriptionSeo = w.DescriptionSeo, ProductAttachments = w.ProductAttachments,
-                DisplayOrder = w.DisplayOrder, OilType = w.OilType
+                DisplayOrder = w.DisplayOrder, OilType = w.OilType, ProductCertificates = w.ProductCertificates
             }).ToListAsync();
             var result = products.Select(w => new ProductViewModel()
             {
@@ -52,7 +52,7 @@ namespace Maglobe.Web.Services
                 {
                   Key = e.Id,
                   Title = e.Certificate.Title,
-                  Image = String.Join("", e.Certificate.Attachment.Image.Select(Convert.ToChar))
+                  Image = String.Join("", e.Certificate?.Attachment?.Image.Select(Convert.ToChar))
                 }).ToList(),
                 DisplayOrder = w.DisplayOrder,
                 OilType = w.OilType
