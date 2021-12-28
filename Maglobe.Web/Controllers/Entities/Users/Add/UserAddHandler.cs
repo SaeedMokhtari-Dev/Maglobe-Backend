@@ -58,7 +58,7 @@ namespace Maglobe.Web.Controllers.Entities.Users.Add
                 
                 newUser.Roles.Add(new UserRole()
                 {
-                    Role = RoleType.User
+                    Role = RoleType.Admin
                 });
                 
                 newUser = (await _context.Users.AddAsync(newUser)).Entity;
