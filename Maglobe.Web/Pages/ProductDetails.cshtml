@@ -10,10 +10,8 @@
 @if (product != null)
 {
     ViewData["Title"] = product.Name;
-    <p>@product.Name</p>
-    <p>@Html.Raw(product.DetailDescription)</p>
-                                           
-                                               <div class="content-wrapper">
+
+    <div class="content-wrapper">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 content align-center">
@@ -30,7 +28,8 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12 align-right">
-                            @product.Description
+                            @Html.Raw(product.DetailDescription)
+
                         </div>
                     </div>
 
@@ -38,11 +37,9 @@
             </div>
         </div>
     </div>
-
 }
 else
 {
     ViewData["Title"] = "Not Found";
     <p>اطلاعاتی یافت نشد</p>
 }
-    
