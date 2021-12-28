@@ -1,0 +1,44 @@
+@page "/Support/{siteLanguage?}"
+@model Maglobe.Web.Pages.Support
+
+@{
+    Layout = "Shared/_Layout";
+    ViewData["Title"] = "پشتیبانی مشتریان";
+}
+
+<div class="content-wrapper">
+    <div class="floating-img">
+    </div>
+    <div class="container-xl">
+        <div class="row">
+            <div class="col-md-12 content align-center">
+                <div class="row">
+                    <div class="col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+                        <h2>پشتیبانی مشتریان</h2>
+                        <p>در صورت داشتن انتقادات و پیشنهادات در مورد محصولات مگلوب و یا ارتباط با ما فرم زیر را
+                            تکمیل نمایید</p>
+
+                        <div class="row">
+                            <div class="col-md-6 form-wrapper">
+                                <input class="form-control">
+                                <label class="form-label">نام و نام خانوادگی</label>
+
+                            </div>
+                            <div class="col-md-6 form-wrapper">
+                                <input class="form-control">
+                                <label class="form-label">شماره موبایل</label>
+                            </div>
+                            <div class="col-md-12 form-wrapper">
+                                <textarea class="form-control"></textarea>
+                                <label class="form-label">پیام شما</label>
+                            </div>
+                            <div class="col-md-12">
+                                <button class="btn btn-gradient btn-medium" type="submit"> ارسال پیام</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
