@@ -43,6 +43,15 @@ namespace Maglobe.Web.Controllers.Entities.Testimonials.Add
                         Image = request.Picture.ToCharArray().Select(Convert.ToByte).ToArray()
                     };
                 }
+                
+                if (!string.IsNullOrEmpty(request.SmallPicture))
+                {
+                    newTestimonial.Attachment = new Attachment()
+                    {
+                        CreatedAt = DateTime.Now,
+                        Image = request.SmallPicture.ToCharArray().Select(Convert.ToByte).ToArray()
+                    };
+                }
 
                 newTestimonial = (await _context.Testimonials.AddAsync(newTestimonial)).Entity;
                 await _context.SaveChangesAsync();

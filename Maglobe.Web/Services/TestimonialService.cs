@@ -24,6 +24,7 @@ namespace Maglobe.Web.Services
         {
             var query = _context.Testimonials
                 .Include(w => w.Attachment)
+                .Include(w => w.SmallPicture)
                 .Where(w => w.IsActive && w.Language == language.ToString())
                 .OrderBy(w => w.DisplayOrder)
                 .AsQueryable();
@@ -31,17 +32,26 @@ namespace Maglobe.Web.Services
             var testimonials = await query.Select(w => new Testimonial()
             {
                 Id = w.Id,
-                Attachment = w.Attachment,
                 Comment = w.Comment,
                 Title = w.Title,
+                Attachment = w.Attachment,
                 AttachmentId = w.AttachmentId,
-                DisplayOrder = w.DisplayOrder
+                DisplayOrder = w.DisplayOrder,
+                SmallPicture = w.SmallPicture,
+                SmallPictureId = w.SmallPictureId,
+                Job = w.Job,
+                Name = w.Name,
+                SocialNetwork = w.SocialNetwork
             }).ToListAsync();
             return testimonials.Select(w => new TestimonialViewModel()
             {
+                Name = w.Name,
                 Comment = w.Comment,
                 DisplayOrder = w.DisplayOrder,
-                Picture = w.AttachmentId.HasValue ? String.Join("", w.Attachment.Image.Select(Convert.ToChar)) : string.Empty
+                Picture = w.AttachmentId.HasValue ? String.Join("", w.Attachment.Image.Select(Convert.ToChar)) : string.Empty,
+                Job = w.Job,
+                SmallPicture = w.SmallPictureId.HasValue ? String.Join("", w.SmallPicture.Image.Select(Convert.ToChar)) : string.Empty,
+                SocialNetwork = w.SocialNetwork
             }) .ToList();
         }
     }

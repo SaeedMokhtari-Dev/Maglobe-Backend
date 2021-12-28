@@ -9,5 +9,10 @@ namespace Maglobe.Web.Controllers.Entities.Testimonials.Edit
         public bool PictureChanged { get; set; }
         public bool IsActive { get; set; }
         public string Language { get; set; }
+        public string Name { get; set; }
+        public string SocialNetwork { get; set; }
+        public string Job { get; set; }
+        public string SmallPicture { get; set; }
+        public bool SmallPictureChanged { get; set; }
     }
 }

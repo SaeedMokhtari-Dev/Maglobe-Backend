@@ -374,6 +374,8 @@ namespace Maglobe.DataAccess.Contexts
 
                 entity.Property(e => e.CreatedAt).HasColumnType("datetime");
 
+                entity.Property(e => e.Job).HasMaxLength(100);
+
                 entity.Property(e => e.Language)
                     .IsRequired()
                     .HasMaxLength(10)
@@ -381,14 +383,23 @@ namespace Maglobe.DataAccess.Contexts
 
                 entity.Property(e => e.ModifiedAt).HasColumnType("datetime");
 
+                entity.Property(e => e.Name).HasMaxLength(100);
+
+                entity.Property(e => e.SocialNetwork).HasMaxLength(200);
+
                 entity.Property(e => e.Title)
                     .IsRequired()
                     .HasMaxLength(500);
 
                 entity.HasOne(d => d.Attachment)
-                    .WithMany(p => p.Testimonials)
+                    .WithMany(p => p.TestimonialAttachments)
                     .HasForeignKey(d => d.AttachmentId)
                     .HasConstraintName("FK_Testimonial_Attachment");
+
+                entity.HasOne(d => d.SmallPicture)
+                    .WithMany(p => p.TestimonialSmallPictures)
+                    .HasForeignKey(d => d.SmallPictureId)
+                    .HasConstraintName("FK_Testimonial_SmallPictureId");
             });
 
             modelBuilder.Entity<User>(entity =>

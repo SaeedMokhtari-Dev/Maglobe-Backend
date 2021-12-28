@@ -40,16 +40,17 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-6 align-right">
-                                                <h5>تعمیرکار شعبه مرکزی اتوکار</h5>
+                                                <h5>@item.Job</h5>
                                             </div>
                                             <div class="col-6 align-left">
-                                                <a href="https://twitter.com" class="testimonial-social-link">
+                                                @item.SocialNetwork
+                                                @*<a href="https://twitter.com" class="testimonial-social-link">
                                                     Davood-car
-                                                </a>
+                                                </a>*@
                                             </div>
                                         </div>
                                         <p>
-                                            @item.Comment
+                                            @Html.Raw(@item.Comment)
                                         </p>
                                     </div>
                                 </div>

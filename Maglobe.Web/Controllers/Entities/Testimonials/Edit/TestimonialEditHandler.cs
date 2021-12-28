@@ -62,6 +62,23 @@ namespace Maglobe.Web.Controllers.Entities.Testimonials.Edit
                     }
                 }
                 
+                if (request.SmallPictureChanged && !string.IsNullOrEmpty(request.SmallPicture))
+                {
+                    if (editTestimonial.SmallPictureId.HasValue)
+                    {
+                        editTestimonial.SmallPicture.CreatedAt = DateTime.Now;
+                        editTestimonial.SmallPicture.Image = request.SmallPicture.ToCharArray().Select(Convert.ToByte).ToArray();
+                    }
+                    else
+                    {
+                        editTestimonial.SmallPicture = new Attachment
+                        {
+                            CreatedAt = DateTime.Now,
+                            Image = request.SmallPicture.ToCharArray().Select(Convert.ToByte).ToArray()
+                        };
+                    }
+                }
+                
                 await _context.SaveChangesAsync();
 
                 return editTestimonial;

@@ -13,7 +13,8 @@ namespace Maglobe.DataAccess.Entities
             Certificates = new HashSet<Certificate>();
             ProductAttachments = new HashSet<ProductAttachment>();
             Settings = new HashSet<Setting>();
-            Testimonials = new HashSet<Testimonial>();
+            TestimonialAttachments = new HashSet<Testimonial>();
+            TestimonialSmallPictures = new HashSet<Testimonial>();
         }
 
         public long Id { get; set; }
@@ -24,6 +25,7 @@ namespace Maglobe.DataAccess.Entities
         public virtual ICollection<Certificate> Certificates { get; set; }
         public virtual ICollection<ProductAttachment> ProductAttachments { get; set; }
         public virtual ICollection<Setting> Settings { get; set; }
-        public virtual ICollection<Testimonial> Testimonials { get; set; }
+        public virtual ICollection<Testimonial> TestimonialAttachments { get; set; }
+        public virtual ICollection<Testimonial> TestimonialSmallPictures { get; set; }
     }
 }

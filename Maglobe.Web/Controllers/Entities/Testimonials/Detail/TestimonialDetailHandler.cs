@@ -25,6 +25,7 @@ namespace Maglobe.Web.Controllers.Entities.Testimonials.Detail
         {
             Testimonial testimonial = await _context.Testimonials
                 .Include(w => w.Attachment)
+                .Include(w => w.SmallPicture)
                 .FirstOrDefaultAsync(w => w.Id == request.TestimonialId);
 
             if (testimonial == null)

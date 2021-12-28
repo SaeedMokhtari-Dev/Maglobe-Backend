@@ -136,11 +136,13 @@ namespace Maglobe.Web.Mapping
             #region Testimonial
 
             CreateMap<TestimonialAddRequest, Testimonial>()
+                .ForMember(w => w.SmallPicture, opt => opt.Ignore())
                 .ForMember(w => w.CreatedAt, opt => opt.MapFrom(e => DateTime.Now))
                 .ForMember(w => w.ModifiedAt, opt => opt.MapFrom(e => DateTime.Now));
 
             CreateMap<TestimonialEditRequest, Testimonial>()
                 .ForMember(w => w.Id, opt => opt.Ignore())
+                .ForMember(w => w.SmallPicture, opt => opt.Ignore())
                 .ForMember(w => w.ModifiedAt, opt => opt.MapFrom(e => DateTime.Now));
 
             CreateMap<Testimonial, TestimonialDetailResponse>()
@@ -151,6 +153,11 @@ namespace Maglobe.Web.Mapping
                     opt.MapFrom(e =>
                         e.AttachmentId.HasValue
                             ? String.Join("", e.Attachment.Image.Select(Convert.ToChar))
+                            : String.Empty))
+                .ForMember(w => w.SmallPicture, opt =>
+                    opt.MapFrom(e =>
+                        e.SmallPictureId.HasValue
+                            ? String.Join("", e.SmallPicture.Image.Select(Convert.ToChar))
                             : String.Empty));
 
             CreateMap<Testimonial, TestimonialGetResponseItem>()
