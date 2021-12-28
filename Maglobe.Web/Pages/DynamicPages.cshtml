@@ -1,0 +1,15 @@
+@page "/Page/{dynamicPageId}/{siteLanguage?}"
+@using Maglobe.Web.Services.Models
+@model Maglobe.Web.Pages.DynamicPages
+
+@{
+    Layout = "Shared/_Layout";
+    var dynamicPage = (DynamicPageViewModel) ViewData["DynamicPage"];
+}
+@if (dynamicPage != null)
+{
+    ViewData["Title"] = dynamicPage.Title;
+    ViewData["DescriptionSeo"] = dynamicPage.DescriptionSeo;
+    
+    <div>@Html.Raw(dynamicPage.Editor)</div>
+}

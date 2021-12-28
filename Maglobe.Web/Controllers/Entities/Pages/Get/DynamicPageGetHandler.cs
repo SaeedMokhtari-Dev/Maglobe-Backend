@@ -5,6 +5,7 @@ using AutoMapper;
 using Maglobe.Core.Api.Handlers;
 using Maglobe.Core.Api.Models;
 using Maglobe.DataAccess.Contexts;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 
 namespace Maglobe.Web.Controllers.Entities.Pages.Get
@@ -13,12 +14,14 @@ namespace Maglobe.Web.Controllers.Entities.Pages.Get
     {
         private readonly MaglobeContext _context;
         private readonly IMapper _mapper;
+        private readonly IHttpContextAccessor _httpContext;
 
         public DynamicPageGetHandler(
-            MaglobeContext context, IMapper mapper)
+            MaglobeContext context, IMapper mapper, IHttpContextAccessor httpContext)
         {
             _context = context;
             _mapper = mapper;
+            _httpContext = httpContext;
         }
 
         protected override async Task<ActionResult> Execute(DynamicPageGetRequest request)
@@ -34,6 +37,8 @@ namespace Maglobe.Web.Controllers.Entities.Pages.Get
             DynamicPageGetResponse response = new DynamicPageGetResponse();
             response.TotalCount = await _context.DynamicPages.CountAsync();
             response.Items = mappedResult;
+            if(_httpContext != null)
+                response.Items.ForEach(w => w.Url = $"{_httpContext.HttpContext?.Request?.Scheme}://{_httpContext.HttpContext?.Request?.Host.Value}/Page/{w.Key}");
             return ActionResult.Ok(response);
         }
     }
