@@ -1,0 +1,107 @@
+@page "/Testimonials/{siteLanguage?}"
+@using Maglobe.Web.Services.Models
+@model Maglobe.Web.Pages.Testimonials
+
+@{
+    Layout = "Shared/_Layout";
+    ViewData["Title"] = "نظرات مشتریان";
+    var testimonials = (List<TestimonialViewModel>) ViewData["Testimonials"];
+}
+
+
+<div class="content-wrapper">
+    <a href="/benefits" class="benefits-btn"></a>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 content">
+                <!-- Slider main container -->
+                <div class="swiper testimonial-swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+
+                        @if (testimonials != null && testimonials.Any())
+                        {
+                            @foreach (var item in testimonials)
+                            {
+                                <div class="swiper-slide">
+                                    <div class="col-md-6 offset-md-3 align-center">
+                                        <img class="img-responsive testimonial-img" src="@item.Picture">
+                                        <h2>نظرات مشتریان</h2>
+
+                                        <div class="row">
+                                            <div class="col-6 align-right">
+                                                <h4>داوود رزاقی</h4>
+                                            </div>
+                                            <div class="col-6 align-left">
+                                                <a href="https://twitter.com" class="testimonial-social-img">
+                                                    <img class="img-responsive" src="@item.Picture">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6 align-right">
+                                                <h5>تعمیرکار شعبه مرکزی اتوکار</h5>
+                                            </div>
+                                            <div class="col-6 align-left">
+                                                <a href="https://twitter.com" class="testimonial-social-link">
+                                                    Davood-car
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <p>
+                                            @item.Comment
+                                        </p>
+                                    </div>
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <p>نظری یافت نشد.</p>
+                        }
+
+                        <!-- If we need pagination -->
+                        <div class="swiper-pagination"></div>
+
+                        <!-- If we need navigation buttons  -->
+
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="@Url.Content("~/StaticFiles/js/swiper.js")"></script>
+<script>
+            const swiper = new Swiper('.swiper', {
+                // Optional parameters
+                loop: true,
+
+                // If we need pagination
+                // Navigation arrows
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    type: 'bullets',
+                    clickable: true,
+                },
+
+                // And if we need scrollbar
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                },
+                autoplay: true,
+                autoplay: {
+                    pauseOnMouseEnter: true,
+                    delay: 3000,
+                },
+            });
+
+        </script>
