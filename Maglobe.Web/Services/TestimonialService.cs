@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Maglobe.Core.Enums;
 using Maglobe.Core.Interfaces;
 using Maglobe.DataAccess.Contexts;
+using Maglobe.DataAccess.Entities;
 using Maglobe.Web.Services.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -27,12 +28,21 @@ namespace Maglobe.Web.Services
                 .OrderBy(w => w.DisplayOrder)
                 .AsQueryable();
 
-            return await query.Select(w => new TestimonialViewModel()
+            var testimonials = await query.Select(w => new Testimonial()
+            {
+                Id = w.Id,
+                Attachment = w.Attachment,
+                Comment = w.Comment,
+                Title = w.Title,
+                AttachmentId = w.AttachmentId,
+                DisplayOrder = w.DisplayOrder
+            }).ToListAsync();
+            return testimonials.Select(w => new TestimonialViewModel()
             {
                 Comment = w.Comment,
                 DisplayOrder = w.DisplayOrder,
-                Picture = String.Join("", w.Attachment.Image.Select(Convert.ToChar))
-            }) .ToListAsync();
+                Picture = w.AttachmentId.HasValue ? String.Join("", w.Attachment.Image.Select(Convert.ToChar)) : string.Empty
+            }) .ToList();
         }
     }
 }
