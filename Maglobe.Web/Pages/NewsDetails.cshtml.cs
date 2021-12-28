@@ -18,7 +18,7 @@ namespace Maglobe.Web.Pages
             Language language = CheckAndSetSiteLanguage(siteLanguage);
             
             ViewData["News"] = await _blogService.GetBlogDetail(language, newsId);
-            ViewData["BodyClass"] = "products";
+            ViewData["BodyClass"] = "news-detail";
         }
     }
 }

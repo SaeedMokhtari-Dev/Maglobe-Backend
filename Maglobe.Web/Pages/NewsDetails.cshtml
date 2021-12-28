@@ -6,5 +6,25 @@
     Layout = "Shared/_Layout";
     var news = (BlogDetailViewModel) ViewData["News"];
 }
+<div class="content-wrapper">
+    <div class="container-xl">
+        <div class="row flex-column-reverse flex-md-row">
+            <div class="col-12 col-md-6">
+                <h1 class="news-title">@news.Title</h1>
 
-<p>@news.Title</p>
+                <p class="news-description">
+                </p>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="news-img">
+                    <img class="img-block" src="@news.Picture">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 news-content">
+                @news.Description
+            </div>
+        </div>
+    </div>
+</div>
