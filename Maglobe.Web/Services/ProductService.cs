@@ -38,6 +38,7 @@ namespace Maglobe.Web.Services
             }).ToListAsync();
             var result = products.Select(w => new ProductViewModel()
             {
+                Id = w.Id,
                 Name = w.Name,
                 Description = w.Description,
                 Model = w.Model,

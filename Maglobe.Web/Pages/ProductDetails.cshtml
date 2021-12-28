@@ -1,0 +1,21 @@
+@page "/ProductDetails/{productId}/{siteLanguage?}"
+@using Maglobe.Web.Services.Models
+@model Maglobe.Web.Pages.ProductDetails
+
+@{
+    Layout = "Shared/_Layout";
+    var product = (ProductDetailViewModel) ViewData["ProductDetail"];
+}
+
+@if (product != null)
+{
+    ViewData["Title"] = product.Name;
+    <p>@product.Name</p>
+                    <p>@Html.Raw(product.DetailDescription)</p>
+}
+else
+{
+    ViewData["Title"] = "Not Found";
+    <p>اطلاعاتی یافت نشد</p>
+}
+    
