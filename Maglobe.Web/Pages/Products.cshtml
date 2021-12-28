@@ -40,8 +40,11 @@
                                                                 <p> تاییدیه رسمی از:</p>
                                                             </div>
                                                             <div class="col-8">
-                                                                @item.CertificateItems
-                                                            </div>
+                                                                @foreach (var itemCertificateItem in item.CertificateItems)
+                                                                {
+                                                                   <img src="@itemCertificateItem.Image" class="inline-logo" alt="@itemCertificateItem.Title">  
+                                                                }
+                                                                </div>
                                                         </div>
 
 
