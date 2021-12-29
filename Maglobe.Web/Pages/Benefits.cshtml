@@ -41,21 +41,21 @@
                                 <div class="swiper-slide">
                                     <a href="5W-30.html">
                                         <img alt="مگلوب" class="img-responsive img-block"
-                                             src="@Url.Content("/StaticFiles/images/5w-30-detail.png")" />
+                                             src="@Url.Content("/StaticFiles/images/5w-30-detail.png")"/>
                                     </a>
                                 </div>
 
                                 <div class="swiper-slide">
                                     <a href="10W-40.html">
                                         <img alt="مگلوب" class="img-responsive img-block"
-                                             src="src/images/10w-40-detail.png"/>
+                                             src="@Url.Content("/StaticFiles/images/10w-40-detail.png")"/>
                                     </a>
                                 </div>
 
                                 <div class="swiper-slide">
                                     <a href="5W-30-p.html">
                                         <img alt="مگلوب" class="img-responsive img-block"
-                                             src="src/images/5w-30-p.png"/>
+                                             src="@Url.Content("/StaticFiles/images/15w-30-p.png")"/>
                                     </a>
                                 </div>
 
@@ -132,3 +132,9 @@
         </div>
     </div>
 </div>
+
+<script>
+        window.setTimeout(function () {
+            location.href = "/testimonials";
+        }, 5000);
+</script>
