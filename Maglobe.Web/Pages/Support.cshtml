@@ -1,4 +1,5 @@
 @page "/Support/{siteLanguage?}"
+@addTagHelper*, Microsoft.AspNetCore.Mvc.TagHelpers
 @model Maglobe.Web.Pages.Support
 
 @{
@@ -17,25 +18,39 @@
                         <h2>پشتیبانی مشتریان</h2>
                         <p>در صورت داشتن انتقادات و پیشنهادات در مورد محصولات مگلوب و یا ارتباط با ما فرم زیر را
                             تکمیل نمایید</p>
-
-                        <div class="row">
-                            <div class="col-md-6 form-wrapper">
-                                <input class="form-control">
-                                <label class="form-label">نام و نام خانوادگی</label>
-
-                            </div>
-                            <div class="col-md-6 form-wrapper">
-                                <input class="form-control">
-                                <label class="form-label">شماره موبایل</label>
-                            </div>
-                            <div class="col-md-12 form-wrapper">
-                                <textarea class="form-control"></textarea>
-                                <label class="form-label">پیام شما</label>
-                            </div>
-                            <div class="col-md-12">
-                                <button class="btn btn-gradient btn-medium" type="submit"> ارسال پیام</button>
-                            </div>
-                        </div>
+                        @if (!Model.Success)
+                        {
+                            <form method="post" asp-page="Support">
+                                <div class="row">
+                                    <div class="col-md-6 form-wrapper">
+                                        <input class="form-control" asp-for="@Model.Name">
+                                        <label class="form-label">نام و نام خانوادگی</label>
+                                        <span asp-validation-for="@Model.Name"></span>
+                                    </div>
+                                    <div class="col-md-6 form-wrapper">
+                                        <input class="form-control" asp-for="@Model.PhoneNumber">
+                                        <label class="form-label">شماره موبایل</label>
+                                        <span asp-validation-for="@Model.PhoneNumber"></span>
+                                    </div>
+                                    <div class="col-md-12 form-wrapper">
+                                        <textarea class="form-control" asp-for="@Model.Description"></textarea>
+                                        <label class="form-label">پیام شما</label>
+                                        <span asp-validation-for="@Model.Description"></span>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <button class="btn btn-gradient btn-medium" type="submit"> ارسال پیام</button>
+                                    </div>
+                                    @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+                                    {
+                                        <div class="alert">@Model.ErrorMessage</div>
+                                    }
+                                </div>
+                            </form>
+                        }
+                        else
+                        {
+                            <p style="color: green">درخواست شما با موفقیت ثبت شد.</p>
+                        }
                     </div>
                 </div>
             </div>
