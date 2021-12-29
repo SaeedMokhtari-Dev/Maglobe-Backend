@@ -64,7 +64,7 @@ namespace Maglobe.Web.Services
 
         public async Task<ProductDetailViewModel> GetProductDetail(Language language, long productId)
         {
-            var product = await _context.Products
+            var product = await _context.Products.Include(w => w.ProductAttachments).ThenInclude(w => w.Attachment)
                 .FirstOrDefaultAsync(w => w.Id == productId && w.IsActive && w.Language == language.ToString());
 
             return new ProductDetailViewModel()
@@ -77,7 +77,9 @@ namespace Maglobe.Web.Services
                 DescriptionSeo = product.DescriptionSeo,
                 DisplayOrder = product.DisplayOrder,
                 DetailDescription = product.DetailDescription,
-                OilType = product.OilType
+                OilType = product.OilType,
+                SmallPicture =  product.ProductAttachments.Any(e => e.AttachmentType == AttachmentType.SmallPicture) ?
+                    String.Join("", product.ProductAttachments.First(e => e.AttachmentType == AttachmentType.SmallPicture).Attachment.Image.Select(Convert.ToChar)) : string.Empty,
             };
         }
     }
