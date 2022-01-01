@@ -144,17 +144,21 @@
                                             <div class="row">
                                                 <div class="col-md-6 pl-5">
                                                     <div class="align-center">
-                                                        <a href="/ProductDetails/@item.Id" class="btn btn-gradient btn-block btn-large">
-                                                            @if (language == "en")
-                                                            {
-                                                                <span>Read More </span>
-                                                            }
-                                                            else
-                                                            {
-                                                                <span> مشاهده جزئیات</span>
-                                                            }
+                                                        @if (language == "en")
+                                                        {
+                                                            <a href="/ProductDetails/@item.Id/en" class="btn btn-gradient btn-block btn-large">
 
-                                                        </a>
+                                                                <span>Read More </span>
+                                                            </a>
+                                                        }
+                                                        else
+                                                        {
+                                                            <a href="/ProductDetails/@item.Id" class="btn btn-gradient btn-block btn-large">
+
+                                                                <span> مشاهده جزئیات</span>
+                                                            </a>
+                                                        }
+
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 align-left">
