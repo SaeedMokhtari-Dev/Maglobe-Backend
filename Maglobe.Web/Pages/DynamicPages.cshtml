@@ -10,6 +10,19 @@
 {
     ViewData["Title"] = dynamicPage.Title;
     ViewData["DescriptionSeo"] = dynamicPage.DescriptionSeo;
-    
-    <div>@Html.Raw(dynamicPage.Editor)</div>
+
+    <div class="content-wrapper">
+        <div class="container-xl">
+            <div class="row">
+                <div class="col-md-12 content align-center">
+                    <div class="row">
+                        <div class="col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+                            <h1>@dynamicPage.Title</h1>
+                            @Html.Raw(dynamicPage.Editor)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 }

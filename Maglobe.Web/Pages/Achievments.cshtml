@@ -3,110 +3,227 @@
 
 @{
     Layout = "Shared/_Layout";
-    ViewData["Title"] = "افتخارات مگلوب";
+    string language = (string) ViewData["siteLanguage"];
+    @if (language == "en")
+    {
+        ViewData["Title"] = "Achievments";
+    }
+    else
+    {
+        ViewData["Title"] = "افتخارات مگلوب";
+    }
+
 }
 
-<div class="content-wrapper">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 content align-center">
-                <div class="row">
-                    <div class="col-md-2">
-                        <div class="certificate">
-                            <p>
-                                Mercedes-Benz
-                                Certificate
-                            </p>
+@if (language == "en")
+{
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 content align-center">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="certificate">
+                                <p>
+                                    Mercedes-Benz
+                                    Certificate
+                                </p>
 
-                            <a href="@Url.Content("/StaticFiles/images/certificate.png")" data-lity>
-                                <img class="certificate-img img-responsive" src="@Url.Content("/StaticFiles/images/certificate.png")"
-                                     alt="'گواهینامه">
-                            </a>
+                                <a href="@Url.Content("/StaticFiles/images/certificate.png")" data-lity>
+                                    <img class="certificate-img img-responsive" src="@Url.Content("/StaticFiles/images/certificate.png")"
+                                         alt="'گواهینامه">
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="certificate">
+                        <div class="col-md-2">
+                            <div class="certificate">
 
-                            <a href="@Url.Content("/StaticFiles/images/certificate.png")" data-lity>
-                                <img class="certificate-img img-responsive" src="@Url.Content("/StaticFiles/images/certificate.png")"
-                                     alt="'گواهینامه">
-                            </a>
-                            <p>
-                                Mercedes-Benz
-                                Certificate
-                            </p>
+                                <a href="@Url.Content("/StaticFiles/images/certificate.png")" data-lity>
+                                    <img class="certificate-img img-responsive" src="@Url.Content("/StaticFiles/images/certificate.png")"
+                                         alt="'گواهینامه">
+                                </a>
+                                <p>
+                                    Mercedes-Benz
+                                    Certificate
+                                </p>
 
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="certificate">
-                            <p>
-                                Mercedes-Benz
-                                Certificate
-                            </p>
+                        <div class="col-md-2">
+                            <div class="certificate">
+                                <p>
+                                    Mercedes-Benz
+                                    Certificate
+                                </p>
 
-                            <a href="@Url.Content("/StaticFiles/images/certificate.png")" data-lity>
-                                <img class="certificate-img img-responsive" src="@Url.Content("/StaticFiles/images/certificate.png")"
-                                     alt="'گواهینامه">
-                            </a>
+                                <a href="@Url.Content("/StaticFiles/images/certificate.png")" data-lity>
+                                    <img class="certificate-img img-responsive" src="@Url.Content("/StaticFiles/images/certificate.png")"
+                                         alt="'گواهینامه">
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="certificate">
+                        <div class="col-md-2">
+                            <div class="certificate">
 
-                            <a href="@Url.Content("/StaticFiles/images/certificate.png")" data-lity>
-                                <img class="certificate-img img-responsive" src="@Url.Content("/StaticFiles/images/certificate.png")"
-                                     alt="'گواهینامه">
-                            </a>
-                            <p>
-                                Mercedes-Benz
-                                Certificate
-                            </p>
+                                <a href="@Url.Content("/StaticFiles/images/certificate.png")" data-lity>
+                                    <img class="certificate-img img-responsive" src="@Url.Content("/StaticFiles/images/certificate.png")"
+                                         alt="'گواهینامه">
+                                </a>
+                                <p>
+                                    Mercedes-Benz
+                                    Certificate
+                                </p>
 
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="certificate">
-                            <p>
-                                Mercedes-Benz
-                                Certificate
-                            </p>
+                        <div class="col-md-2">
+                            <div class="certificate">
+                                <p>
+                                    Mercedes-Benz
+                                    Certificate
+                                </p>
 
-                            <a href="@Url.Content("/StaticFiles/images/certificate.png")" data-lity>
-                                <img class="certificate-img img-responsive" src="@Url.Content("/StaticFiles/images/certificate.png")"
-                                     alt="'گواهینامه">
-                            </a>
+                                <a href="@Url.Content("/StaticFiles/images/certificate.png")" data-lity>
+                                    <img class="certificate-img img-responsive" src="@Url.Content("/StaticFiles/images/certificate.png")"
+                                         alt="'گواهینامه">
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="certificate">
+                        <div class="col-md-2">
+                            <div class="certificate">
 
-                            <a href="@Url.Content("/StaticFiles/images/certificate.png")" data-lity>
-                                <img class="certificate-img img-responsive" src="@Url.Content("/StaticFiles/images/certificate.png")"
-                                     alt="'گواهینامه">
-                            </a>
-                            <p>
-                                Mercedes-Benz
-                                Certificate
-                            </p>
+                                <a href="@Url.Content("/StaticFiles/images/certificate.png")" data-lity>
+                                    <img class="certificate-img img-responsive" src="@Url.Content("/StaticFiles/images/certificate.png")"
+                                         alt="'گواهینامه">
+                                </a>
+                                <p>
+                                    Mercedes-Benz
+                                    Certificate
+                                </p>
 
+                            </div>
                         </div>
+
                     </div>
+                    <div class="row achievments-text">
+                        <div class="col-md-6 offset-md-3">
 
-                </div>
-                <div class="row achievments-text">
-                    <div class="col-md-6 offset-md-3">
+                            <h2>Maglub Achivements</h2>
+                            <p>
+                                This product is produced using high quality synthetic base oil Has been and in addition to psychological And protecting engine parts also reduces fuel consumption. This product for the general public Rides and light vans are designed with gasoline fuel or equipped with turbochargers
+                            </p>
+                        </div>
 
-                        <h2>افتخارات مگلوب</h2>
-                        <p>
-                            این محصول با استفاده از روغن تمام پایه سنتزی با کیفیت عالی تولید شده است و علاوه بر
-                            روانی و محافظت از قطعات موتور باعث کاهش مصرف سوخت هم می شود. ابن فرآورده برای عموم
-                            خودروهای سواری و ون های سبک با سوخت بنزین یا مجهز به توربو شارژ طراحی شده است
-                        </p>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
-</div>
+}
+else
+{
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 content align-center">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="certificate">
+                                <p>
+                                    Mercedes-Benz
+                                    Certificate
+                                </p>
+
+                                <a href="@Url.Content("/StaticFiles/images/certificate.png")" data-lity>
+                                    <img class="certificate-img img-responsive" src="@Url.Content("/StaticFiles/images/certificate.png")"
+                                         alt="'گواهینامه">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="certificate">
+
+                                <a href="@Url.Content("/StaticFiles/images/certificate.png")" data-lity>
+                                    <img class="certificate-img img-responsive" src="@Url.Content("/StaticFiles/images/certificate.png")"
+                                         alt="'گواهینامه">
+                                </a>
+                                <p>
+                                    Mercedes-Benz
+                                    Certificate
+                                </p>
+
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="certificate">
+                                <p>
+                                    Mercedes-Benz
+                                    Certificate
+                                </p>
+
+                                <a href="@Url.Content("/StaticFiles/images/certificate.png")" data-lity>
+                                    <img class="certificate-img img-responsive" src="@Url.Content("/StaticFiles/images/certificate.png")"
+                                         alt="'گواهینامه">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="certificate">
+
+                                <a href="@Url.Content("/StaticFiles/images/certificate.png")" data-lity>
+                                    <img class="certificate-img img-responsive" src="@Url.Content("/StaticFiles/images/certificate.png")"
+                                         alt="'گواهینامه">
+                                </a>
+                                <p>
+                                    Mercedes-Benz
+                                    Certificate
+                                </p>
+
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="certificate">
+                                <p>
+                                    Mercedes-Benz
+                                    Certificate
+                                </p>
+
+                                <a href="@Url.Content("/StaticFiles/images/certificate.png")" data-lity>
+                                    <img class="certificate-img img-responsive" src="@Url.Content("/StaticFiles/images/certificate.png")"
+                                         alt="'گواهینامه">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="certificate">
+
+                                <a href="@Url.Content("/StaticFiles/images/certificate.png")" data-lity>
+                                    <img class="certificate-img img-responsive" src="@Url.Content("/StaticFiles/images/certificate.png")"
+                                         alt="'گواهینامه">
+                                </a>
+                                <p>
+                                    Mercedes-Benz
+                                    Certificate
+                                </p>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row achievments-text">
+                        <div class="col-md-6 offset-md-3">
+
+                            <h2>افتخارات مگلوب</h2>
+                            <p>
+                                این محصول با استفاده از روغن تمام پایه سنتزی با کیفیت عالی تولید شده است و علاوه بر
+                                روانی و محافظت از قطعات موتور باعث کاهش مصرف سوخت هم می شود. ابن فرآورده برای عموم
+                                خودروهای سواری و ون های سبک با سوخت بنزین یا مجهز به توربو شارژ طراحی شده است
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

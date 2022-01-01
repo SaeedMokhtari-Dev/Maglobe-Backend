@@ -89,10 +89,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     +9821 - 8347
                 </p>
                 <div class="mobile-support">
-                    <a class="btn btn-secondary btn-block" href="/support">
-                        <i class="icon-user"></i> پشتیبانی
-                        مشتریان
-                    </a>
+                    @if (language == "en")
+                    {
+                        <a class="btn btn-secondary btn-block" href="/support">
+                            <i class="icon-user"></i> Customer Support
+                        </a>
+                    }
+                    else
+                    {
+                        <a class="btn btn-secondary btn-block" href="/support">
+                            <i class="icon-user"></i> پشتیبانی
+                            مشتریان
+                        </a>
+                    }
+
+
                 </div>
             </nav>
         </div>

@@ -1,33 +1,74 @@
 @page "/Index/{siteLanguage?}"
 @model Maglobe.Web.Pages.Index
 
+
 @{
     Layout = "Shared/_Layout";
-    ViewData["Title"] = "مگلوب";
-}
+    string language = (string) ViewData["siteLanguage"];
 
-<div class="content-wrapper">
-    <div class="container">
-        <div class="row">
-            <div class="content">
-                <div class="d-block d-md-none motor-wrapper align-left">
-                    <img class="" src="@Url.Content("~/StaticFiles/images/motor.png")">
-                </div>
-                <div class="d-block d-md-none">
-                    <img class="" src="@Url.Content("~/StaticFiles/images/mobile-benz.png")" >
-                </div>
-                <div class="content-text">
-                    <h2>مگلوب برانید</h2>
-                    <p class="align-justify">
-                        این محصول با استفاده از روغن تمام پایه سنتزی با کیفیت عالی تولید
-                        شده است و علاوه بر روانی
-                        و محافظت از قطعات موتور باعث کاهش مصرف سوخت هم می شود. ابن فرآورده برای عموم خودروهای
-                        سواری و ون های سبک با سوخت بنزین یا مجهز به توربو شارژ طراحی شده است
-                    </p>
-                    <div class="line"></div>
-                    <p class="license">تحت لیسانس رسمی از <strong>ایفااویل اتریش</strong></p>
+    @if (language == "en")
+    {
+        ViewData["Title"] = "Maglub";
+    }
+    else
+    {
+        ViewData["Title"] = "مگلوب";
+    }
+
+}
+@if (language == "en")
+{
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="content">
+                    <div class="d-block d-md-none motor-wrapper align-left">
+                        <img class="" src="@Url.Content("~/StaticFiles/images/motor.png")">
+                    </div>
+                    <div class="d-block d-md-none">
+                        <img class="" src="@Url.Content("~/StaticFiles/images/mobile-benz.png")">
+                    </div>
+                    <div class="content-text">
+                        <h2>Drive Maglub</h2>
+                        <p class="align-justify">
+                            This product is produced using high quality synthetic base oil
+                            Has been and in addition to psychological
+                            And protecting engine parts also reduces fuel consumption. This product for the general public
+                            Rides and light vans are designed with gasoline fuel or equipped with turbochargers
+                        </p>
+                        <div class="line"></div>
+                        <p class="license">Under the official license of <strong>Efoil Austria</strong></p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+}
+else
+{
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="content">
+                    <div class="d-block d-md-none motor-wrapper align-left">
+                        <img class="" src="@Url.Content("~/StaticFiles/images/motor.png")">
+                    </div>
+                    <div class="d-block d-md-none">
+                        <img class="" src="@Url.Content("~/StaticFiles/images/mobile-benz.png")">
+                    </div>
+                    <div class="content-text">
+                        <h2>مگلوب برانید</h2>
+                        <p class="align-justify">
+                            این محصول با استفاده از روغن تمام پایه سنتزی با کیفیت عالی تولید
+                            شده است و علاوه بر روانی
+                            و محافظت از قطعات موتور باعث کاهش مصرف سوخت هم می شود. ابن فرآورده برای عموم خودروهای
+                            سواری و ون های سبک با سوخت بنزین یا مجهز به توربو شارژ طراحی شده است
+                        </p>
+                        <div class="line"></div>
+                        <p class="license">تحت لیسانس رسمی از <strong>ایفااویل اتریش</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

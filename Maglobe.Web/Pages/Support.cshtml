@@ -5,55 +5,124 @@
 @{
     Layout = "Shared/_Layout";
     ViewData["Title"] = "پشتیبانی مشتریان";
+    string language = (string) ViewData["siteLanguage"];
+    @if (language == "en")
+    {
+        ViewData["Title"] = "Support";
+    }
+    else
+    {
+        ViewData["Title"] = "پشتیبانی مشتریان";
+    }
+
 }
 
-<div class="content-wrapper">
-    <div class="floating-img">
-    </div>
-    <div class="container-xl">
-        <div class="row">
-            <div class="col-md-12 content align-center">
-                <div class="row">
-                    <div class="col-md-8 offset-md-2 col-xl-6 offset-xl-3">
-                        <h2>پشتیبانی مشتریان</h2>
-                        <p>در صورت داشتن انتقادات و پیشنهادات در مورد محصولات مگلوب و یا ارتباط با ما فرم زیر را
-                            تکمیل نمایید</p>
-                        @if (!Model.Success)
-                        {
-                            <form method="post" asp-page="Support">
-                                <div class="row">
-                                    <div class="col-md-6 form-wrapper">
-                                        <input class="form-control" asp-for="@Model.Name">
-                                        <label class="form-label">نام و نام خانوادگی</label>
-                                        <span asp-validation-for="@Model.Name"></span>
+@if (language == "en")
+{
+    <div class="content-wrapper">
+        <div class="floating-img">
+        </div>
+        <div class="container-xl">
+            <div class="row">
+                <div class="col-md-12 content align-center">
+                    <div class="row">
+                        <div class="col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+                            <h2>Customer support</h2>
+                            <p>
+                                If you have any comments or suggestions about Megloob products or contact us, use the form below Complete
+                            </p>
+                            @if (!Model.Success)
+                            {
+                                <form method="post" asp-page="Support">
+                                    <div class="row">
+                                        <div class="col-md-6 form-wrapper">
+                                            <input class="form-control" asp-for="@Model.Name">
+                                            <label class="form-label">Name </label>
+                                            <span asp-validation-for="@Model.Name"></span>
+                                        </div>
+                                        <div class="col-md-6 form-wrapper">
+                                            <input class="form-control" asp-for="@Model.PhoneNumber">
+                                            <label class="form-label">Mobile</label>
+                                            <span asp-validation-for="@Model.PhoneNumber"></span>
+                                        </div>
+                                        <div class="col-md-12 form-wrapper">
+                                            <textarea class="form-control" asp-for="@Model.Description"></textarea>
+                                            <label class="form-label">Message</label>
+                                            <span asp-validation-for="@Model.Description"></span>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <button class="btn btn-gradient btn-medium" type="submit">Send</button>
+                                        </div>
+                                        @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+                                        {
+                                            <div class="alert">@Model.ErrorMessage</div>
+                                        }
                                     </div>
-                                    <div class="col-md-6 form-wrapper">
-                                        <input class="form-control" asp-for="@Model.PhoneNumber">
-                                        <label class="form-label">شماره موبایل</label>
-                                        <span asp-validation-for="@Model.PhoneNumber"></span>
-                                    </div>
-                                    <div class="col-md-12 form-wrapper">
-                                        <textarea class="form-control" asp-for="@Model.Description"></textarea>
-                                        <label class="form-label">پیام شما</label>
-                                        <span asp-validation-for="@Model.Description"></span>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <button class="btn btn-gradient btn-medium" type="submit"> ارسال پیام</button>
-                                    </div>
-                                    @if (!string.IsNullOrEmpty(Model.ErrorMessage))
-                                    {
-                                        <div class="alert">@Model.ErrorMessage</div>
-                                    }
-                                </div>
-                            </form>
-                        }
-                        else
-                        {
-                            <p style="color: green">درخواست شما با موفقیت ثبت شد.</p>
-                        }
+                                </form>
+                            }
+                            else
+                            {
+                                <p style="color: green">Your request has been successfully submitted.</p>
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+}
+else
+{
+    <div class="content-wrapper">
+        <div class="floating-img">
+        </div>
+        <div class="container-xl">
+            <div class="row">
+                <div class="col-md-12 content align-center">
+                    <div class="row">
+                        <div class="col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+                            <h2>پشتیبانی مشتریان</h2>
+                            <p>
+                                در صورت داشتن انتقادات و پیشنهادات در مورد محصولات مگلوب و یا ارتباط با ما فرم زیر را
+                                تکمیل نمایید
+                            </p>
+                            @if (!Model.Success)
+                            {
+                                <form method="post" asp-page="Support">
+                                    <div class="row">
+                                        <div class="col-md-6 form-wrapper">
+                                            <input class="form-control" asp-for="@Model.Name">
+                                            <label class="form-label">نام و نام خانوادگی</label>
+                                            <span asp-validation-for="@Model.Name"></span>
+                                        </div>
+                                        <div class="col-md-6 form-wrapper">
+                                            <input class="form-control" asp-for="@Model.PhoneNumber">
+                                            <label class="form-label">شماره موبایل</label>
+                                            <span asp-validation-for="@Model.PhoneNumber"></span>
+                                        </div>
+                                        <div class="col-md-12 form-wrapper">
+                                            <textarea class="form-control" asp-for="@Model.Description"></textarea>
+                                            <label class="form-label">پیام شما</label>
+                                            <span asp-validation-for="@Model.Description"></span>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <button class="btn btn-gradient btn-medium" type="submit"> ارسال پیام</button>
+                                        </div>
+                                        @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+                                        {
+                                            <div class="alert">@Model.ErrorMessage</div>
+                                        }
+                                    </div>
+                                </form>
+                            }
+                            else
+                            {
+                                <p style="color: green">درخواست شما با موفقیت ثبت شد.</p>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

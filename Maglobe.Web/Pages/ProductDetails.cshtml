@@ -5,6 +5,8 @@
 @{
     Layout = "Shared/_Layout";
     var product = (ProductDetailViewModel) ViewData["ProductDetail"];
+    string language = (string) ViewData["siteLanguage"];
+    ViewData["Title"] = @product.Name + @product.Model;
 }
 
 @if (product != null)
@@ -30,6 +32,137 @@
                     <div class="row">
                         <div class="col-md-12 align-right">
                             @Html.Raw(product.DetailDescription)
+                            @if (language == "en")
+                            {
+                                <h3>Attributes</h3>
+
+                                <table class="table">
+
+                                    <tr>
+                                        <td class="table-dark-bg">Property</td>
+                                        <td class="table-dark-bg">Before</td>
+                                        <td class="table-dark-bg">After</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Viscosity at 100 ° C</td>
+                                        <td>14/8</td>
+                                        <td>8</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td> Viscosity index</td>
+                                        <td> 178 </td>
+                                        <td>175</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td> Flash point</td>
+                                        <td>235</td>
+                                        <td>220</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td> Fall point</td>
+                                        <td>-48</td>
+                                        <td>-48</td>
+                                    </tr>
+                                </table>
+                                <h3>: Confirmations and performance levels</h3>
+
+                                <table class="table">
+
+                                    <tr>
+                                        <td class="table-dark-bg">Performance level</td>
+                                        <td>API SN+ ; ACEA C5 ; ILSAC GF5</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="table-dark-bg">Suitable for:</td>
+                                        <td>
+                                            <ul class="ltr">
+                                                <li>Mercedes-Benz: MB 229.71</li>
+                                                <li>BMW: BMW LL-17 FE+</li>
+                                                <li>Volvo: VCC RBS0-2AE </li>
+                                                <li>GM: Dexos D</li>
+                                                <li>Opel: OV0401547</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+
+
+                                </table>
+                                <p>Packing: metal container @product.Volume </p>
+                                <p class="license">
+                                    Produced in: Sepahan Oil Company under the supervision and license of Evvaoil Austria
+                                </p>
+                            }
+                            else
+                            {
+                                <h3>ویژگی‌ها</h3>
+
+                                <table class="table">
+
+                                    <tr>
+                                        <td class="table-dark-bg">ویژگی</td>
+                                        <td class="table-dark-bg">مقدار قبلی</td>
+                                        <td class="table-dark-bg">مقدار اصلاح شده</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>گرانروی در 100 درجه سانتیگراد</td>
+                                        <td>14/8</td>
+                                        <td>8</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td> شاخص گرانروی</td>
+                                        <td> 178 </td>
+                                        <td>175</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td> نقطه اشتعال</td>
+                                        <td>235</td>
+                                        <td>220</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td> نقطه ریزش</td>
+                                        <td>-48</td>
+                                        <td>-48</td>
+                                    </tr>
+                                </table>
+                                <h3>:تاییدیه ها و سطوح کارایی</h3>
+
+                                <table class="table">
+
+                                    <tr>
+                                        <td class="table-dark-bg">سطح کارایی</td>
+                                        <td>API SN+ ; ACEA C5 ; ILSAC GF5</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="table-dark-bg">مناسب برای</td>
+                                        <td>
+                                            <ul class="ltr">
+                                                <li>Mercedes-Benz: MB 229.71</li>
+                                                <li>BMW: BMW LL-17 FE+</li>
+                                                <li>Volvo: VCC RBS0-2AE </li>
+                                                <li>GM: Dexos D</li>
+                                                <li>Opel: OV0401547</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+
+
+                                </table>
+                                <p>بسته بندی: ظرف فلزی 5 لیتری </p>
+                                <p class="license">
+                                    تولید شده در: شرکت نفت سپاهان تحت نظارت و لیسانس شرکت ایفااویل اتریش
+                                </p>
+                            }
+
 
                         </div>
                     </div>

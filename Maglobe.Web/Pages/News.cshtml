@@ -4,15 +4,30 @@
 
 @{
     Layout = "Shared/_Layout";
-    ViewData["Title"] = "رسانه";
     var news = (List<BlogListViewModel>) ViewData["News"];
-
+    string language = (string) ViewData["siteLanguage"];
+    @if (language == "en")
+    {
+        ViewData["Title"] = "News";
+    }
+    else
+    {
+        ViewData["Title"] = "رسانه";
+    }
 }
 
 <div class="content-wrapper">
     <div class="container-xl">
         <div class="row">
-            <h1 class="align-center">رسانه</h1>
+            @if (language == "en")
+            {
+                <h1 class="align-center">News</h1>
+            }
+            else
+            {
+                <h1 class="align-center">رسانه</h1>
+            }
+
         </div>
         <div class="row">
             @if (news != null && news.Any())
@@ -24,7 +39,14 @@
                             <a href="/NewsDetails/@item.Id">
                                 <img class="news-thumbnail img-block" src="@item.Picture">
                                 <h2>@item.Title</h2>
-                                <a class="news-more" href="/NewsDetails/@item.Id">مشاهده مطلب...</a>
+                                @if (language == "en")
+                                {
+                                    <a class="news-more" href="/NewsDetails/@item.Id">Read More...</a>
+                                }
+                                else
+                                {
+                                    <a class="news-more" href="/NewsDetails/@item.Id">مشاهده مطلب...</a>
+                                }
                                 <!-- <div class="row news-meta">
                                     <div class="col-6"><img class="view-img" src="src/images/view.svg"><span>630 بازدید</span>
                                     </div>
@@ -39,7 +61,14 @@
             }
             else
             {
-                <p>خبری یافت نشد.</p>
+                @if (language == "en")
+                {
+                    <p> No news found </p>
+                }
+                else
+                {
+                    <p>خبری یافت نشد.</p>
+                }
             }
         </div>
     </div>

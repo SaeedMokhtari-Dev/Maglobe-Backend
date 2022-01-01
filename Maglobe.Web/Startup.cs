@@ -22,8 +22,9 @@ namespace Maglobe.Web
         {
             Configuration = configuration;
         }
-        
+
         public IConfiguration Configuration { get; }
+
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
@@ -37,16 +38,13 @@ namespace Maglobe.Web
                 .ConfigureAuthentication(Configuration)
                 .ConfigureAuthorization()
                 .ConfigureServicesByConvention(Assembly.GetExecutingAssembly());
-            
+
             services.AddAutoMapper(typeof(AutoMapping));
             services.AddMvcCore().AddApiExplorer();
-            
+
             services.ConfigureSwagger();
             services.AddResponseCaching();
-            services.AddMvc().AddRazorPagesOptions(options =>
-            {
-                options.Conventions.AddPageRoute("/Index", "");
-            });
+            services.AddMvc().AddRazorPagesOptions(options => { options.Conventions.AddPageRoute("/Index", ""); });
             services.AddRazorPages();
             services.AddHttpContextAccessor();
             //services.AddControllersWithViews();
@@ -58,7 +56,7 @@ namespace Maglobe.Web
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             SetCulture();
-            
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -77,12 +75,13 @@ namespace Maglobe.Web
             {
                 context.Response.OnStarting(() =>
                 {
-                    context.Response.Headers.Add("API-Server-Version", GetType().Assembly.GetName().Version?.ToString());
+                    context.Response.Headers.Add("API-Server-Version",
+                        GetType().Assembly.GetName().Version?.ToString());
                     return Task.FromResult(0);
                 });
                 await nextMiddleware();
             });
-            
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseStaticFiles(new StaticFileOptions
@@ -102,18 +101,10 @@ namespace Maglobe.Web
             {
                 endpoints.MapRazorPages();
                 endpoints.MapControllers();
-                
             });
-            /*app.UseSpa(spa =>
-            {
-                spa.Options.SourcePath = "ClientApp";
-            
-                /*if (env.IsDevelopment())
-                {
-                    spa.UseReactDevelopmentServer(npmScript: "start");
-                }#1#
-            });*/
+            app.UseSpa(spa => { spa.Options.SourcePath = "ClientApp"; });
         }
+
         private static void SetCulture()
         {
             var cultureInfo = new CultureInfo("en");

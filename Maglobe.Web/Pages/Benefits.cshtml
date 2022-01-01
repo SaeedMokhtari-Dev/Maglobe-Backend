@@ -3,138 +3,277 @@
 
 @{
     Layout = "Shared/_Layout";
-    ViewData["Title"] = "مزایا";
+    string language = (string) ViewData["siteLanguage"];
+    @if (language == "en")
+    {
+        ViewData["Title"] = "Benefits";
+    }
+    else
+    {
+        ViewData["Title"] = "مزایا";
+    }
 }
 
-<div class="content-wrapper">
-    <a href="/testimonials" class="testimonials-btn"></a>
-    <div class="container">
-        <div class="row">
+@if (language == "en")
+{
+    <div class="content-wrapper">
+        <a href="/testimonials/en" class="testimonials-btn"></a>
+        <div class="container">
+            <div class="row">
 
-            <div class="col-md-12 content align-center">
-                <div class="row">
-                    <div class="col-12 d-block d-md-none">
-                        <!-- Slider main container -->
-                        <div class="swiper benefits-swiper">
-                            <!-- Additional required wrapper -->
-                            <div class="swiper-wrapper">
-                                <!-- Slides -->
-                                <div class="swiper-slide">
+                <div class="col-md-12 content align-center">
+                    <div class="row">
+                        <div class="col-12 d-block d-md-none">
+                            <!-- Slider main container -->
+                            <div class="swiper benefits-swiper">
+                                <!-- Additional required wrapper -->
+                                <div class="swiper-wrapper">
+                                    <!-- Slides -->
+                                    <div class="swiper-slide">
+                                        <a href="20W-50.html">
+                                            <img alt="مگلوب" class="img-responsive img-block"
+                                                 src="@Url.Content("/StaticFiles/images/20w-50-detail.png")"/>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="5W-40.html">
+                                            <img alt="مگلوب" class="img-responsive img-block"
+                                                 src="@Url.Content("/StaticFiles/images/5w-40-detail.png")"/>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="0w-20.html">
+                                            <img alt="مگلوب" class="img-responsive img-block"
+                                                 src="@Url.Content("/StaticFiles/images/0w-20-detail.png")"/>
+                                        </a>
+                                    </div>
+
+                                    <div class="swiper-slide">
+                                        <a href="5W-30.html">
+                                            <img alt="مگلوب" class="img-responsive img-block"
+                                                 src="@Url.Content("/StaticFiles/images/5w-30-detail.png")"/>
+                                        </a>
+                                    </div>
+
+                                    <div class="swiper-slide">
+                                        <a href="10W-40.html">
+                                            <img alt="مگلوب" class="img-responsive img-block"
+                                                 src="@Url.Content("/StaticFiles/images/10w-40-detail.png")"/>
+                                        </a>
+                                    </div>
+
+                                    <div class="swiper-slide">
+                                        <a href="5W-30-p.html">
+                                            <img alt="مگلوب" class="img-responsive img-block"
+                                                 src="@Url.Content("/StaticFiles/images/15w-30-p.png")"/>
+                                        </a>
+                                    </div>
+
+
+                                    <!-- End Slide1-->
+
+                                </div>
+
+                                <!-- End Slides -->
+                                <!-- If we need pagination -->
+                                <div class="swiper-pagination"></div>
+
+                                <!-- If we need navigation buttons -->
+                                <!-- <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 offset-md-3 ">
+                            <h2>Why Maglub</h2>
+                            <p>
+                                This product is produced using high quality synthetic base oil Has been and in addition to psychological And protecting engine parts also reduces fuel consumption. This product for the general public Rides and light vans are designed with gasoline fuel or equipped with turbochargers
+                            </p>
+                        </div>
+                        <div class="d-none d-md-block col-sm-8 offset-sm-2">
+                            <div class="row">
+                                <div class="col-md-2 nprl">
                                     <a href="20W-50.html">
                                         <img alt="مگلوب" class="img-responsive img-block"
                                              src="@Url.Content("/StaticFiles/images/20w-50-detail.png")"/>
                                     </a>
                                 </div>
-                                <div class="swiper-slide">
+                                <div class="col-md-2 nprl">
                                     <a href="5W-40.html">
                                         <img alt="مگلوب" class="img-responsive img-block"
                                              src="@Url.Content("/StaticFiles/images/5w-40-detail.png")"/>
                                     </a>
                                 </div>
-                                <div class="swiper-slide">
+                                <div class="col-md-2 nprl">
                                     <a href="0w-20.html">
                                         <img alt="مگلوب" class="img-responsive img-block"
                                              src="@Url.Content("/StaticFiles/images/0w-20-detail.png")"/>
                                     </a>
                                 </div>
-
-                                <div class="swiper-slide">
+                                <div class="col-md-2 nprl">
                                     <a href="5W-30.html">
                                         <img alt="مگلوب" class="img-responsive img-block"
                                              src="@Url.Content("/StaticFiles/images/5w-30-detail.png")"/>
                                     </a>
                                 </div>
-
-                                <div class="swiper-slide">
+                                <div class="col-md-2 nprl">
                                     <a href="10W-40.html">
                                         <img alt="مگلوب" class="img-responsive img-block"
-                                             src="@Url.Content("/StaticFiles/images/10w-40-detail.png")"/>
+                                             src="@Url.Content("/StaticFiles/images/5w-30-detail.png")"/>
                                     </a>
                                 </div>
-
-                                <div class="swiper-slide">
+                                <div class="col-md-2 nprl">
                                     <a href="5W-30-p.html">
                                         <img alt="مگلوب" class="img-responsive img-block"
-                                             src="@Url.Content("/StaticFiles/images/15w-30-p.png")"/>
+                                             src="@Url.Content("/StaticFiles/images/5w-30-p.png")"/>
                                     </a>
                                 </div>
-
-
-                                <!-- End Slide1-->
-
                             </div>
 
-                            <!-- End Slides -->
-                            <!-- If we need pagination -->
-                            <div class="swiper-pagination"></div>
-
-                            <!-- If we need navigation buttons -->
-                            <!-- <div class="swiper-button-prev"></div>
-                            <div class="swiper-button-next"></div> -->
                         </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 offset-md-3 ">
-                        <h2>چرا روغن موتور مگلوب؟</h2>
-                        <p>
-                            این محصول با استفاده از روغن تمام پایه سنتزی با کیفیت عالی تولید شده است و علاوه بر
-                            روانی و
-                            محافظت از قطعات موتور باعث کاهش مصرف سوخت هم می شود. ابن فرآورده برای عموم خودروهای
-                            سواری و ون
-                            های سبک با سوخت بنزین یا مجهز به توربو شارژ طراحی شده است
-
-                        </p>
-                    </div>
-                    <div class="d-none d-md-block col-sm-8 offset-sm-2">
-                        <div class="row">
-                            <div class="col-md-2 nprl">
-                                <a href="20W-50.html">
-                                    <img alt="مگلوب" class="img-responsive img-block"
-                                         src="@Url.Content("/StaticFiles/images/20w-50-detail.png")"/>
-                                </a>
-                            </div>
-                            <div class="col-md-2 nprl">
-                                <a href="5W-40.html">
-                                    <img alt="مگلوب" class="img-responsive img-block"
-                                         src="@Url.Content("/StaticFiles/images/5w-40-detail.png")"/>
-                                </a>
-                            </div>
-                            <div class="col-md-2 nprl">
-                                <a href="0w-20.html">
-                                    <img alt="مگلوب" class="img-responsive img-block"
-                                         src="@Url.Content("/StaticFiles/images/0w-20-detail.png")"/>
-                                </a>
-                            </div>
-                            <div class="col-md-2 nprl">
-                                <a href="5W-30.html">
-                                    <img alt="مگلوب" class="img-responsive img-block"
-                                         src="@Url.Content("/StaticFiles/images/5w-30-detail.png")"/>
-                                </a>
-                            </div>
-                            <div class="col-md-2 nprl">
-                                <a href="10W-40.html">
-                                    <img alt="مگلوب" class="img-responsive img-block"
-                                         src="@Url.Content("/StaticFiles/images/5w-30-detail.png")"/>
-                                </a>
-                            </div>
-                            <div class="col-md-2 nprl">
-                                <a href="5W-30-p.html">
-                                    <img alt="مگلوب" class="img-responsive img-block"
-                                         src="@Url.Content("/StaticFiles/images/5w-30-p.png")"/>
-                                </a>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+    <script>
+        window.setTimeout(function () {
+            location.href = "/testimonials/en";
+        }, 5000);
+</script>
+}
+else
+{
+    <div class="content-wrapper">
+        <a href="/testimonials" class="testimonials-btn"></a>
+        <div class="container">
+            <div class="row">
 
-<script>
+                <div class="col-md-12 content align-center">
+                    <div class="row">
+                        <div class="col-12 d-block d-md-none">
+                            <!-- Slider main container -->
+                            <div class="swiper benefits-swiper">
+                                <!-- Additional required wrapper -->
+                                <div class="swiper-wrapper">
+                                    <!-- Slides -->
+                                    <div class="swiper-slide">
+                                        <a href="20W-50.html">
+                                            <img alt="مگلوب" class="img-responsive img-block"
+                                                 src="@Url.Content("/StaticFiles/images/20w-50-detail.png")"/>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="5W-40.html">
+                                            <img alt="مگلوب" class="img-responsive img-block"
+                                                 src="@Url.Content("/StaticFiles/images/5w-40-detail.png")"/>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="0w-20.html">
+                                            <img alt="مگلوب" class="img-responsive img-block"
+                                                 src="@Url.Content("/StaticFiles/images/0w-20-detail.png")"/>
+                                        </a>
+                                    </div>
+
+                                    <div class="swiper-slide">
+                                        <a href="5W-30.html">
+                                            <img alt="مگلوب" class="img-responsive img-block"
+                                                 src="@Url.Content("/StaticFiles/images/5w-30-detail.png")"/>
+                                        </a>
+                                    </div>
+
+                                    <div class="swiper-slide">
+                                        <a href="10W-40.html">
+                                            <img alt="مگلوب" class="img-responsive img-block"
+                                                 src="@Url.Content("/StaticFiles/images/10w-40-detail.png")"/>
+                                        </a>
+                                    </div>
+
+                                    <div class="swiper-slide">
+                                        <a href="5W-30-p.html">
+                                            <img alt="مگلوب" class="img-responsive img-block"
+                                                 src="@Url.Content("/StaticFiles/images/15w-30-p.png")"/>
+                                        </a>
+                                    </div>
+
+
+                                    <!-- End Slide1-->
+
+                                </div>
+
+                                <!-- End Slides -->
+                                <!-- If we need pagination -->
+                                <div class="swiper-pagination"></div>
+
+                                <!-- If we need navigation buttons -->
+                                <!-- <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 offset-md-3 ">
+                            <h2>چرا روغن موتور مگلوب؟</h2>
+                            <p>
+                                این محصول با استفاده از روغن تمام پایه سنتزی با کیفیت عالی تولید شده است و علاوه بر
+                                روانی و
+                                محافظت از قطعات موتور باعث کاهش مصرف سوخت هم می شود. ابن فرآورده برای عموم خودروهای
+                                سواری و ون
+                                های سبک با سوخت بنزین یا مجهز به توربو شارژ طراحی شده است
+
+                            </p>
+                        </div>
+                        <div class="d-none d-md-block col-sm-8 offset-sm-2">
+                            <div class="row">
+                                <div class="col-md-2 nprl">
+                                    <a href="20W-50.html">
+                                        <img alt="مگلوب" class="img-responsive img-block"
+                                             src="@Url.Content("/StaticFiles/images/20w-50-detail.png")"/>
+                                    </a>
+                                </div>
+                                <div class="col-md-2 nprl">
+                                    <a href="5W-40.html">
+                                        <img alt="مگلوب" class="img-responsive img-block"
+                                             src="@Url.Content("/StaticFiles/images/5w-40-detail.png")"/>
+                                    </a>
+                                </div>
+                                <div class="col-md-2 nprl">
+                                    <a href="0w-20.html">
+                                        <img alt="مگلوب" class="img-responsive img-block"
+                                             src="@Url.Content("/StaticFiles/images/0w-20-detail.png")"/>
+                                    </a>
+                                </div>
+                                <div class="col-md-2 nprl">
+                                    <a href="5W-30.html">
+                                        <img alt="مگلوب" class="img-responsive img-block"
+                                             src="@Url.Content("/StaticFiles/images/5w-30-detail.png")"/>
+                                    </a>
+                                </div>
+                                <div class="col-md-2 nprl">
+                                    <a href="10W-40.html">
+                                        <img alt="مگلوب" class="img-responsive img-block"
+                                             src="@Url.Content("/StaticFiles/images/5w-30-detail.png")"/>
+                                    </a>
+                                </div>
+                                <div class="col-md-2 nprl">
+                                    <a href="5W-30-p.html">
+                                        <img alt="مگلوب" class="img-responsive img-block"
+                                             src="@Url.Content("/StaticFiles/images/5w-30-p.png")"/>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
         window.setTimeout(function () {
             location.href = "/testimonials";
         }, 5000);
 </script>
+}

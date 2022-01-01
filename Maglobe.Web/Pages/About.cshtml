@@ -3,56 +3,60 @@
 
 @{
     Layout = "Shared/_Layout";
-    ViewData["Title"] = "درباره ما";
-}
+    string language = (string) ViewData["siteLanguage"];
 
-<div class="content-wrapper">
-    <div class="container-xl">
-        <div class="row">
-            <div class="col-md-12 content align-center">
-                <div class="row">
-                    <div class="col-md-7 right-content">
-                        <div class="inner-content">
-                            <h2>درباره مگلوب</h2>
-                            <p>
-                                این محصول با استفاده از روغن تمام پایه سنتزی با کیفیت عالی تولید شده است و علاوه بر
-                                روانی و محافظت از قطعات موتور باعث کاهش مصرف سوخت هم می شود. ابن فرآورده برای عموم
-                                خودروهای سواری و ون های سبک با سوخت بنزین یا این محصول با استفاده از روغن تمام پایه
-                                سنتزی با کیفیت عالی تولید شده است و علاوه بر روانی و محافظت از قطعات موتور باعث کاهش
-                                مصرف سوخت هم می شود. ابن فرآورده برای عموم خودروهای سواری و ون های سبک با سوخت بنزین
-                                یا
-                                مجهز به توربو شارژ طراحی شده است
-                                مجهز به توربو شارژ طراحی شده است
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-5">
-                        <div class="row">
-                            <div class="col-6 col-sm-6 left-content-one">
-                                <div class="inner-content">
-                                    <a href="/ContactUs">
-                                        <img class="img-block call-icon" alt="تلفن" src="@Url.Content("/StaticFiles/images/phone-icon.png")">
-                                        <span>تماس با ما</span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-6 left-content-two">
-                                <div class="inner-content">
-                                    <a href="/Support">
-                                        <img class="img-block call-icon" alt="تلفن"
-                                             src="@Url.Content("/StaticFiles/images/contact-us-icon.png")">
-                                        <span>پشتیبانی مشتریان</span>
-                                    </a>
-                                </div>
+    @if (language == "en")
+    {
+        ViewData["Title"] = "About Us";
+    }
+    else
+    {
+        ViewData["Title"] = "درباره ما";
+    }
+}
+@if (language == "en")
+{
+    <div class="content-wrapper">
+        <div class="container-xl">
+            <div class="row">
+                <div class="col-md-12 content align-center">
+                    <div class="row">
+                        <div class="col-md-7 right-content">
+                            <div class="inner-content">
+                                <h2>About Maglub</h2>
+                                <p>
+                                    This product is produced using high quality synthetic base oil Has been and in addition to psychological And protecting engine parts also reduces fuel consumption. This product for the general public Rides and light vans are designed with gasoline fuel or equipped with turbochargers
+                                </p>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-6 offset-3 col-sm-8 offset-sm-2 left-content-three">
-                                <div class="inner-content">
-                                    <a href="/Achievments">
-                                        <img class="img-block call-icon" alt="تلفن" src="@Url.Content("/StaticFiles/images/cet-icon.png")">
-                                        <span>افتخارات مگلوب</span>
-                                    </a>
+                        <div class="col-md-5">
+                            <div class="row">
+                                <div class="col-6 col-sm-6 left-content-one">
+                                    <div class="inner-content">
+                                        <a href="/ContactUs/en">
+                                            <img class="img-block call-icon" alt="تلفن" src="@Url.Content("/StaticFiles/images/phone-icon.png")">
+                                            <span>Contact Us</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-6 left-content-two">
+                                    <div class="inner-content">
+                                        <a href="/Support/en">
+                                            <img class="img-block call-icon" alt="تلفن"
+                                                 src="@Url.Content("/StaticFiles/images/contact-us-icon.png")">
+                                            <span>Customer Support</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 offset-3 col-sm-8 offset-sm-2 left-content-three">
+                                    <div class="inner-content">
+                                        <a href="/Achievments/en">
+                                            <img class="img-block call-icon" alt="تلفن" src="@Url.Content("/StaticFiles/images/cet-icon.png")">
+                                            <span>Maglub Achievments</span>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -61,4 +65,63 @@
             </div>
         </div>
     </div>
-</div>
+}
+else
+{
+    <div class="content-wrapper">
+        <div class="container-xl">
+            <div class="row">
+                <div class="col-md-12 content align-center">
+                    <div class="row">
+                        <div class="col-md-7 right-content">
+                            <div class="inner-content">
+                                <h2>درباره مگلوب</h2>
+                                <p>
+                                    این محصول با استفاده از روغن تمام پایه سنتزی با کیفیت عالی تولید شده است و علاوه بر
+                                    روانی و محافظت از قطعات موتور باعث کاهش مصرف سوخت هم می شود. ابن فرآورده برای عموم
+                                    خودروهای سواری و ون های سبک با سوخت بنزین یا این محصول با استفاده از روغن تمام پایه
+                                    سنتزی با کیفیت عالی تولید شده است و علاوه بر روانی و محافظت از قطعات موتور باعث کاهش
+                                    مصرف سوخت هم می شود. ابن فرآورده برای عموم خودروهای سواری و ون های سبک با سوخت بنزین
+                                    یا
+                                    مجهز به توربو شارژ طراحی شده است
+                                    مجهز به توربو شارژ طراحی شده است
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="row">
+                                <div class="col-6 col-sm-6 left-content-one">
+                                    <div class="inner-content">
+                                        <a href="/ContactUs">
+                                            <img class="img-block call-icon" alt="تلفن" src="@Url.Content("/StaticFiles/images/phone-icon.png")">
+                                            <span>تماس با ما</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-6 left-content-two">
+                                    <div class="inner-content">
+                                        <a href="/Support">
+                                            <img class="img-block call-icon" alt="تلفن"
+                                                 src="@Url.Content("/StaticFiles/images/contact-us-icon.png")">
+                                            <span>پشتیبانی مشتریان</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 offset-3 col-sm-8 offset-sm-2 left-content-three">
+                                    <div class="inner-content">
+                                        <a href="/Achievments">
+                                            <img class="img-block call-icon" alt="تلفن" src="@Url.Content("/StaticFiles/images/cet-icon.png")">
+                                            <span>افتخارات مگلوب</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

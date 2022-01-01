@@ -6,6 +6,17 @@
     Layout = "Shared/_Layout";
     ViewData["Title"] = "محصولات";
     var products = (List<ProductViewModel>) ViewData["Products"];
+    string language = (string) ViewData["siteLanguage"];
+    @if (language == "en")
+    {
+        ViewData["Title"] = "Products";
+    }
+    else
+    {
+        ViewData["Title"] = "محصولات";
+    }
+
+
 }
 
 
@@ -22,14 +33,21 @@
                         {
                             @foreach (var item in products)
                             {
-                                <div class="swiper-slide">
+                                <div class="swiper-slide" id="slide-@item.Id">
                                     <div class="row">
                                         <div class="col-xxl-4 offset-xxl-3 col-lg-5 offset-lg-1 col-md-6 offset-md-1">
                                             <div class="row">
-                                                <h3 class="purple-heading">
+                                                <h3 class="product-heading">
                                                     <span>@item.Name</span>@item.Model
                                                 </h3>
-                                                <p>مشخصات محصول:</p>
+                                                @if (language == "en")
+                                                {
+                                                    <p>Product Specifications:</p>
+                                                }
+                                                else
+                                                {
+                                                    <p>مشخصات محصول:</p>
+                                                }
                                                 <p>
                                                     @item.Description
                                                 </p>
@@ -39,9 +57,23 @@
                                                     <div class="deep-box">
                                                         <div class="row">
                                                             <div class="col-4">
-                                                                <p> تاییدیه رسمی از:</p>
+                                                                @if (language == "en")
+                                                                {
+                                                                    <p>Official confirmation from:</p>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <p>تاییدیه رسمی از:</p>
+                                                                }
                                                             </div>
                                                             <div class="col-8">
+                                                                <img class="inline-logo" alt="بنز"
+                                                                     src="@Url.Content("~/StaticFiles/images/mercedes-benz.png")">
+                                                                <img class="inline-logo" alt="بی ام و"
+                                                                     src="@Url.Content("~/StaticFiles/images/bmw.png")">
+                                                                <img class="inline-logo" alt="فولکس واگن"
+                                                                     src="@Url.Content("~/StaticFiles/images/wolex.png")">
+
                                                             </div>
                                                         </div>
 
@@ -53,7 +85,15 @@
                                                 <div class="col-6 pl-5">
                                                     <div class="deep-box-small  align-center">
                                                         <p>
-                                                            مدل:
+                                                            @if (language == "en")
+                                                            {
+                                                                <span>Model:</span>
+                                                            }
+                                                            else
+                                                            {
+                                                                <span>مدل:</span>
+                                                            }
+
                                                             <span>@item.Name</span>@item.Model
                                                         </p>
 
@@ -61,7 +101,18 @@
                                                 </div>
                                                 <div class="col-6 pr-5">
                                                     <div class="deep-box-small  align-center">
-                                                        <p>کیفیت: @item.Quality</p>
+                                                        <p>
+                                                            @if (language == "en")
+                                                            {
+                                                                <span> Quality:</span>
+                                                            }
+                                                            else
+                                                            {
+                                                                <span> کیفیت:</span>
+                                                            }
+
+                                                            @item.Quality
+                                                        </p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -69,7 +120,15 @@
                                                 <div class="col-6 pl-5">
                                                     <div class="deep-box-small  align-center">
                                                         <p>
-                                                            حجم: @item.Volume
+                                                            @if (language == "en")
+                                                            {
+                                                                <span>Volume:</span>
+                                                            }
+                                                            else
+                                                            {
+                                                                <span>حجم:</span>
+                                                            }
+                                                            @item.Volume
                                                         </p>
 
                                                     </div>
@@ -86,7 +145,15 @@
                                                 <div class="col-md-6 pl-5">
                                                     <div class="align-center">
                                                         <a href="/ProductDetails/@item.Id" class="btn btn-gradient btn-block btn-large">
-                                                            مشاهده جزئیات
+                                                            @if (language == "en")
+                                                            {
+                                                                <span>Read More </span>
+                                                            }
+                                                            else
+                                                            {
+                                                                <span> مشاهده جزئیات</span>
+                                                            }
+
                                                         </a>
                                                     </div>
                                                 </div>
@@ -107,18 +174,26 @@
                         }
                         else
                         {
-                            <p>محصولی یافت نشد.</p>
+                            @if (language == "en")
+                            {
+                                <p> No products found </p>
+                            }
+                            else
+                            {
+                                <p>محصولی یافت نشد.</p>
+                            }
                         }
 
-                        <!-- If we need pagination -->
-                        <div class="swiper-pagination"></div>
-
-                        <!-- If we need navigation buttons  -->
-
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
 
                     </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+
+                    <!-- If we need navigation buttons  -->
+
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+
 
                 </div>
             </div>

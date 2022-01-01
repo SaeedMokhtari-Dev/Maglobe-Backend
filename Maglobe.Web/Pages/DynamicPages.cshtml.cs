@@ -20,7 +20,7 @@ namespace Maglobe.Web.Pages
             Language language = CheckAndSetSiteLanguage(siteLanguage);
             
             ViewData["DynamicPage"] = await _dynamicPageService.GetDynamicPage(language, dynamicPageId);
-            ViewData["BodyClass"] = "news-detail";
+            ViewData["BodyClass"] = "contact-us";
         }
     }
 }

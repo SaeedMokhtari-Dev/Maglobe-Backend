@@ -3,38 +3,82 @@
 
 @{
     Layout = "Shared/_Layout";
-    ViewData["Title"] = "تماس با ما";
+    string language = (string) ViewData["siteLanguage"];
+    @if (language == "en")
+    {
+        ViewData["Title"] = "Contact Us";
+    }
+    else
+    {
+        ViewData["Title"] = "تماس با ما";
+    }
 }
+@if (language == "en")
+{
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 content align-center">
+                    <div class="row">
+                        <div class="col-md-6 offset-md-3">
+                            <h2>Contact Us</h2>
+                            <p>
+                                This product is produced using high quality synthetic base oil Has been and in addition to psychological And protecting engine parts also reduces fuel consumption. This product for the general public Rides and light vans are designed with gasoline fuel or equipped with turbochargers
+                            </p>
+                            <p class="ltr">
+                                <img class="img-block call-icon" alt="تلفن" src="@Url.Content("/StaticFiles/images/call-icon.png")">
+                                +9821 - 8347
+                            </p>
+                            <p>
+                                <img class="img-block email-icon" alt="ایمیل" src="@Url.Content("/StaticFiles/images/email-icon.png")">
+                                info@sepehanoil.com<br>
+                                ads@sepahanoil.com
 
-<div class="content-wrapper">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 content align-center">
-                <div class="row">
-                    <div class="col-md-6 offset-md-3">
-                        <h2>تماس با ما</h2>
-                        <p>
-                            این محصول با استفاده از روغن تمام پایه سنتزی با کیفیت عالی تولید شده است و علاوه بر
-                            روانی و محافظت از قطعات موتور باعث کاهش مصرف سوخت هم می شود.
-                        </p>
-                        <p class="ltr">
-                            <img class="img-block call-icon" alt="تلفن" src="@Url.Content("/StaticFiles/images/call-icon.png")">
-                            +9821 - 8347
-                        </p>
-                        <p>
-                            <img class="img-block email-icon" alt="ایمیل" src="@Url.Content("/StaticFiles/images/email-icon.png")">
-                            info@sepehanoil.com<br>
-                            ads@sepahanoil.com
+                            </p>
+                            <p>
+                                <img class="img-block location-icon" alt="تلفن" src="@Url.Content("/StaticFiles/images/location-icon.png")">
+                                Iran, Tehran, Argentina Square, Baharan Square, No. 92
+                            </p>
 
-                        </p>
-                        <p>
-                            <img class="img-block location-icon" alt="تلفن" src="@Url.Content("/StaticFiles/images/location-icon.png")">
-                            ایران، تهران، میدان آرژانتین، میدان بهاران، شماره 92
-                        </p>
-
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+}
+else
+{
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 content align-center">
+                    <div class="row">
+                        <div class="col-md-6 offset-md-3">
+                            <h2>تماس با ما</h2>
+                            <p>
+                                این محصول با استفاده از روغن تمام پایه سنتزی با کیفیت عالی تولید شده است و علاوه بر
+                                روانی و محافظت از قطعات موتور باعث کاهش مصرف سوخت هم می شود.
+                            </p>
+                            <p class="ltr">
+                                <img class="img-block call-icon" alt="تلفن" src="@Url.Content("/StaticFiles/images/call-icon.png")">
+                                +9821 - 8347
+                            </p>
+                            <p>
+                                <img class="img-block email-icon" alt="ایمیل" src="@Url.Content("/StaticFiles/images/email-icon.png")">
+                                info@sepehanoil.com<br>
+                                ads@sepahanoil.com
+
+                            </p>
+                            <p>
+                                <img class="img-block location-icon" alt="تلفن" src="@Url.Content("/StaticFiles/images/location-icon.png")">
+                                ایران، تهران، میدان آرژانتین، میدان بهاران، شماره 92
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
