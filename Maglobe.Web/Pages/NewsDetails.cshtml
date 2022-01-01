@@ -5,6 +5,8 @@
 @{
     Layout = "Shared/_Layout";
     var news = (BlogDetailViewModel) ViewData["News"];
+    ViewData["Title"] = @news.Title;
+
 }
 @if (news != null)
 {
