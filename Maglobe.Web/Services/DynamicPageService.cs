@@ -17,19 +17,19 @@ namespace Maglobe.Web.Services
             _context = context;
         }
 
-        public async Task<DynamicPageViewModel> GetDynamicPage(Language language, long DynamicPageKey)
+        public async Task<DynamicPageViewModel> GetDynamicPage(Language language, long dynamicPageKey)
         {
-            var DynamicPage = await _context.DynamicPages
-                .FirstOrDefaultAsync(w => w.IsActive && w.Language == language.ToString() && w.Id == DynamicPageKey);
+            var dynamicPage = await _context.DynamicPages
+                .FirstOrDefaultAsync(w => w.IsActive && w.Language == language.ToString() && w.Id == dynamicPageKey);
 
-            if (DynamicPage == null)
-                throw new Exception("DynamicPage Not Found");
+            if (dynamicPage == null)
+                return new DynamicPageViewModel();
 
             return new DynamicPageViewModel()
             {
-                Title = DynamicPage.Title,
-                Editor = DynamicPage.Editor,
-                DescriptionSeo = DynamicPage.DescriptionSeo
+                Title = dynamicPage.Title,
+                Editor = dynamicPage.Editor,
+                DescriptionSeo = dynamicPage.DescriptionSeo
             };
         }
     }

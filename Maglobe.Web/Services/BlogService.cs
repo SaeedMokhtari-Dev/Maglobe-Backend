@@ -38,14 +38,18 @@ namespace Maglobe.Web.Services
                 Attachment = w.Attachment,
                 AttachmentId = w.AttachmentId
             }).ToListAsync();
-            var result = news.Select(w => new BlogListViewModel()
+            var result = new List<BlogListViewModel>();
+            if (news != null && news.Any())
             {
-                Id = w.Id,
-                Title = w.Title,
-                Picture = w.AttachmentId.HasValue
-                    ? String.Join("", w.Attachment.Image.Select(Convert.ToChar))
-                    : string.Empty
-            }).ToList();
+                result = news.Select(w => new BlogListViewModel()
+                {
+                    Id = w.Id,
+                    Title = w.Title,
+                    Picture = w.AttachmentId.HasValue
+                        ? String.Join("", w.Attachment.Image.Select(Convert.ToChar))
+                        : string.Empty
+                }).ToList();
+            }
 
             return result;
 
@@ -56,12 +60,16 @@ namespace Maglobe.Web.Services
             var blog = await _context.Blogs.Include(w => w.Attachment).FirstOrDefaultAsync(w => w.Language == language.ToString() &&
                                                                      w.Id == id);
 
+            if (blog == null) return new BlogDetailViewModel();
+
             return new BlogDetailViewModel()
             {
                 Title = blog.Title,
                 Date = blog.PublishedDate.ToPersianDateAndDayName(),
                 Description = blog.Description,
-                Picture =  blog.AttachmentId.HasValue ? String.Join("", blog.Attachment.Image.Select(Convert.ToChar)) : string.Empty
+                Picture = blog.AttachmentId.HasValue
+                    ? String.Join("", blog.Attachment.Image.Select(Convert.ToChar))
+                    : string.Empty
             };
         }
     }

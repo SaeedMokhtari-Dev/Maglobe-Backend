@@ -43,6 +43,7 @@ namespace Maglobe.Web.Services
                 Name = w.Name,
                 SocialNetwork = w.SocialNetwork
             }).ToListAsync();
+            
             return testimonials.Select(w => new TestimonialViewModel()
             {
                 Name = w.Name,

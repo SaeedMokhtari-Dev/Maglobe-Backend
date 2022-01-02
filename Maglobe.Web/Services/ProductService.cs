@@ -67,6 +67,8 @@ namespace Maglobe.Web.Services
             var product = await _context.Products.Include(w => w.ProductAttachments).ThenInclude(w => w.Attachment)
                 .FirstOrDefaultAsync(w => w.Id == productId && w.IsActive && w.Language == language.ToString());
 
+            if (product == null) return new ProductDetailViewModel();
+            
             return new ProductDetailViewModel()
             {
                 Name = product.Name,

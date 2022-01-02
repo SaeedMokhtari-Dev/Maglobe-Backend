@@ -24,7 +24,7 @@ namespace Maglobe.Web.Services
                 .FirstOrDefaultAsync(w => w.Language == language.ToString());
 
             if (setting == null)
-                throw new Exception("Setting Not Found");
+                return new SettingViewModel();
 
             return new SettingViewModel()
             {
