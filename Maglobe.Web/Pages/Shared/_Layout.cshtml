@@ -92,6 +92,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <ul>
                     @await Component.InvokeAsync("Menu", new {siteLanguage = ViewData["siteLanguage"] != null ? (string) ViewData["siteLanguage"] : string.Empty});
                 </ul>
+                <div class="header-lang">
+                    @if (language == "en")
+                    {
+                        <a href="/">FA</a>
+                        <a class="active" href="/index/en/">EN</a>
+                    }
+                    else
+                    {
+                        <a class="active" href="/">FA</a>
+                        <a href="/index/en">EN</a>
+                    }
+
+                </div>
+
                 <p class="ltr align-center">
                     <img class="img-block call-icon" alt="تلفن" src="@Url.Content("/StaticFiles/images/call-icon.png")">
                     +9821 - 8347
